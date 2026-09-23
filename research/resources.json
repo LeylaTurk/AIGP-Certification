@@ -3480,7 +3480,21 @@
       "IAPP official training (~$995+)",
       "22Academy Exam Prep Suite (EUR745)",
       "Privacy Bootcamp / Training Camp / InfosecTrain boot camps (prices not verified; almost certainly > $150)"
-    ]
+    ],
+    "revised": {
+      "date": "2026-09-23",
+      "verdict": "Recommend: AI Career Pro AIGP Exam Prep ($99)",
+      "reason": "Candidate needs a course to introduce and connect topics and to stay motivated; AI Career Pro is v2.1-mapped (vendor-stated), has 117 short video lessons with written and audio versions, 700+ questions and 5 mocks, has a free trial, and was already the plan's mock bank, so it costs nothing extra.",
+      "caveat": "No independent learner reviews found; use the Day-1 free trial as the check.",
+      "alternative": "Kyle David AIGP Masterclass (Udemy, 19-20 h; v2.1 status conflicting between listings; buy on sale)",
+      "sources": [
+        "https://governance.aicareer.pro/course/aigp-exam-prep",
+        "https://governance.aicareer.pro/blog/aigp-in-21-days",
+        "https://aigovernance.study/best-aigp-exam-prep/",
+        "https://opencourser.com/course/y0mo9n/ai-governance-professional-aigp-certification-masterclass",
+        "https://www.drdavidprivacy.com/course/ai-governance-professional-aigp-certification-masterclass"
+      ]
+    }
   },
   "sources": [
     {

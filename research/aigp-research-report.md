@@ -411,3 +411,33 @@ That is suggestive, not strong. Its full version (~€180) is also over budget.
 - gdpr-info.eu Art 9/14/15/25 URLs (pattern-inferred).
 - All YouTube and podcast content quality (titles and dates only).
 - All Reddit community evidence (inaccessible).
+
+---
+
+## Addendum (2026-09-23): prep course verdict revised for the candidate's learning style
+
+**Why it changed.** The original verdict ("none required") assumed the candidate could learn from primary sources. The candidate has since said they need a course to introduce the topics and connect them, and that reading alone won't keep them motivated. Motivation and structure are real pass/fail factors, so a course is now **recommended**, within the $150 cap.
+
+**Recommendation: AI Career Pro AIGP Exam Prep, $99. It was already in the plan as the mock-exam bank.**
+- Vendor-stated contents: 117 video lessons (~5 min each) across 59 topics, mapped to BoK v2.1. Every lesson also has a written and an audio version. 700+ practice questions (a mix of knowledge and scenario questions) and 5 full 100-question mocks. The vendor also suggests a 13-day study plan, one sub-domain per day. [A1][A2]
+- The instructor, James Kavanagh, led AI governance at Microsoft and Amazon and passed the AIGP. [A1][A3]
+- An independent comparison site lists it in the same tier as the named-instructor video courses. [A3]
+- **Buying it as the course costs nothing extra**: the plan already used its mocks. There is a free trial (Domain I-A plus a practice exam). [A1]
+- **Caveat:** we found no independent learner reviews. The free trial on Day 1 is the check.
+
+**Alternative (or optional second teacher): Dr Kyle David's AIGP Certification Masterclass on Udemy.**
+- 19–20+ hours of video. [A4]
+- It has the strongest independent evidence of any paid product (Veronica Lin, passed Jan 2026) [15].
+- It's too long to run alongside the plan as a second full course. Use it instead of AI Career Pro if the trial doesn't suit you, or only for weak domains after Mock #1.
+- **v2.1 status is conflicting:** one listing says "current to v2.1 (July 2026)", another says v2.0.1. [A4][A5] Check the Udemy page before buying.
+- **Price:** Udemy sale price (not verified). The own-site version with 600 questions and flashcards probably costs more than $150 [A6].
+
+**Budget check.** AI Career Pro ($99) plus the optional Udemy course on sale (≈ $15–25) ≈ $120, within the $150 cap.
+
+Addendum sources (web search, 2026-09-23; the pages themselves could not be opened from the sandbox):
+- A1. AI Career Pro, AIGP Exam Prep Course: https://governance.aicareer.pro/course/aigp-exam-prep
+- A2. AI Career Pro, "How to Pass the AIGP Exam in 21 Days": https://governance.aicareer.pro/blog/aigp-in-21-days
+- A3. aigovernance.study, "Best AIGP Exam Prep: Courses & Materials Compared (2026)": https://aigovernance.study/best-aigp-exam-prep/
+- A4. OpenCourser listing, "AI Governance Professional (AIGP) Certification Masterclass" (Udemy): https://opencourser.com/course/y0mo9n/ai-governance-professional-aigp-certification-masterclass
+- A5. Dr David Privacy, AIGP Certification Masterclass: https://www.drdavidprivacy.com/course/ai-governance-professional-aigp-certification-masterclass
+- A6. Dr David Privacy, course catalogue: https://www.drdavidprivacy.com/courses

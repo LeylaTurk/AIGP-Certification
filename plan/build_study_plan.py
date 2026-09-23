@@ -51,202 +51,203 @@ REST = "REST"  # marker for a rest day
 
 # Each week: theme, domains, list of 7 day entries (Wed..Tue). The final week ends on exam day.
 # Pattern: most study on weekdays (Wed, Thu, Fri, Mon, Tue ~1.5-2 h each), Saturday is the one
-# longer weekend session (the full mocks), Sunday is the rest day.
+# longer weekend session (labs and full mocks), Sunday is the rest day.
+# Weeks 1-3 are a COURSE-LED first pass: one AI Career Pro BoK sub-domain per study day
+# (watch the lessons -> do that topic's quiz questions -> one hands-on task), all 13 sub-domains
+# done before Mock #1. Weeks 3-5 deepen with primary sources, applied labs and mocks.
+# The hands-on labs all use one invented company, "NovaPay" (a 500-person EU/US fintech),
+# so the pieces connect: org chart -> policy -> inventory -> risk tiers -> assessments -> vendors -> monitoring.
+ACP = "pe-aicareerpro"
 WEEKS = [
-    dict(theme="Blueprint, diagnostic, Domain I (governance programme) and EU AI Act orientation",
+    dict(theme="Course kick-off, diagnostic, Domain I (foundations) and II.A-II.B (privacy and other laws)",
          dom=["I", "II"], days=[
         [  # Wed 23 Sep
-            T("Read the AIGP BoK v2.1 PDF: all four domains' competencies and performance indicators; tag each line Strong / Partial / Weak against your BlueDot background", "iapp-bok-v2-1", "read", 50, "All"),
-            T("Request the free IAPP AIGP study guide (form); check it shows the 4-domain structure before using it", "iapp-aigp-fsg-request", "read", 10, "All"),
-            T("Read the IAPP Candidate Handbook PDF: scheduling, rescheduling/cancellation cut-offs, ID rules, OnVUE requirements. Note the reschedule cut-off: it sets your real go/no-go date", "iapp-handbook-pdf", "read", 25, "All"),
-            T("Read EU AI Act Article 4 (AI literacy duty)", "aia-art-4", "read", 10, "I"),
+            T("Read the AIGP BoK v2.1 PDF: all four domains' competencies and performance indicators; tag each line Strong / Partial / Weak against your BlueDot background", "iapp-bok-v2-1", "read", 45, "All"),
+            T("Read the IAPP Candidate Handbook PDF: scheduling, rescheduling/cancellation cut-offs, ID rules, OnVUE requirements. Check Pearson VUE seats for Tue 27 Oct", "iapp-handbook-pdf", "read", 20, "All"),
+            T("Request the free IAPP AIGP study guide (form); check it shows the 4-domain structure", "iapp-aigp-fsg-request", "read", 10, "All"),
+            T("AI Career Pro FREE trial: course intro + Domain I.A lessons (what AI is, AI types, risks and harms). BlueDot-covered, so watch at 1.5x", ACP, "watch", 35, "I", sub="I.A"),
             O("Watch 'AIGP v2.1 Full Course Update Explained' (what changed in v2.1)", "yt-v21-update", "watch", 45, "All"),
         ],
         [  # Thu 24 Sep
-            T("Diagnostic part 1: IAPP free study guide sample questions, untimed", "iapp-aigp-fsg-request", "practice", 35, "All", ms="Diagnostic"),
-            T("Diagnostic part 2: AIGP Playbook 15-question free mock preview, untimed", "pe-aigpplaybook", "practice", 25, "All"),
-            T("Start a gap log: tag every diagnostic miss by BoK competency and rank the four domains weakest to strongest", "", "review", 20, "All"),
-            T("Read Commission Guidelines on the AI-system definition: the 7 definitional elements only (fast)", "ec-guidelines-ai-definition", "read", 20, "I", sub="I.A"),
-            T("Skim OECD AI Principles: 5 values-based principles + 5 recommendations (fast, BlueDot-covered)", "oecd-ai-principles", "read", 15, "II", sub="II.D"),
-            O("Read Veronica Lin's 'How I passed the AIGP exam' (what worked, what didn't)", "rep-veronica-lin", "read", 15, "All"),
+            T("Diagnostic part 1: AI Career Pro free practice exam, untimed; mark every guess", ACP, "practice", 40, "All", ms="Diagnostic"),
+            T("Diagnostic part 2: IAPP free study guide sample questions", "iapp-aigp-fsg-request", "practice", 20, "All"),
+            T("Start a gap log: tag every miss and guess by BoK competency; rank the four domains weakest to strongest", "", "review", 15, "All"),
+            T("Buy the AI Career Pro AIGP Exam Prep course ($99) if the trial lessons and questions felt IAPP-like (else see the plan's budget section for the alternative)", ACP, "practice", 10, "All", ms="Buy course (AI Career Pro, $99)"),
+            T("Set up your Anki deck; add the first 15 cards from diagnostic misses", "", "flashcards", 20, "All"),
         ],
         [  # Fri 25 Sep
-            T("Read AIGP Playbook Domain I notes: skim I.A; study I.B (roles, committees, cross-functional collaboration, AI literacy) and I.C (policies across the lifecycle)", "aigpplaybook-d1", "read", 75, "I"),
-            T("Make Anki flashcards: Domain I roles, governance committee/RACI, policy types, AI inventory", "", "flashcards", 30, "I"),
-            O("Listen: AIGP Audio Course Ep. 1, decoding the exam blueprint", "pod-baremetal-ep1", "watch", 25, "All"),
+            T("Course: Domain I.B lessons (roles and responsibilities, governance committees, cross-functional collaboration, AI literacy and training)", ACP, "watch", 45, "I"),
+            T("Course: Domain I.B quiz questions; add every miss to Anki", ACP, "practice", 20, "I"),
+            T("Read EU AI Act Article 4 (AI literacy duty)", "aia-art-4", "read", 10, "I"),
+            T("Lab 1 (NovaPay): sketch NovaPay's AI governance structure: committee, owners, RACI for approving a new AI use case", "", "practice", 25, "I"),
         ],
         [  # Sat 26 Sep
-            T("Read NIST AI RMF Playbook GOVERN 1-6 (policies, accountability, workforce, culture, stakeholder engagement, third-party risk)", "nist-playbook-govern", "read", 60, "I"),
-            T("Listen: AIGP Audio Course Ep. 11, updating privacy, security, data-governance and IP policies for AI (I.C.2)", "pod-baremetal-ep11-spotify", "watch", 30, "I"),
-            O("Read IAPP AI Governance Profession Report 2025: where governance sits, team structures", "iapp-profession-report-2025", "read", 45, "I"),
+            T("Course: Domain I.C lessons (policies and procedures across the AI lifecycle)", ACP, "watch", 45, "I"),
+            T("Course: Domain I.C quiz questions; add misses to Anki", ACP, "practice", 20, "I"),
+            T("Lab 2 (NovaPay): draft a 1-page AI use policy + an AI inventory template (fields: owner, purpose, data, vendor, risk tier, status)", "", "practice", 40, "I"),
+            O("Read NIST AI RMF Playbook GOVERN 1-6 and compare with your Lab 1-2 drafts", "nist-playbook-govern", "read", 45, "I"),
+            O("Listen: AIGP Audio Course Ep. 11, privacy, security, data-governance and IP policies for AI (I.C.2)", "pod-baremetal-ep11-spotify", "watch", 30, "I"),
         ],
         REST,  # Sun 27 Sep
         [  # Mon 28 Sep
-            T("Read IAPP AI Governance in Practice Report 2024: programme set-up sections (governance structures, inventories, risk assessment)", "iapp-in-practice-2024", "read", 55, "I"),
-            T("Read the IAPP Key Terms for AI Governance glossary end to end; flag unfamiliar terms", "iapp-glossary", "read", 45, "I", sub="I.A"),
-            O("Skim NIST AI 600-1 GenAI Profile Section 2 (the 12 GAI risks); BlueDot-covered, just map names", "nist-600-1", "read", 30, "I", sub="I.A"),
+            T("Course: Domain II.A lessons (privacy and data protection law applied to AI)", ACP, "watch", 45, "II", sub="II.A"),
+            T("Course: Domain II.A quiz questions; add misses to Anki", ACP, "practice", 20, "II", sub="II.A"),
+            T("Read GDPR Article 22 (automated individual decision-making, incl. profiling)", "gdpr-art-22", "read", 15, "II", sub="II.A"),
+            T("Read GDPR Article 35 (DPIA: when required, minimum contents); you'll use it in Lab 6", "gdpr-art-35", "read", 15, "II", sub="II.A"),
+            T("Anki: GDPR articles that matter for AI (5, 6, 13, 22, 35) in one line each", "", "flashcards", 15, "II", sub="II.A"),
+            O("Read GDPR Articles 5 and 6 (principles, lawful bases) for AI training data", "gdpr-art-5", "read", 30, "II", sub="II.A"),
         ],
         [  # Tue 29 Sep
-            T("Read the EU AI Act high-level summary (whole page): risk tiers, provider vs deployer duties, GPAI", "aia-high-level-summary", "read", 45, "II", sub="II.C"),
-            T("Read EU AI Act Article 3 definitions: points (1) AI system, (3) provider, (4) deployer, (5)-(7) authorised rep/importer/distributor, (63)-(66) GPAI", "aia-art-3", "read", 25, "II", sub="II.C"),
-            T("Make Anki flashcards from ~40 flagged glossary terms (IAPP wording) + the Art 3 role definitions", "", "flashcards", 30, "I", sub="I.A"),
-            T("Week 1 recap: Anki review of all Week 1 cards + write a one-page Domain I summary from memory", "", "review", 20, "I"),
-            O("Skim Oliver Patel's Unofficial AIGP Resource Guide and bookmark links for your Weak competencies", "oliverpatel-aigp-guide", "read", 20, "All"),
+            T("Course: Domain II.B lessons (IP, anti-discrimination, consumer protection, product liability)", ACP, "watch", 40, "II", sub="II.B"),
+            T("Course: Domain II.B quiz questions; add misses to Anki", ACP, "practice", 20, "II", sub="II.B"),
+            T("Read FTC 'Operation AI Comply' (Section 5 deception/unfairness applied to AI claims)", "ftc-ai-comply", "read", 20, "II", sub="II.B"),
+            T("Read NYC DCWP page on Local Law 144 (AEDT bias audits, candidate notice)", "nyc-aedt", "read", 15, "II", sub="II.B"),
+            T("Week 1 recap: Anki review + teach-back: explain Domain I out loud in 5 minutes (voice memo), then check against your notes", "", "review", 20, "I"),
+            O("Read Veronica Lin's 'How I passed the AIGP exam' (what worked, what didn't)", "rep-veronica-lin", "read", 15, "All"),
         ],
     ]),
-    dict(theme="First pass: GDPR for AI, Domain III (governing development) and Domain IV (governing deployment)",
-         dom=["III", "IV", "II"], days=[
+    dict(theme="Course: II.C-II.D (EU AI Act, standards) and III.A-III.C (governing development), plus EU AI Act lab",
+         dom=["II", "III"], days=[
         [  # Wed 30 Sep
-            T("Read NIST AI RMF 1.0 PDF Part 1, Section 3 (7 trustworthy-AI characteristics) and Section 5 overview of the Core", "nist-ai-rmf-pdf", "read", 45, "II", sub="II.D"),
-            T("Read the AIRC AI RMF Core page: Govern/Map/Measure/Manage and their category IDs (GOVERN 1-6, MAP 1-5, MEASURE 1-4, MANAGE 1-4)", "nist-airc-core", "read", 35, "II", sub="II.D"),
-            T("Read GDPR Article 5 (principles): note how purpose limitation and minimisation bite on AI training data", "gdpr-art-5", "read", 20, "II", sub="II.A"),
-            T("Read GDPR Article 6 (lawful bases): legitimate interest vs consent for training and deployment", "gdpr-art-6", "read", 20, "II", sub="II.A"),
-            O("Watch 'NIST AI RMF deep dive: GOVERN vs MAP vs MEASURE vs MANAGE'", "yt-nist-rmf-functions", "watch", 30, "II", sub="II.D"),
+            T("Course: Domain II.C lessons (EU AI Act and other AI-specific laws)", ACP, "watch", 55, "II", sub="II.C"),
+            T("Course: Domain II.C quiz questions; add misses to Anki", ACP, "practice", 20, "II", sub="II.C"),
+            T("Read the EU AI Act high-level summary: risk tiers, provider vs deployer duties, GPAI", "aia-high-level-summary", "read", 30, "II", sub="II.C"),
+            T("Read EU AI Act Article 5 (the prohibited practices)", "aia-art-5", "read", 20, "II", sub="II.C"),
         ],
         [  # Thu 1 Oct
-            T("Read NIST AI RMF Playbook MAP 1-5 (context, categorisation, capabilities, risks/benefits, impacts): the design-stage checklist", "nist-playbook-map", "read", 50, "III"),
-            T("Read EU AI Act Article 9 (risk management system for high-risk AI)", "aia-art-9", "read", 20, "III"),
-            T("Read EU AI Act Article 10 (data and data governance: training, validation, test sets; bias examination)", "aia-art-10", "read", 25, "III"),
-            T("Read GDPR Article 22 (automated individual decision-making, incl. profiling)", "gdpr-art-22", "read", 15, "II", sub="II.A"),
-            T("Add MAP categories, Art 9 steps and Art 10 data duties to Anki", "", "flashcards", 10, "III"),
+            T("Course: Domain II.D lessons (NIST AI RMF, ISO/IEC 42001 and 42005, OECD, other frameworks)", ACP, "watch", 45, "II", sub="II.D"),
+            T("Course: Domain II.D quiz questions; add misses to Anki", ACP, "practice", 20, "II", sub="II.D"),
+            T("Read the AIRC AI RMF Core page: Govern/Map/Measure/Manage and their category IDs", "nist-airc-core", "read", 30, "II", sub="II.D"),
+            T("Anki: NIST functions + categories; ISO 42001 (management system) vs 42005 (impact assessment)", "", "flashcards", 15, "II", sub="II.D"),
+            O("Watch 'NIST AI RMF deep dive: GOVERN vs MAP vs MEASURE vs MANAGE'", "yt-nist-rmf-functions", "watch", 30, "II", sub="II.D"),
         ],
         [  # Fri 2 Oct
-            T("Read ICO guidance: 'How should we assess security and data minimisation in AI?'", "ico-ai-security-minimisation", "read", 40, "III"),
-            T("Read Datasheets for Datasets (Gebru et al.): abstract + the question sets (motivation, composition, collection, preprocessing, uses)", "datasheets", "read", 25, "III"),
-            T("Read Model Cards for Model Reporting (Mitchell et al.): abstract + the model-card sections", "model-cards", "read", 20, "III"),
-            T("Make Anki flashcards: Domain III lifecycle stages and the artefact produced at each (intake form, impact assessment, datasheet, model card, test report)", "", "flashcards", 25, "III"),
+            T("Course: Domain III.A lessons (governing design and build: use-case intake, impact assessment, requirements)", ACP, "watch", 45, "III"),
+            T("Course: Domain III.A quiz questions; add misses to Anki", ACP, "practice", 20, "III"),
+            T("Read NIST AI RMF Playbook MAP 1-5 (the design-stage checklist); skim, note 5 actions NovaPay should take", "nist-playbook-map", "read", 30, "III"),
+            O("Read Model Cards for Model Reporting (Mitchell et al.): the model-card sections", "model-cards", "read", 25, "III"),
         ],
         [  # Sat 3 Oct
-            T("Read NIST AI RMF Playbook MEASURE 1-4 (metrics, TEVV, bias/fairness, feedback); skim the eval parts you know from BlueDot", "nist-playbook-measure", "read", 50, "III"),
-            T("Read NIST AI RMF Playbook MANAGE 1-4 (risk response, third-party risk, post-deployment monitoring, incident communication)", "nist-playbook-manage", "read", 50, "IV"),
-            T("Read GDPR Article 35 (DPIA: when required, minimum contents)", "gdpr-art-35", "read", 20, "II", sub="II.A"),
-            O("Read OWASP Top 10 for LLM Applications 2025: LLM01-LLM10 titles + mitigations", "owasp-llm-top10", "read", 30, "III"),
+            T("Lab 3 (NovaPay): run the EU AI Act Compliance Checker on 5 NovaPay systems (credit scoring, CV screening, customer chatbot, fraud detection, AI-generated marketing video); record the risk tier and NovaPay's role for each", "aia-compliance-checker", "practice", 45, "II", sub="II.C"),
+            T("Check your Lab 3 answers against EU AI Act Article 6 (high-risk classification, incl. Art 6(3) derogation) and Annex III", "aia-art-6", "read", 30, "II", sub="II.C"),
+            T("Read EU AI Act Article 3 definitions (provider, deployer, importer, distributor) and fix any role you got wrong in Lab 3", "aia-art-3", "read", 15, "II", sub="II.C"),
+            T("Week 2 recap: Anki review + drill 20 OpenExamPrep questions (Domains I-II)", "pe-openexamprep", "practice", 30, "All"),
+            O("Watch 'AIGP How They Passed - July 2026' (v2.1-era candidate panel)", "yt-how-they-passed-jul26", "watch", 45, "All"),
         ],
         REST,  # Sun 4 Oct
         [  # Mon 5 Oct
-            T("Read EU AI Act Article 26 (obligations of deployers of high-risk AI)", "aia-art-26", "read", 25, "IV"),
-            T("Read EU AI Act Article 27 (fundamental rights impact assessment)", "aia-art-27", "read", 20, "IV"),
-            T("Work through the ICO AI and data protection risk toolkit: its risk areas and example controls", "ico-ai-toolkit", "read", 30, "IV"),
-            T("Read IAPP: 'EU model contractual clauses for AI procurement: a practical guide' (vendor terms, IV.B)", "iapp-mcc-article", "read", 30, "IV"),
-            T("Make Anki flashcards: deployer duties, FRIA, DPIA triggers, vendor contract terms", "", "flashcards", 10, "IV"),
-            O("Watch 'AIGP How They Passed - July 2026' (the only v2.1-era candidate panel)", "yt-how-they-passed-jul26", "watch", 45, "All"),
+            T("Course: Domain III.B lessons (data governance, training and testing, bias and fairness)", ACP, "watch", 45, "III"),
+            T("Course: Domain III.B quiz questions; add misses to Anki", ACP, "practice", 20, "III"),
+            T("Read EU AI Act Article 10 (data and data governance)", "aia-art-10", "read", 20, "III"),
+            T("Lab 4 (NovaPay): answer 10 key questions from Datasheets for Datasets for NovaPay's credit-scoring training data", "datasheets", "practice", 25, "III"),
         ],
         [  # Tue 6 Oct
-            T("Read Singapore Model AI Governance Framework for Agentic AI: agent risks and controls sections (agentic architectures are new in v2.1, IV.A)", "sg-agentic-mgf", "read", 35, "IV"),
-            T("Complete Canada's Algorithmic Impact Assessment tool for one invented scenario (e.g., benefits-eligibility triage)", "ca-aia-tool", "practice", 40, "IV"),
-            T("Try AI Career Pro's free practice exam / free Domain I-A trial; judge whether the items feel IAPP-like before buying", "pe-aicareerpro", "practice", 30, "All"),
-            T("Week 2 recap: cumulative Anki review (Weeks 1-2)", "", "flashcards", 20, "All"),
-            O("Read IAPP: 'EDPB weighs in on key questions on personal data in AI models'", "iapp-edpb-article", "read", 20, "II", sub="II.A"),
-            O("Drill 20 OpenExamPrep questions untimed (Domains III-IV)", "pe-openexamprep", "practice", 25, "All"),
+            T("Course: Domain III.C lessons (testing, release readiness, monitoring and maintenance during development)", ACP, "watch", 45, "III"),
+            T("Course: Domain III.C quiz questions; add misses to Anki", ACP, "practice", 20, "III"),
+            T("Read NIST AI RMF Playbook MEASURE 1-4 (metrics, TEVV, bias, feedback); skim the eval parts you know from BlueDot", "nist-playbook-measure", "read", 30, "III"),
+            T("Anki: Domain III lifecycle stages and the artefact produced at each (intake form, impact assessment, datasheet, model card, test report)", "", "flashcards", 15, "III"),
+            O("Read OWASP Top 10 for LLM Applications 2025: LLM01-LLM10 titles + mitigations", "owasp-llm-top10", "read", 30, "III"),
         ],
     ]),
-    dict(theme="EU AI Act article-level deep dive, Mock #1, book the exam, standards (II.C, II.D)",
-         dom=["II", "All"], days=[
+    dict(theme="Course: IV.A-IV.C (governing deployment), Mock #1, book the exam, EU AI Act high-risk deep dive",
+         dom=["IV", "II", "All"], days=[
         [  # Wed 7 Oct
-            T("Read AIGP Playbook Domain II notes: II.A (privacy law) and II.B (other laws) sections", "aigpplaybook-d2", "read", 40, "II", sub="II.A"),
-            T("Read EU AI Act Article 5 (the prohibited practices)", "aia-art-5", "read", 30, "II", sub="II.C"),
-            T("Read EU AI Act Article 6 (high-risk classification rules, incl. the Art 6(3) derogation and profiling carve-back)", "aia-art-6", "read", 20, "II", sub="II.C"),
-            T("Read EU AI Act Annex III (the 8 high-risk use-case areas)", "aia-annex-3", "read", 25, "II", sub="II.C"),
-            O("Read IAPP Top 10 EU AI Act: 'Understanding and assessing risk'", "iapp-top10-risk", "read", 30, "II", sub="II.C"),
-            O("Skim the Commission Guidelines on prohibited AI practices: worked examples for each Art 5 ban", "ec-guidelines-prohibited", "read", 30, "II", sub="II.C"),
+            T("Course: Domain IV.A lessons (deciding whether and how to deploy, incl. agentic AI)", ACP, "watch", 45, "IV"),
+            T("Course: Domain IV.A quiz questions; add misses to Anki", ACP, "practice", 20, "IV"),
+            T("Read Singapore Model AI Governance Framework for Agentic AI: agent risks and controls sections", "sg-agentic-mgf", "read", 30, "IV"),
+            T("Read EU AI Act Article 26 (obligations of deployers of high-risk AI)", "aia-art-26", "read", 20, "IV"),
         ],
         [  # Thu 8 Oct
-            T("Buy ONE v2.1 practice bank: AI Career Pro ($99, 5 full mocks) if its free trial felt IAPP-like; otherwise one Udemy v2.1 bank on sale", "pe-aicareerpro", "practice", 15, "All", ms="Buy practice bank (AI Career Pro, $99)"),
-            T("Read EU AI Act Chapter III Section 2 (Arts 8-15 high-risk requirements), focusing on Arts 11 technical documentation, 12 record-keeping, 13 transparency to deployers", "aia-section-3-2", "read", 40, "II", sub="II.C"),
-            T("Read EU AI Act Article 14 (human oversight)", "aia-art-14", "read", 20, "III"),
-            T("Read EU AI Act Article 25 (value chain: when a deployer/distributor becomes a provider)", "aia-art-25", "read", 25, "II", sub="II.C"),
-            T("Read 'Why I failed the AIGP exam' (FAIR Institute): answer as the ideal governance function, not the pragmatic operator", "rep-fair-failed", "read", 10, "All"),
-            O("Read IAPP Top 10 EU AI Act: 'Subject matter, definitions, key actors and scope'", "iapp-top10-scope", "read", 30, "II", sub="II.C"),
+            T("Course: Domain IV.B lessons (assessments, third-party/vendor due diligence, contracts)", ACP, "watch", 45, "IV"),
+            T("Course: Domain IV.B quiz questions; add misses to Anki", ACP, "practice", 20, "IV"),
+            T("Read IAPP: 'EU model contractual clauses for AI procurement: a practical guide'", "iapp-mcc-article", "read", 25, "IV"),
+            T("Lab 5 (NovaPay): write a 12-question vendor due-diligence questionnaire for buying a third-party CV-screening tool", "", "practice", 25, "IV"),
         ],
         [  # Fri 9 Oct
-            T("Read EU AI Act Article 50 (transparency: chatbots, synthetic content, deepfakes, emotion recognition)", "aia-art-50", "read", 20, "II", sub="II.C"),
-            T("Read EU AI Act Article 99 (penalty tiers: EUR35m/7%, EUR15m/3%, EUR7.5m/1%)", "aia-art-99", "read", 15, "II", sub="II.C"),
-            T("Read the AI Act implementation timeline: ORIGINAL dates (2 Feb 2025, 2 Aug 2025, 2 Aug 2026, 2 Aug 2027)", "aia-timeline", "read", 20, "II", sub="II.C"),
-            T("Read Morgan Lewis on the Digital Omnibus: NEW dates (Annex III to 2 Dec 2027, Annex I to 2 Aug 2028)", "omnibus-morganlewis", "read", 25, "II", sub="II.C"),
-            T("Read EU AI Act Articles 51 and 53 (systemic-risk GPAI, 10^25 FLOP presumption; GPAI provider obligations); fast, BlueDot-covered", "aia-art-53", "read", 15, "II", sub="II.C"),
-            O("Read IAPP Top 10 EU AI Act: 'Obligations for general-purpose AI models'", "iapp-top10-gpai", "read", 25, "II", sub="II.C"),
+            T("Course: Domain IV.C lessons (post-deployment monitoring, incidents, decommissioning)", ACP, "watch", 45, "IV"),
+            T("Course: Domain IV.C quiz questions; add misses to Anki", ACP, "practice", 20, "IV"),
+            T("Read NIST AI RMF Playbook MANAGE 1-4 (risk response, third-party risk, monitoring, incident communication); skim", "nist-playbook-manage", "read", 30, "IV"),
+            T("Anki: deployer duties, vendor contract terms, incident steps", "", "flashcards", 15, "IV"),
         ],
         [  # Sat 10 Oct
-            T("FULL MOCK #1: AI Career Pro Mock 1, 100 Qs, timed 165 min, no notes (target >=60% overall, >=55% on III and IV)", "pe-aicareerpro", "practice", 165, "All", ms="First practice exam"),
-            T("Score Mock #1 by domain; update the gap log; apply the decision rule (keep 27 Oct or move to 10 Nov? fallback course?)", "", "review", 20, "All"),
+            T("FULL MOCK #1: AI Career Pro Mock 1, 100 Qs, timed 165 min, no notes (target >=60% overall, >=55% on III and IV)", ACP, "practice", 165, "All", ms="First practice exam"),
+            T("Score Mock #1 by domain; update the gap log; apply the decision rule (keep 27 Oct or move to 10 Nov?)", "", "review", 20, "All"),
         ],
         REST,  # Sun 11 Oct
         [  # Mon 12 Oct
             T("BOOK THE EXAM (gated on Mock #1): >=60% and >=55% on III/IV -> book Tue 27 Oct 2026; otherwise book fallback Tue 10 Nov 2026. Book via the IAPP AIGP page, then Pearson VUE (morning slot, or take the afternoon off)", "iapp-aigp-page", "review", 15, "All", ms="Book exam by (gated on Mock #1)"),
-            T("Review every Mock #1 item (right and wrong): write why each distractor is wrong", "pe-aicareerpro", "review", 90, "All"),
-            O("Run the EU AI Act Compliance Checker on 5 invented scenarios (HR screening, chatbot, credit scoring, emotion recognition at work, product safety component)", "aia-compliance-checker", "practice", 45, "II", sub="II.C"),
+            T("Review every Mock #1 item (right and wrong): write why each distractor is wrong", ACP, "review", 75, "All"),
+            T("Anki: a card for every Mock #1 miss", "", "flashcards", 20, "All"),
         ],
         [  # Tue 13 Oct
-            T("Make Anki flashcards from every Mock #1 miss + a two-column date card (original vs Omnibus)", "", "flashcards", 25, "All"),
-            T("Read the ISO/IEC 42001 page (AIMS scope, clause structure)", "iso-42001", "read", 5, "II", sub="II.D"),
-            T("Read ISMS.online on ISO 42001 Annex A controls (A.2-A.10 objectives)", "isms-42001-annex-a", "read", 35, "II", sub="II.D"),
-            T("Skim the NIST AI RMF to ISO/IEC 42001 crosswalk: how the functions map to 42001 clauses", "nist-crosswalk-42001", "read", 15, "II", sub="II.D"),
-            T("Read the ISO/IEC 42005 page (AI system impact assessment, new in v2.1)", "iso-42005", "read", 5, "II", sub="II.D"),
-            T("Skim the ISO/IEC 42005 to NIST AI RMF crosswalk", "nist-crosswalk-42005", "read", 15, "II", sub="II.D"),
-            O("Skim the IAPP US State AI Governance Legislation Tracker (which states, which models)", "iapp-us-state-tracker", "read", 20, "II", sub="II.B"),
+            T("Read EU AI Act Chapter III Section 2 (Arts 8-15 high-risk requirements): Arts 9 risk management, 11 documentation, 12 logs, 13 transparency", "aia-section-3-2", "read", 40, "II", sub="II.C"),
+            T("Read EU AI Act Article 14 (human oversight)", "aia-art-14", "read", 15, "III"),
+            T("Lab 6a (NovaPay): high-risk checklist for the credit-scoring model: map each of Arts 9-15 to an owner and an artefact", "", "practice", 30, "III"),
+            T("Read the AI Act implementation timeline: ORIGINAL dates", "aia-timeline", "read", 15, "II", sub="II.C"),
+            T("Read Morgan Lewis on the Digital Omnibus: NEW dates (Annex III to 2 Dec 2027, Annex I to 2 Aug 2028); make a two-column date card", "omnibus-morganlewis", "read", 20, "II", sub="II.C"),
+            O("Read IAPP Top 10 EU AI Act: 'Understanding and assessing risk'", "iapp-top10-risk", "read", 30, "II", sub="II.C"),
         ],
     ]),
-    dict(theme="II.A/II.B detail, Domain III deep dive, Mock #2, Domain IV deep dive",
+    dict(theme="Applied deep dive: FRIA/DPIA lab, GDPR and US laws, Mock #2, standards, post-market",
          dom=["II", "III", "IV"], days=[
         [  # Wed 14 Oct
-            T("Read FTC 'Operation AI Comply' (Section 5 deception/unfairness applied to AI claims)", "ftc-ai-comply", "read", 20, "II", sub="II.B"),
-            T("Read NYC DCWP page on Local Law 144 (AEDT bias audits, candidate notice)", "nyc-aedt", "read", 20, "II", sub="II.B"),
-            T("Read McDermott: Colorado SB24-205 blocked, replaced by SB26-189 (eff. 1 Jan 2027); keep the developer/deployer duty-of-care concepts", "co-status-mcdermott", "read", 20, "II", sub="II.B"),
-            T("Read Wittliff Cutter: Texas TRAIGA, the Colorado reset and federal preemption (2026)", "texas-traiga", "read", 20, "II", sub="II.B"),
-            T("Read GDPR Article 13 (incl. 'meaningful information about the logic involved')", "gdpr-art-13", "read", 15, "II", sub="II.A"),
-            T("Read FPF on South Korea's AI Framework (Basic) Act, in force 22 Jan 2026 (new in v2.1)", "kr-ai-basic-act-fpf", "read", 20, "II", sub="II.C"),
-            O("Read the Dec 2025 White House EO on a national AI policy framework (state-law preemption)", "us-eo-dec-2025", "read", 20, "II", sub="II.C"),
+            T("Read EU AI Act Article 25 (value chain: when a deployer becomes a provider)", "aia-art-25", "read", 20, "II", sub="II.C"),
+            T("Read EU AI Act Article 27 (fundamental rights impact assessment)", "aia-art-27", "read", 20, "IV"),
+            T("Lab 6b (NovaPay): mini FRIA + DPIA for deploying the CV-screening tool (use the Art 27 and GDPR Art 35 headings; 1 page)", "", "practice", 45, "IV"),
+            T("Anki: provider vs deployer vs 'deemed provider'; FRIA vs DPIA", "", "flashcards", 15, "II", sub="II.C"),
+            O("Complete Canada's Algorithmic Impact Assessment tool for the same CV-screening scenario and compare", "ca-aia-tool", "practice", 40, "IV"),
         ],
         [  # Thu 15 Oct
-            T("Read ICO Guidance on AI and data protection: accountability, lawfulness, fairness and transparency sections", "ico-ai-guidance", "read", 45, "II", sub="II.A"),
-            T("Read EDPB Opinion 28/2024 executive summary (model anonymity, legitimate-interest 3-step test, consequences of unlawful training)", "edpb-op-28-2024", "read", 25, "II", sub="II.A"),
-            T("Read EU AI Act Article 15 (accuracy, robustness and cybersecurity) on the AI Act Service Desk", "aia-art-15-sd", "read", 20, "III"),
-            T("Read EU AI Act Article 43 (conformity assessment routes) as a III.C release gate", "aia-art-43", "read", 15, "III"),
+            T("Read ICO Guidance on AI and data protection: accountability, lawfulness, fairness and transparency sections", "ico-ai-guidance", "read", 40, "II", sub="II.A"),
+            T("Read EDPB Opinion 28/2024 executive summary (model anonymity, legitimate-interest 3-step test)", "edpb-op-28-2024", "read", 25, "II", sub="II.A"),
+            T("Read GDPR Article 13 (incl. 'meaningful information about the logic involved')", "gdpr-art-13", "read", 15, "II", sub="II.A"),
+            T("Course: re-do the II.A quiz questions you missed the first time", ACP, "practice", 15, "II", sub="II.A"),
             O("Read ICO: 'How do we ensure individual rights in our AI systems?'", "ico-ai-rights", "read", 30, "II", sub="II.A"),
         ],
         [  # Fri 16 Oct
-            T("Read AIGP Playbook training material: Domain III module (III.A design/build, III.B data, III.C release/monitoring/maintenance)", "aigpplaybook-training", "read", 60, "III"),
-            T("Read EU AI Act Articles 47 and 49 (EU declaration of conformity / CE marking; registration in the EU database)", "aia-art-47", "read", 15, "III"),
-            T("Read IAPP Top 10 EU AI Act: 'Post-market monitoring, information sharing and enforcement'", "iapp-top10-pmm", "read", 35, "III"),
-            O("Skim NIST AI 100-2e2025 adversarial ML taxonomy: the attack classes (evasion, poisoning, privacy, misuse)", "nist-100-2-2025", "read", 40, "III"),
+            T("Read McDermott: Colorado SB24-205 blocked, replaced by SB26-189 (eff. 1 Jan 2027); keep the developer/deployer duty-of-care concepts", "co-status-mcdermott", "read", 20, "II", sub="II.B"),
+            T("Read Wittliff Cutter: Texas TRAIGA, the Colorado reset and federal preemption (2026)", "texas-traiga", "read", 15, "II", sub="II.B"),
+            T("Read FPF on South Korea's AI Framework (Basic) Act (new in v2.1)", "kr-ai-basic-act-fpf", "read", 20, "II", sub="II.C"),
+            T("Read EU AI Act Article 50 (transparency: chatbots, synthetic content, deepfakes) and Article 99 penalty tiers", "aia-art-50", "read", 25, "II", sub="II.C"),
+            T("Teach-back: 5-minute voice memo on 'which AI laws apply to NovaPay in the EU and US, and why'", "", "review", 15, "II", sub="II.B"),
+            O("Read the Dec 2025 White House EO on a national AI policy framework (state-law preemption)", "us-eo-dec-2025", "read", 20, "II", sub="II.C"),
         ],
         [  # Sat 17 Oct
-            T("FULL MOCK #2: AI Career Pro Mock 2, timed 165 min (target >=70% overall, no domain <65%; >=75% counts toward the booking rule)", "pe-aicareerpro", "practice", 165, "All", ms="Second practice exam"),
+            T("FULL MOCK #2: AI Career Pro Mock 2, timed 165 min (target >=70% overall, no domain <65%; >=75% counts toward the booking rule)", ACP, "practice", 165, "All", ms="Second practice exam"),
             T("Score Mock #2 by domain; update the gap log; pick the two weakest competencies for Week 5", "", "review", 20, "All"),
         ],
         REST,  # Sun 18 Oct
         [  # Mon 19 Oct
-            T("Review every Mock #2 item: why each distractor is wrong", "pe-aicareerpro", "review", 60, "All"),
+            T("Review every Mock #2 item: why each distractor is wrong", ACP, "review", 60, "All"),
             T("Buy the IAPP official AIGP practice exam (~$50-60, price unverified); confirm the store page references BoK v2.1", "pe-iapp-official", "practice", 10, "All", ms="Buy IAPP practice exam"),
-            T("Read IAPP Top 10 EU AI Act: 'AI assurance across the risk categories'", "iapp-top10-assurance", "read", 35, "III"),
-            O("Read Canada's Directive on Automated Decision-Making (impact levels, requirements)", "ca-dadm", "read", 20, "II", sub="II.C"),
-            O("Read China's Interim Measures for Generative AI Services (English translation)", "cn-genai-measures", "read", 20, "II", sub="II.C"),
+            T("Read ISMS.online on ISO 42001 Annex A controls (A.2-A.10 objectives)", "isms-42001-annex-a", "read", 30, "II", sub="II.D"),
+            T("Lab 7: using the NIST AI RMF to ISO/IEC 42001 crosswalk, build a 1-page table: NIST function -> 42001 clause -> NovaPay artefact", "nist-crosswalk-42001", "practice", 25, "II", sub="II.D"),
+            O("Skim the ISO/IEC 42005 to NIST AI RMF crosswalk", "nist-crosswalk-42005", "read", 15, "II", sub="II.D"),
         ],
         [  # Tue 20 Oct
-            T("Read AIGP Playbook training material: Domain IV module (IV.A deploy decision incl. agentic, IV.B assessments/vendor due diligence, IV.C monitoring, incidents, decommissioning)", "aigpplaybook-training", "read", 55, "IV"),
-            T("Make Anki flashcards: release gates, post-market monitoring, serious-incident reporting + Mock #2 misses", "", "flashcards", 25, "III"),
+            T("Read IAPP Top 10 EU AI Act: 'Post-market monitoring, information sharing and enforcement'", "iapp-top10-pmm", "read", 30, "III"),
+            T("Read EU AI Act Article 43 (conformity assessment routes) as a release gate", "aia-art-43", "read", 15, "III"),
+            T("Lab 8 (NovaPay): 1-page monitoring and incident plan for the credit-scoring model (drift trigger, owner, serious-incident reporting, decommissioning)", "", "practice", 25, "IV"),
+            T("Course: rewatch the lessons for your two weakest competencies from Mock #2", ACP, "watch", 25, "All"),
             T("Week 4 recap: cumulative Anki review (all decks)", "", "flashcards", 20, "All"),
-            O("Skim GDPR Chapter 3 (data subject rights, Arts 12-23) for AI-relevant rights: access, erasure, objection", "gdpr-chapter-3", "read", 15, "II", sub="II.A"),
-            O("Read the Council of Europe AI treaty (CETS 225) announcement", "coe-portal", "read", 15, "II", sub="II.C"),
+            O("Read IAPP Top 10 EU AI Act: 'AI assurance across the risk categories'", "iapp-top10-assurance", "read", 35, "III"),
         ],
     ]),
     dict(theme="Consolidation and exam week: Mock #3, IAPP official practice exam, go/no-go, exam Tue 27 Oct",
          dom=["All", "IV", "III"], days=[
         [  # Wed 21 Oct
-            T("FULL MOCK #3: AI Career Pro Mock 3, timed 165 min (target >=75% overall, no domain <65-70%). Block a long evening", "pe-aicareerpro", "practice", 165, "All"),
+            T("FULL MOCK #3: AI Career Pro Mock 3, timed 165 min (target >=75% overall, no domain <65-70%). Block a long evening", ACP, "practice", 165, "All"),
             T("Score Mock #3 by domain and compare with Mock #2", "", "review", 15, "All"),
         ],
         [  # Thu 22 Oct
-            T("Review Mock #3 misses; re-read your notes on the 3 most-missed competencies", "pe-aicareerpro", "review", 45, "All"),
-            T("Gap closure 1 (default IV.B if the gap log agrees): re-read the IAPP guide to EU model contractual clauses; list 10 vendor due-diligence questions", "iapp-mcc-article", "review", 40, "IV"),
+            T("Review Mock #3 misses; rewatch the course lessons for the 3 most-missed competencies", ACP, "review", 45, "All"),
+            T("Gap closure: redo your weakest NovaPay lab (default Lab 5 vendor questionnaire) using what the mocks taught you", "", "practice", 30, "IV"),
             T("Early go/no-go check on Mocks #2 and #3. If the handbook's reschedule cut-off falls before Sun 25 Oct, decide today", "iapp-handbook-page", "review", 10, "All"),
             O("Read AIGP Playbook reference sheets and checklists (impact assessments, vendor review)", "aigpplaybook-resources", "review", 20, "IV"),
         ],
         [  # Fri 23 Oct
-            T("Gap closure 2 (default IV.C): re-read NIST Playbook MANAGE 3-4 (third-party risk, post-deployment monitoring, incident response, decommissioning)", "nist-playbook-manage", "review", 40, "IV"),
-            T("Re-read EU AI Act Articles 25 and 26 together: build a provider vs deployer vs 'deemed provider' table", "aia-art-25", "review", 25, "II", sub="II.C"),
+            T("Course: take 40 mixed questions from the course bank you haven't seen, timed (~1.5 min each)", ACP, "practice", 60, "All"),
             T("Run the OnVUE system check on the exam computer (>=48 h ahead) or confirm the test-centre route; re-read the handbook's ID and room rules", "iapp-handbook-page", "review", 20, "All"),
-            O("Drill 40 OpenExamPrep questions untimed on your two weakest competencies", "pe-openexamprep", "practice", 40, "All"),
             O("Watch 'Top 3 Tips to Pass Your AIGP Exam on the First Try'", "yt-top3-tips", "watch", 20, "All"),
         ],
         [  # Sat 24 Oct
@@ -336,7 +337,7 @@ def main():
                  for d in RES["exam"]["domains"]],
         targetScores=dict(
             diagnostic="No target; ranks domains",
-            mock1=">=60% overall and >=55% on Domains III and IV (else fallback course + book 10 Nov)",
+            mock1=">=60% overall and >=55% on Domains III and IV (else book 10 Nov and redo the course lessons for III/IV)",
             mock2=">=70% overall, no domain <65% (>=75% counts toward the booking rule)",
             mock3=">=75% overall, no domain <65-70%",
             iappOfficial=">=70-75% timed",
@@ -397,19 +398,34 @@ def write_md(plan, flat, ms_at, by_sub, total_core, total_opt):
       f"| Fallback exam date | Tue 10 Nov 2026 |\n")
     A("## 2. Why 5 weeks (exam Tue 27 Oct)\n")
     A("- **Research estimate:** median ≈ 55 h for passers (range 40–80 h). The research agent's estimate for you is 50–65 h. The evidence is weak and triangulated.\n"
-      "- **Minus about 6 h for background.** BlueDot already covers I.A (AI types, risks and harms), GPAI and systemic-risk provisions, the global policy landscape, and evals/red-teaming. The plan skims these (OECD, the AI-definition guidelines, Arts 51/53, NIST 600-1 and OWASP are fast reads or stretch tasks) instead of studying them.\n"
+      "- **Minus about 6 h for background.** BlueDot already covers I.A (AI types, risks and harms), GPAI and systemic-risk provisions, the global policy landscape, and evals/red-teaming. The plan moves through these fast: the course's I.A lessons at 1.5× speed on Day 1, and OWASP and the GPAI material as stretch tasks.\n"
       "- **Plus about 10 h for full-length practice.** The booking rule requires three full timed mocks plus the IAPP practice exam. That is 4 × 165 min ≈ 11 h of sitting, plus reviews. Generic hour estimates under-count this.\n"
       "- **Result:** 55 − 6 + 10 ≈ **59–62 h**. You asked for an exam on **Tue 27 Oct**, which is exactly 5 Wed–Tue weeks from Day 1. At ~12 h/week that gives ≈ 58 h of study plus the exam sitting: inside the estimate, with no spare buffer week. The 6-week version had one. Week 5 carries Mock #3, the IAPP practice exam and the exam itself, so it runs heavier (≈ 11.7 h of study + the 2.75-h exam).\n- **Weekday-first schedule:** Wed, Thu, Fri, Mon and Tue carry about 1.5–2 h each (≈ 79% of core time). **Saturday** is the one longer weekend session: the full mocks go there. **Sunday is the rest day** (in week 5 it is a 20-min go/no-go check).\n"
-      "- About 70% of core study time goes to Domains III and IV and to II.A–II.C, the areas BlueDot does not cover (see §5).\n"
+      "- About 70% of topic study time goes to Domains III and IV and to II.A–II.C, the areas BlueDot does not cover (see §5).\n"
       "- **Buffer:** there is no buffer week any more. The safety net is the readiness gate: if it fails, the fallback date Tue 10 Nov adds 2 weeks.\n")
     A("### Booking logic (why there are two booking milestones)\n")
     A("Pearson VUE seats usually need booking about 2–3 weeks ahead. The research readiness rule (two consecutive mocks ≥75% plus the IAPP practice exam ≥70–75%) can only be met in week 5, 2–3 days before the target date. So the plan books in two steps:\n\n"
-      "1. **Mon 12 Oct: book**, 15 days ahead, gated on Mock #1 (Sat 10 Oct). If Mock #1 is ≥60% overall and ≥55% on III and IV, book **Tue 27 Oct**. Otherwise book **Tue 10 Nov** and buy the fallback course (§8). On Day 1, check Pearson VUE seat availability for 27 Oct. If seats look scarce, book right away and reschedule later if Mock #1 misses, within the handbook's reschedule rules.\n"
+      "1. **Mon 12 Oct: book**, 15 days ahead, gated on Mock #1 (Sat 10 Oct). If Mock #1 is ≥60% overall and ≥55% on III and IV, book **Tue 27 Oct**. Otherwise book **Tue 10 Nov** and redo the course lessons for III/IV (§4). On Day 1, check Pearson VUE seat availability for 27 Oct. If seats look scarce, book right away and reschedule later if Mock #1 misses, within the handbook's reschedule rules.\n"
       "2. **Sun 25 Oct: go/no-go (\"Ready to book exam\").** Keep 27 Oct only if the full rule is met. Otherwise reschedule to 10 Nov. There is also an early check on Thu 22 Oct (Mocks #2 and #3).\n\n"
       "Read the Candidate Handbook on Day 1 for the reschedule cut-off and fee; the research could not verify them. Pearson VUE reschedules are often allowed up to 24–48 h before the exam, but IAPP's own cut-off may be earlier. If it falls before Sun 25 Oct, make the call at the Thu 22 Oct early check using Mocks #2 and #3.\n\n"
       "**If 27 Oct is not available:** take the nearest weekday seat (Wed 28 – Fri 30 Oct) and repeat the Mon 26 Oct review pattern on the extra days. OnVUE usually has more availability than test centres.\n")
 
-    A("## 3. Weekly overview\n")
+    A("## 3. How the plan is built: a course first, then hands-on practice\n")
+    A("You said you learn best with a course that joins up the topics, and that reading on its own won't keep you going. So the plan is built like this:\n\n"
+      "- **Weeks 1–3: course-led first pass.** The [AI Career Pro AIGP course](https://governance.aicareer.pro/course/aigp-exam-prep) (v2.1; 117 videos of about 5 minutes, each with a written and an audio version; 700+ questions; 5 full mocks) covers **one BoK sub-domain per study day**, in BoK order: I.A → IV.C, all 13 before Mock #1. Every course day has the same three steps:\n"
+      "  1. **Watch** that sub-domain's lessons (~45 min).\n"
+      "  2. **Quiz**: that topic's course questions straight away (~20 min). Every miss becomes an Anki card.\n"
+      "  3. **Do**: one primary source *or* one hands-on task (~20–30 min), so you see the real text or apply the idea the same day.\n"
+      "- **NovaPay labs.** The hands-on tasks all use one invented company, *NovaPay* (a 500-person EU/US fintech). Each lab builds on the one before, which is how the dots connect: governance structure (Lab 1) → AI policy and inventory (Lab 2) → EU AI Act risk tiers (Lab 3) → datasheet (Lab 4) → vendor questionnaire (Lab 5) → high-risk checklist and FRIA/DPIA (Lab 6) → NIST↔ISO table (Lab 7) → monitoring and incident plan (Lab 8). By exam day you will have walked one company through the whole BoK lifecycle, which is what the scenario questions test.\n"
+      "- **Weeks 3–5: applied deep dive + mocks.** Primary sources, each paired with a lab or recall task, plus Mocks #1–#3 and the IAPP practice exam.\n"
+      "- **Motivation hooks.** A visible streak and progress ring in the tracker; voice-memo teach-backs; a score trend on the practice-exam log; and short course videos with audio versions you can play on a walk or commute.\n")
+    mix = defaultdict(int)
+    for _, o, _ in flat:
+        if not o["optional"]:
+            mix[o["type"]] += o["minutes"]
+    tm = sum(mix.values())
+    A("**Core time by activity:** " + " · ".join(f"{k} {v/60:.1f} h ({100*v/tm:.0f}%)" for k, v in sorted(mix.items(), key=lambda x: -x[1])) + ". Pure reading is about a quarter of the plan; most of the rest is doing.\n")
+    A("## 3b. Weekly overview\n")
     A("| Week | Dates | Theme | BoK domains | Core h | Stretch h | Milestones |\n|---|---|---|---|---|---|---|")
     for w in plan["weeks"]:
         d0, d1 = w["days"][0]["date"], w["days"][-1]["date"]
@@ -424,7 +440,7 @@ def write_md(plan, flat, ms_at, by_sub, total_core, total_opt):
     prow = []
     rows = {
         "Diagnostic": ("IAPP free-guide sample Qs + AIGP Playbook 15-Q preview, untimed", "None. It ranks the domains", "Nothing to fix. Use it to order your gap log"),
-        "First practice exam": ("Mock #1: AI Career Pro Mock 1, timed 165 min", "≥60% overall; ≥55% on III and IV", "Buy the fallback course (§8) and use its III/IV modules in the week 4 stretch slots. **Book 10 Nov instead of 27 Oct.**"),
+        "First practice exam": ("Mock #1: AI Career Pro Mock 1, timed 165 min", "≥60% overall; ≥55% on III and IV", "Rewatch the course lessons for III/IV and redo their quiz questions in the week 4 stretch slots. If you want a second teacher, add Kyle David's Udemy course on sale (§8). **Book 10 Nov instead of 27 Oct.**"),
         "Second practice exam": ("Mock #2: AI Career Pro Mock 2, timed", "≥70% overall, no domain <65% (≥75% counts toward the booking rule)", "Spend all week 5 stretch time on the two weakest competencies. If <65%, move to 10 Nov now rather than at the go/no-go"),
         "IAPP official practice exam": ("IAPP official practice exam (PDF), timed 165 min", "≥70–75%", "Reschedule to 10 Nov at the go/no-go. In the extension, re-study the missed competencies and sit AI Career Pro Mocks 4 and 5 as the new 'two consecutive'"),
     }
@@ -461,7 +477,7 @@ def write_md(plan, flat, ms_at, by_sub, total_core, total_opt):
     A(f"\nIII + IV + II.A–C = **{100*focus/non_mixed:.0f}% of topic study time** (excluding mixed practice/review). Most of the mixed practice time is also III/IV-weighted, because those domains are ~54% of the questions.\n")
 
     A("## 6. Daily plan\n")
-    A("Each task shows: type · minutes · BoK domain. Stretch tasks are optional. 🏁 marks a milestone. The Anki deck is self-made, built from the IAPP glossary, EU AI Act articles and your mock misses; no link is given because Anki's site is not in the verified resource list.\n")
+    A("Each task shows: type · minutes · BoK domain. Stretch tasks are optional. 🏁 marks a milestone. The Anki deck is self-made, built from your course-quiz and mock misses; NovaPay labs have no link because they are your own work; no link is given because Anki's site is not in the verified resource list.\n")
     for w in plan["weeks"]:
         core = w["targetHours"]
         opt = sum(t["minutes"] for d in w["days"] for t in d["tasks"] if t["optional"]) / 60
@@ -508,20 +524,20 @@ def write_md(plan, flat, ms_at, by_sub, total_core, total_opt):
 
 | Item | Cost (USD) | Status | When to buy | Link |
 |---|---|---|---|---|
-| AI Career Pro AIGP Exam Prep (5 full v2.1 mocks, 700+ Qs) | $99 | Core (the Mock #1–#3 bank) | Thu 8 Oct, after trying its free trial on Tue 6 Oct | [governance.aicareer.pro](https://governance.aicareer.pro/course/aigp-exam-prep) |
-| *Alternative to the above:* one Udemy v2.1 bank (6×100 "600 Questions" set or the rebuilt 800-Q set) | sale price unverified (usually below AI Career Pro) | Only if the AI Career Pro trial doesn't feel IAPP-like | Thu 8 Oct | see `research/resources.json` → practiceExams |
+| **Prep course:** AI Career Pro AIGP Exam Prep (117 video lessons with written + audio versions, 700+ Qs, 5 full v2.1 mocks) | **$99** | **Core: the course spine for weeks 1–3 and the Mock #1–#3 bank** | Thu 24 Sep, after the free trial on Wed 23 Sep | [governance.aicareer.pro](https://governance.aicareer.pro/course/aigp-exam-prep) |
+| *Alternative to the above:* Kyle David AIGP Masterclass (Udemy; 19–20 h of video; one listing says v2.1, July 2026, another still says v2.0.1) plus one Udemy v2.1 question bank | Udemy sale prices *unverified* (usually $15–25 each) | Only if the AI Career Pro trial doesn't suit you. It's longer (20 h), so it would replace, not add to, the course steps | Thu 24 Sep | [udemy.com/course/aigp-masterclass](https://www.udemy.com/course/aigp-masterclass/) |
 | IAPP official AIGP practice exam (digital) | ~$50–60 *(unverified)* | Core | Mon 19 Oct (the plan uses it Sat 24 Oct) | [store.iapp.org](https://store.iapp.org/aigp-practice-exam-digital/) |
 | **AIGP exam fee** | **$799** non-member / $649 member (membership ≈ $295/yr, *unverified*, so non-member is cheaper unless you want membership anyway) | Core | Mon 12 Oct (after Mock #1) | [IAPP AIGP page](https://iapp.org/certify/aigp) |
-| Fallback prep course: Kyle David AIGP Masterclass (Udemy, video-only) | Udemy sale price *unverified* (typically well under $150) | **Conditional**: only if Mock #1 is <60% or <55% on III/IV. Confirm the page says v2.1 | Mon 12 Oct (after Mock #1) | [udemy.com/course/aigp-masterclass](https://www.udemy.com/course/aigp-masterclass/) |
+| Optional second teacher: Kyle David AIGP Masterclass (Udemy, video-only) | Udemy sale price *unverified* (usually $15–25) | **Conditional**: only if Mock #1 is <60% or <55% on III/IV and a second explanation would help. Confirm the page says v2.1. Keeps total course spend ≤ $150 | Mon 12 Oct (after Mock #1) | [udemy.com/course/aigp-masterclass](https://www.udemy.com/course/aigp-masterclass/) |
 | Retake fee (contingency) | $625 non-member / $475 member | Only if needed | — | — |
 
-**Expected spend: ≈ $799 + $99 + ~$55 ≈ $953** (non-member). The worst case adds the Udemy fallback course (sale price) and a $625 retake. The free resources are the BoK, IAPP glossary/trackers/Top-10 series, the AIGP Playbook, NIST/ICO/EDPB/EUR-Lex/artificialintelligenceact.eu, OpenExamPrep and Anki.
+**Expected spend: ≈ $799 + $99 + ~$55 ≈ $953** (non-member). Course spend is $99, inside your $150 cap (≈ $120 even with the optional Udemy second teacher on sale). The worst case adds a $625 retake. The free resources are the BoK, IAPP glossary/trackers/Top-10 series, the AIGP Playbook, NIST/ICO/EDPB/EUR-Lex/artificialintelligenceact.eu, OpenExamPrep and Anki.
 """)
     A("## 9. Caveats\n")
     A("""- **Links:** every task link comes from `research/resources.json`. Study links are all `verified: true` entries, meaning the exact URL appeared in a live web search on 2026-09-23; the sandbox could not open the pages. The practice-exam links (AI Career Pro, AIGP Playbook preview, OpenExamPrep, IAPP store) come from the `practiceExams` section, which has no per-entry `verified` flag; research §5 lists them as Recommend/Optional. The four `verified: false` GDPR URLs (Arts 9, 14, 15, 25 on gdpr-info.eu) are not used.
 - **BoK wording:** the research could not open the BoK v2.1 PDF, so the competency wording is reconstructed. Day 1's BoK read is where you correct the plan's domain tags if the PDF differs.
 - **Hours:** the estimates rest on weak evidence. This 5-week version has no buffer week. If Mocks #1–#2 are weak, move to 10 Nov early rather than cramming.
-- **AIGP Playbook "training material" (Domain III/IV modules):** the research verified the hub page, not per-domain pages. Open the hub and pick the Domain III / IV section.
+- **AI Career Pro course:** its lesson counts, v2.1 alignment and $99 price come from the vendor's own pages (search results on 2026-09-23). The research found no independent reviews, so the free trial on Day 1 is your check: if it doesn't click, switch to the alternative in §8 on Day 2. The per-day lesson times (~45 min per sub-domain) are estimates (117 videos × ~5 min ≈ 10 h across 13 sub-domains).
 """)
     (ROOT / "plan" / "aigp-study-plan.md").write_text("\n".join(L))
 

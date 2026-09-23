@@ -3,9 +3,9 @@
     "startDate": "2026-09-23",
     "examTargetDate": "2026-10-27",
     "totalWeeks": 5,
-    "totalHours": 60.5,
-    "coreHours": 60.5,
-    "stretchHours": 12.8,
+    "totalHours": 60.6,
+    "coreHours": 60.6,
+    "stretchHours": 8.8,
     "studyHoursExcludingExamSitting": 57.8,
     "bookByDate": "2026-10-12",
     "goNoGoDate": "2026-10-25",
@@ -38,7 +38,7 @@
     ],
     "targetScores": {
       "diagnostic": "No target; ranks domains",
-      "mock1": ">=60% overall and >=55% on Domains III and IV (else fallback course + book 10 Nov)",
+      "mock1": ">=60% overall and >=55% on Domains III and IV (else book 10 Nov and redo the course lessons for III/IV)",
       "mock2": ">=70% overall, no domain <65% (>=75% counts toward the booking rule)",
       "mock3": ">=75% overall, no domain <65-70%",
       "iappOfficial": ">=70-75% timed",
@@ -48,12 +48,12 @@
   "weeks": [
     {
       "week": 1,
-      "theme": "Blueprint, diagnostic, Domain I (governance programme) and EU AI Act orientation",
+      "theme": "Course kick-off, diagnostic, Domain I (foundations) and II.A-II.B (privacy and other laws)",
       "bokDomains": [
         "I",
         "II"
       ],
-      "targetHours": 10.4,
+      "targetHours": 10.8,
       "days": [
         {
           "date": "2026-09-23",
@@ -65,13 +65,22 @@
               "title": "Read the AIGP BoK v2.1 PDF: all four domains' competencies and performance indicators; tag each line Strong / Partial / Weak against your BlueDot background",
               "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
               "type": "read",
-              "minutes": 50,
+              "minutes": 45,
               "optional": false,
               "domain": "All"
             },
             {
               "id": "w1d1t2",
-              "title": "Request the free IAPP AIGP study guide (form); check it shows the 4-domain structure before using it",
+              "title": "Read the IAPP Candidate Handbook PDF: scheduling, rescheduling/cancellation cut-offs, ID rules, OnVUE requirements. Check Pearson VUE seats for Tue 27 Oct",
+              "url": "https://prod.iapp.org/media/pdf/certification/IAPP_Certification_Handbook_Updated.pdf",
+              "type": "read",
+              "minutes": 20,
+              "optional": false,
+              "domain": "All"
+            },
+            {
+              "id": "w1d1t3",
+              "title": "Request the free IAPP AIGP study guide (form); check it shows the 4-domain structure",
               "url": "https://iapp.org/l/aigp-study-guide-request",
               "type": "read",
               "minutes": 10,
@@ -79,20 +88,11 @@
               "domain": "All"
             },
             {
-              "id": "w1d1t3",
-              "title": "Read the IAPP Candidate Handbook PDF: scheduling, rescheduling/cancellation cut-offs, ID rules, OnVUE requirements. Note the reschedule cut-off: it sets your real go/no-go date",
-              "url": "https://prod.iapp.org/media/pdf/certification/IAPP_Certification_Handbook_Updated.pdf",
-              "type": "read",
-              "minutes": 25,
-              "optional": false,
-              "domain": "All"
-            },
-            {
               "id": "w1d1t4",
-              "title": "Read EU AI Act Article 4 (AI literacy duty)",
-              "url": "https://artificialintelligenceact.eu/article/4/",
-              "type": "read",
-              "minutes": 10,
+              "title": "AI Career Pro FREE trial: course intro + Domain I.A lessons (what AI is, AI types, risks and harms). BlueDot-covered, so watch at 1.5x",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 35,
               "optional": false,
               "domain": "I"
             },
@@ -114,57 +114,49 @@
           "tasks": [
             {
               "id": "w1d2t1",
-              "title": "Diagnostic part 1: IAPP free study guide sample questions, untimed",
-              "url": "https://iapp.org/l/aigp-study-guide-request",
+              "title": "Diagnostic part 1: AI Career Pro free practice exam, untimed; mark every guess",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
               "type": "practice",
-              "minutes": 35,
+              "minutes": 40,
               "optional": false,
               "domain": "All",
               "milestone": "Diagnostic"
             },
             {
               "id": "w1d2t2",
-              "title": "Diagnostic part 2: AIGP Playbook 15-question free mock preview, untimed",
-              "url": "https://aigpplaybook.com/premium-exam.html",
+              "title": "Diagnostic part 2: IAPP free study guide sample questions",
+              "url": "https://iapp.org/l/aigp-study-guide-request",
               "type": "practice",
-              "minutes": 25,
+              "minutes": 20,
               "optional": false,
               "domain": "All"
             },
             {
               "id": "w1d2t3",
-              "title": "Start a gap log: tag every diagnostic miss by BoK competency and rank the four domains weakest to strongest",
+              "title": "Start a gap log: tag every miss and guess by BoK competency; rank the four domains weakest to strongest",
               "url": "",
               "type": "review",
-              "minutes": 20,
+              "minutes": 15,
               "optional": false,
               "domain": "All"
             },
             {
               "id": "w1d2t4",
-              "title": "Read Commission Guidelines on the AI-system definition: the 7 definitional elements only (fast)",
-              "url": "https://ai-act-service-desk.ec.europa.eu/sites/default/files/2025-08/commission_guidelines_on_the_definition_of_an_artificial_intelligence_system_established_by_regulation_eu_20241689_ai_actenglish_nf2skcqfrtjdfggjavcodopcwz4_112455.PDF",
-              "type": "read",
-              "minutes": 20,
+              "title": "Buy the AI Career Pro AIGP Exam Prep course ($99) if the trial lessons and questions felt IAPP-like (else see the plan's budget section for the alternative)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 10,
               "optional": false,
-              "domain": "I"
+              "domain": "All",
+              "milestone": "Buy course (AI Career Pro, $99)"
             },
             {
               "id": "w1d2t5",
-              "title": "Skim OECD AI Principles: 5 values-based principles + 5 recommendations (fast, BlueDot-covered)",
-              "url": "https://oecd.ai/en/ai-principles",
-              "type": "read",
-              "minutes": 15,
+              "title": "Set up your Anki deck; add the first 15 cards from diagnostic misses",
+              "url": "",
+              "type": "flashcards",
+              "minutes": 20,
               "optional": false,
-              "domain": "II"
-            },
-            {
-              "id": "w1d2t6",
-              "title": "Read Veronica Lin's 'How I passed the AIGP exam' (what worked, what didn't)",
-              "url": "https://aigouvernance.com/how-i-passed-the-aigp-exam-what-actually-worked-what-didnt/",
-              "type": "read",
-              "minutes": 15,
-              "optional": true,
               "domain": "All"
             }
           ]
@@ -176,30 +168,39 @@
           "tasks": [
             {
               "id": "w1d3t1",
-              "title": "Read AIGP Playbook Domain I notes: skim I.A; study I.B (roles, committees, cross-functional collaboration, AI literacy) and I.C (policies across the lifecycle)",
-              "url": "https://aigpplaybook.com/aigp-domain-1.html",
-              "type": "read",
-              "minutes": 75,
+              "title": "Course: Domain I.B lessons (roles and responsibilities, governance committees, cross-functional collaboration, AI literacy and training)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
               "domain": "I"
             },
             {
               "id": "w1d3t2",
-              "title": "Make Anki flashcards: Domain I roles, governance committee/RACI, policy types, AI inventory",
-              "url": "",
-              "type": "flashcards",
-              "minutes": 30,
+              "title": "Course: Domain I.B quiz questions; add every miss to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 20,
               "optional": false,
               "domain": "I"
             },
             {
               "id": "w1d3t3",
-              "title": "Listen: AIGP Audio Course Ep. 1, decoding the exam blueprint",
-              "url": "https://podcasts.apple.com/us/podcast/episode-1-decode-the-aigp-exam-blueprint-question/id1890735004?i=1000759289642",
-              "type": "watch",
+              "title": "Read EU AI Act Article 4 (AI literacy duty)",
+              "url": "https://artificialintelligenceact.eu/article/4/",
+              "type": "read",
+              "minutes": 10,
+              "optional": false,
+              "domain": "I"
+            },
+            {
+              "id": "w1d3t4",
+              "title": "Lab 1 (NovaPay): sketch NovaPay's AI governance structure: committee, owners, RACI for approving a new AI use case",
+              "url": "",
+              "type": "practice",
               "minutes": 25,
-              "optional": true,
-              "domain": "All"
+              "optional": false,
+              "domain": "I"
             }
           ]
         },
@@ -210,28 +211,46 @@
           "tasks": [
             {
               "id": "w1d4t1",
-              "title": "Read NIST AI RMF Playbook GOVERN 1-6 (policies, accountability, workforce, culture, stakeholder engagement, third-party risk)",
-              "url": "https://airc.nist.gov/airmf-resources/playbook/govern/",
-              "type": "read",
-              "minutes": 60,
+              "title": "Course: Domain I.C lessons (policies and procedures across the AI lifecycle)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
               "domain": "I"
             },
             {
               "id": "w1d4t2",
-              "title": "Listen: AIGP Audio Course Ep. 11, updating privacy, security, data-governance and IP policies for AI (I.C.2)",
-              "url": "https://open.spotify.com/episode/3ca2ImW1KV6MZ8gH1WFwU3",
-              "type": "watch",
-              "minutes": 30,
+              "title": "Course: Domain I.C quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 20,
               "optional": false,
               "domain": "I"
             },
             {
               "id": "w1d4t3",
-              "title": "Read IAPP AI Governance Profession Report 2025: where governance sits, team structures",
-              "url": "https://iapp.org/resources/article/ai-governance-profession-report",
+              "title": "Lab 2 (NovaPay): draft a 1-page AI use policy + an AI inventory template (fields: owner, purpose, data, vendor, risk tier, status)",
+              "url": "",
+              "type": "practice",
+              "minutes": 40,
+              "optional": false,
+              "domain": "I"
+            },
+            {
+              "id": "w1d4t4",
+              "title": "Read NIST AI RMF Playbook GOVERN 1-6 and compare with your Lab 1-2 drafts",
+              "url": "https://airc.nist.gov/airmf-resources/playbook/govern/",
               "type": "read",
               "minutes": 45,
+              "optional": true,
+              "domain": "I"
+            },
+            {
+              "id": "w1d4t5",
+              "title": "Listen: AIGP Audio Course Ep. 11, privacy, security, data-governance and IP policies for AI (I.C.2)",
+              "url": "https://open.spotify.com/episode/3ca2ImW1KV6MZ8gH1WFwU3",
+              "type": "watch",
+              "minutes": 30,
               "optional": true,
               "domain": "I"
             }
@@ -260,30 +279,57 @@
           "tasks": [
             {
               "id": "w1d6t1",
-              "title": "Read IAPP AI Governance in Practice Report 2024: programme set-up sections (governance structures, inventories, risk assessment)",
-              "url": "https://prod.iapp.org/resources/article/ai-governance-in-practice-report/",
-              "type": "read",
-              "minutes": 55,
+              "title": "Course: Domain II.A lessons (privacy and data protection law applied to AI)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
-              "domain": "I"
+              "domain": "II"
             },
             {
               "id": "w1d6t2",
-              "title": "Read the IAPP Key Terms for AI Governance glossary end to end; flag unfamiliar terms",
-              "url": "https://iapp.org/resources/ai-governance-glossary",
-              "type": "read",
-              "minutes": 45,
+              "title": "Course: Domain II.A quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 20,
               "optional": false,
-              "domain": "I"
+              "domain": "II"
             },
             {
               "id": "w1d6t3",
-              "title": "Skim NIST AI 600-1 GenAI Profile Section 2 (the 12 GAI risks); BlueDot-covered, just map names",
-              "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+              "title": "Read GDPR Article 22 (automated individual decision-making, incl. profiling)",
+              "url": "https://gdpr-info.eu/art-22-gdpr/",
+              "type": "read",
+              "minutes": 15,
+              "optional": false,
+              "domain": "II"
+            },
+            {
+              "id": "w1d6t4",
+              "title": "Read GDPR Article 35 (DPIA: when required, minimum contents); you'll use it in Lab 6",
+              "url": "https://gdpr-info.eu/art-35-gdpr/",
+              "type": "read",
+              "minutes": 15,
+              "optional": false,
+              "domain": "II"
+            },
+            {
+              "id": "w1d6t5",
+              "title": "Anki: GDPR articles that matter for AI (5, 6, 13, 22, 35) in one line each",
+              "url": "",
+              "type": "flashcards",
+              "minutes": 15,
+              "optional": false,
+              "domain": "II"
+            },
+            {
+              "id": "w1d6t6",
+              "title": "Read GDPR Articles 5 and 6 (principles, lawful bases) for AI training data",
+              "url": "https://gdpr-info.eu/art-5-gdpr/",
               "type": "read",
               "minutes": 30,
               "optional": true,
-              "domain": "I"
+              "domain": "II"
             }
           ]
         },
@@ -294,34 +340,43 @@
           "tasks": [
             {
               "id": "w1d7t1",
-              "title": "Read the EU AI Act high-level summary (whole page): risk tiers, provider vs deployer duties, GPAI",
-              "url": "https://artificialintelligenceact.eu/high-level-summary/",
-              "type": "read",
-              "minutes": 45,
+              "title": "Course: Domain II.B lessons (IP, anti-discrimination, consumer protection, product liability)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 40,
               "optional": false,
               "domain": "II"
             },
             {
               "id": "w1d7t2",
-              "title": "Read EU AI Act Article 3 definitions: points (1) AI system, (3) provider, (4) deployer, (5)-(7) authorised rep/importer/distributor, (63)-(66) GPAI",
-              "url": "https://artificialintelligenceact.eu/article/3/",
-              "type": "read",
-              "minutes": 25,
+              "title": "Course: Domain II.B quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 20,
               "optional": false,
               "domain": "II"
             },
             {
               "id": "w1d7t3",
-              "title": "Make Anki flashcards from ~40 flagged glossary terms (IAPP wording) + the Art 3 role definitions",
-              "url": "",
-              "type": "flashcards",
-              "minutes": 30,
+              "title": "Read FTC 'Operation AI Comply' (Section 5 deception/unfairness applied to AI claims)",
+              "url": "https://www.ftc.gov/business-guidance/blog/2024/09/operation-ai-comply-continuing-crackdown-overpromises-ai-related-lies",
+              "type": "read",
+              "minutes": 20,
               "optional": false,
-              "domain": "I"
+              "domain": "II"
             },
             {
               "id": "w1d7t4",
-              "title": "Week 1 recap: Anki review of all Week 1 cards + write a one-page Domain I summary from memory",
+              "title": "Read NYC DCWP page on Local Law 144 (AEDT bias audits, candidate notice)",
+              "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+              "type": "read",
+              "minutes": 15,
+              "optional": false,
+              "domain": "II"
+            },
+            {
+              "id": "w1d7t5",
+              "title": "Week 1 recap: Anki review + teach-back: explain Domain I out loud in 5 minutes (voice memo), then check against your notes",
               "url": "",
               "type": "review",
               "minutes": 20,
@@ -329,11 +384,11 @@
               "domain": "I"
             },
             {
-              "id": "w1d7t5",
-              "title": "Skim Oliver Patel's Unofficial AIGP Resource Guide and bookmark links for your Weak competencies",
-              "url": "https://oliverpatel.substack.com/p/the-unofficial-aigp-resource-guide",
+              "id": "w1d7t6",
+              "title": "Read Veronica Lin's 'How I passed the AIGP exam' (what worked, what didn't)",
+              "url": "https://aigouvernance.com/how-i-passed-the-aigp-exam-what-actually-worked-what-didnt/",
               "type": "read",
-              "minutes": 20,
+              "minutes": 15,
               "optional": true,
               "domain": "All"
             }
@@ -343,13 +398,12 @@
     },
     {
       "week": 2,
-      "theme": "First pass: GDPR for AI, Domain III (governing development) and Domain IV (governing deployment)",
+      "theme": "Course: II.C-II.D (EU AI Act, standards) and III.A-III.C (governing development), plus EU AI Act lab",
       "bokDomains": [
-        "III",
-        "IV",
-        "II"
+        "II",
+        "III"
       ],
-      "targetHours": 11.8,
+      "targetHours": 11.2,
       "days": [
         {
           "date": "2026-09-30",
@@ -358,47 +412,38 @@
           "tasks": [
             {
               "id": "w2d1t1",
-              "title": "Read NIST AI RMF 1.0 PDF Part 1, Section 3 (7 trustworthy-AI characteristics) and Section 5 overview of the Core",
-              "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
-              "type": "read",
-              "minutes": 45,
+              "title": "Course: Domain II.C lessons (EU AI Act and other AI-specific laws)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 55,
               "optional": false,
               "domain": "II"
             },
             {
               "id": "w2d1t2",
-              "title": "Read the AIRC AI RMF Core page: Govern/Map/Measure/Manage and their category IDs (GOVERN 1-6, MAP 1-5, MEASURE 1-4, MANAGE 1-4)",
-              "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
-              "type": "read",
-              "minutes": 35,
+              "title": "Course: Domain II.C quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 20,
               "optional": false,
               "domain": "II"
             },
             {
               "id": "w2d1t3",
-              "title": "Read GDPR Article 5 (principles): note how purpose limitation and minimisation bite on AI training data",
-              "url": "https://gdpr-info.eu/art-5-gdpr/",
+              "title": "Read the EU AI Act high-level summary: risk tiers, provider vs deployer duties, GPAI",
+              "url": "https://artificialintelligenceact.eu/high-level-summary/",
               "type": "read",
-              "minutes": 20,
+              "minutes": 30,
               "optional": false,
               "domain": "II"
             },
             {
               "id": "w2d1t4",
-              "title": "Read GDPR Article 6 (lawful bases): legitimate interest vs consent for training and deployment",
-              "url": "https://gdpr-info.eu/art-6-gdpr/",
+              "title": "Read EU AI Act Article 5 (the prohibited practices)",
+              "url": "https://artificialintelligenceact.eu/article/5/",
               "type": "read",
               "minutes": 20,
               "optional": false,
-              "domain": "II"
-            },
-            {
-              "id": "w2d1t5",
-              "title": "Watch 'NIST AI RMF deep dive: GOVERN vs MAP vs MEASURE vs MANAGE'",
-              "url": "https://www.youtube.com/watch?v=IbKXHfkFcBQ",
-              "type": "watch",
-              "minutes": 30,
-              "optional": true,
               "domain": "II"
             }
           ]
@@ -410,48 +455,48 @@
           "tasks": [
             {
               "id": "w2d2t1",
-              "title": "Read NIST AI RMF Playbook MAP 1-5 (context, categorisation, capabilities, risks/benefits, impacts): the design-stage checklist",
-              "url": "https://airc.nist.gov/airmf-resources/playbook/map/",
-              "type": "read",
-              "minutes": 50,
+              "title": "Course: Domain II.D lessons (NIST AI RMF, ISO/IEC 42001 and 42005, OECD, other frameworks)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
-              "domain": "III"
+              "domain": "II"
             },
             {
               "id": "w2d2t2",
-              "title": "Read EU AI Act Article 9 (risk management system for high-risk AI)",
-              "url": "https://artificialintelligenceact.eu/article/9/",
-              "type": "read",
+              "title": "Course: Domain II.D quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
               "minutes": 20,
               "optional": false,
-              "domain": "III"
+              "domain": "II"
             },
             {
               "id": "w2d2t3",
-              "title": "Read EU AI Act Article 10 (data and data governance: training, validation, test sets; bias examination)",
-              "url": "https://artificialintelligenceact.eu/article/10/",
+              "title": "Read the AIRC AI RMF Core page: Govern/Map/Measure/Manage and their category IDs",
+              "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
               "type": "read",
-              "minutes": 25,
+              "minutes": 30,
               "optional": false,
-              "domain": "III"
+              "domain": "II"
             },
             {
               "id": "w2d2t4",
-              "title": "Read GDPR Article 22 (automated individual decision-making, incl. profiling)",
-              "url": "https://gdpr-info.eu/art-22-gdpr/",
-              "type": "read",
+              "title": "Anki: NIST functions + categories; ISO 42001 (management system) vs 42005 (impact assessment)",
+              "url": "",
+              "type": "flashcards",
               "minutes": 15,
               "optional": false,
               "domain": "II"
             },
             {
               "id": "w2d2t5",
-              "title": "Add MAP categories, Art 9 steps and Art 10 data duties to Anki",
-              "url": "",
-              "type": "flashcards",
-              "minutes": 10,
-              "optional": false,
-              "domain": "III"
+              "title": "Watch 'NIST AI RMF deep dive: GOVERN vs MAP vs MEASURE vs MANAGE'",
+              "url": "https://www.youtube.com/watch?v=IbKXHfkFcBQ",
+              "type": "watch",
+              "minutes": 30,
+              "optional": true,
+              "domain": "II"
             }
           ]
         },
@@ -462,38 +507,38 @@
           "tasks": [
             {
               "id": "w2d3t1",
-              "title": "Read ICO guidance: 'How should we assess security and data minimisation in AI?'",
-              "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-should-we-assess-security-and-data-minimisation-in-ai/",
-              "type": "read",
-              "minutes": 40,
+              "title": "Course: Domain III.A lessons (governing design and build: use-case intake, impact assessment, requirements)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
               "domain": "III"
             },
             {
               "id": "w2d3t2",
-              "title": "Read Datasheets for Datasets (Gebru et al.): abstract + the question sets (motivation, composition, collection, preprocessing, uses)",
-              "url": "https://arxiv.org/abs/1803.09010",
-              "type": "read",
-              "minutes": 25,
-              "optional": false,
-              "domain": "III"
-            },
-            {
-              "id": "w2d3t3",
-              "title": "Read Model Cards for Model Reporting (Mitchell et al.): abstract + the model-card sections",
-              "url": "https://arxiv.org/abs/1810.03993",
-              "type": "read",
+              "title": "Course: Domain III.A quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
               "minutes": 20,
               "optional": false,
               "domain": "III"
             },
             {
-              "id": "w2d3t4",
-              "title": "Make Anki flashcards: Domain III lifecycle stages and the artefact produced at each (intake form, impact assessment, datasheet, model card, test report)",
-              "url": "",
-              "type": "flashcards",
-              "minutes": 25,
+              "id": "w2d3t3",
+              "title": "Read NIST AI RMF Playbook MAP 1-5 (the design-stage checklist); skim, note 5 actions NovaPay should take",
+              "url": "https://airc.nist.gov/airmf-resources/playbook/map/",
+              "type": "read",
+              "minutes": 30,
               "optional": false,
+              "domain": "III"
+            },
+            {
+              "id": "w2d3t4",
+              "title": "Read Model Cards for Model Reporting (Mitchell et al.): the model-card sections",
+              "url": "https://arxiv.org/abs/1810.03993",
+              "type": "read",
+              "minutes": 25,
+              "optional": true,
               "domain": "III"
             }
           ]
@@ -505,39 +550,48 @@
           "tasks": [
             {
               "id": "w2d4t1",
-              "title": "Read NIST AI RMF Playbook MEASURE 1-4 (metrics, TEVV, bias/fairness, feedback); skim the eval parts you know from BlueDot",
-              "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
-              "type": "read",
-              "minutes": 50,
+              "title": "Lab 3 (NovaPay): run the EU AI Act Compliance Checker on 5 NovaPay systems (credit scoring, CV screening, customer chatbot, fraud detection, AI-generated marketing video); record the risk tier and NovaPay's role for each",
+              "url": "https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/",
+              "type": "practice",
+              "minutes": 45,
               "optional": false,
-              "domain": "III"
+              "domain": "II"
             },
             {
               "id": "w2d4t2",
-              "title": "Read NIST AI RMF Playbook MANAGE 1-4 (risk response, third-party risk, post-deployment monitoring, incident communication)",
-              "url": "https://airc.nist.gov/airmf-resources/playbook/manage/",
+              "title": "Check your Lab 3 answers against EU AI Act Article 6 (high-risk classification, incl. Art 6(3) derogation) and Annex III",
+              "url": "https://artificialintelligenceact.eu/article/6/",
               "type": "read",
-              "minutes": 50,
+              "minutes": 30,
               "optional": false,
-              "domain": "IV"
+              "domain": "II"
             },
             {
               "id": "w2d4t3",
-              "title": "Read GDPR Article 35 (DPIA: when required, minimum contents)",
-              "url": "https://gdpr-info.eu/art-35-gdpr/",
+              "title": "Read EU AI Act Article 3 definitions (provider, deployer, importer, distributor) and fix any role you got wrong in Lab 3",
+              "url": "https://artificialintelligenceact.eu/article/3/",
               "type": "read",
-              "minutes": 20,
+              "minutes": 15,
               "optional": false,
               "domain": "II"
             },
             {
               "id": "w2d4t4",
-              "title": "Read OWASP Top 10 for LLM Applications 2025: LLM01-LLM10 titles + mitigations",
-              "url": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
-              "type": "read",
+              "title": "Week 2 recap: Anki review + drill 20 OpenExamPrep questions (Domains I-II)",
+              "url": "https://open-exam-prep.com/practice/aigp",
+              "type": "practice",
               "minutes": 30,
+              "optional": false,
+              "domain": "All"
+            },
+            {
+              "id": "w2d4t5",
+              "title": "Watch 'AIGP How They Passed - July 2026' (v2.1-era candidate panel)",
+              "url": "https://www.youtube.com/watch?v=rdASQWETQyY",
+              "type": "watch",
+              "minutes": 45,
               "optional": true,
-              "domain": "III"
+              "domain": "All"
             }
           ]
         },
@@ -564,57 +618,39 @@
           "tasks": [
             {
               "id": "w2d6t1",
-              "title": "Read EU AI Act Article 26 (obligations of deployers of high-risk AI)",
-              "url": "https://artificialintelligenceact.eu/article/26/",
-              "type": "read",
-              "minutes": 25,
+              "title": "Course: Domain III.B lessons (data governance, training and testing, bias and fairness)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
-              "domain": "IV"
+              "domain": "III"
             },
             {
               "id": "w2d6t2",
-              "title": "Read EU AI Act Article 27 (fundamental rights impact assessment)",
-              "url": "https://artificialintelligenceact.eu/article/27/",
-              "type": "read",
+              "title": "Course: Domain III.B quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
               "minutes": 20,
               "optional": false,
-              "domain": "IV"
+              "domain": "III"
             },
             {
               "id": "w2d6t3",
-              "title": "Work through the ICO AI and data protection risk toolkit: its risk areas and example controls",
-              "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/ai-and-data-protection-risk-toolkit/",
+              "title": "Read EU AI Act Article 10 (data and data governance)",
+              "url": "https://artificialintelligenceact.eu/article/10/",
               "type": "read",
-              "minutes": 30,
+              "minutes": 20,
               "optional": false,
-              "domain": "IV"
+              "domain": "III"
             },
             {
               "id": "w2d6t4",
-              "title": "Read IAPP: 'EU model contractual clauses for AI procurement: a practical guide' (vendor terms, IV.B)",
-              "url": "https://iapp.org/news/a/eu-model-contractual-clauses-for-ai-procurement-a-practical-guide",
-              "type": "read",
-              "minutes": 30,
+              "title": "Lab 4 (NovaPay): answer 10 key questions from Datasheets for Datasets for NovaPay's credit-scoring training data",
+              "url": "https://arxiv.org/abs/1803.09010",
+              "type": "practice",
+              "minutes": 25,
               "optional": false,
-              "domain": "IV"
-            },
-            {
-              "id": "w2d6t5",
-              "title": "Make Anki flashcards: deployer duties, FRIA, DPIA triggers, vendor contract terms",
-              "url": "",
-              "type": "flashcards",
-              "minutes": 10,
-              "optional": false,
-              "domain": "IV"
-            },
-            {
-              "id": "w2d6t6",
-              "title": "Watch 'AIGP How They Passed - July 2026' (the only v2.1-era candidate panel)",
-              "url": "https://www.youtube.com/watch?v=rdASQWETQyY",
-              "type": "watch",
-              "minutes": 45,
-              "optional": true,
-              "domain": "All"
+              "domain": "III"
             }
           ]
         },
@@ -625,57 +661,48 @@
           "tasks": [
             {
               "id": "w2d7t1",
-              "title": "Read Singapore Model AI Governance Framework for Agentic AI: agent risks and controls sections (agentic architectures are new in v2.1, IV.A)",
-              "url": "https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf",
-              "type": "read",
-              "minutes": 35,
+              "title": "Course: Domain III.C lessons (testing, release readiness, monitoring and maintenance during development)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
-              "domain": "IV"
+              "domain": "III"
             },
             {
               "id": "w2d7t2",
-              "title": "Complete Canada's Algorithmic Impact Assessment tool for one invented scenario (e.g., benefits-eligibility triage)",
-              "url": "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
+              "title": "Course: Domain III.C quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
               "type": "practice",
-              "minutes": 40,
+              "minutes": 20,
               "optional": false,
-              "domain": "IV"
+              "domain": "III"
             },
             {
               "id": "w2d7t3",
-              "title": "Try AI Career Pro's free practice exam / free Domain I-A trial; judge whether the items feel IAPP-like before buying",
-              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
-              "type": "practice",
+              "title": "Read NIST AI RMF Playbook MEASURE 1-4 (metrics, TEVV, bias, feedback); skim the eval parts you know from BlueDot",
+              "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
+              "type": "read",
               "minutes": 30,
               "optional": false,
-              "domain": "All"
+              "domain": "III"
             },
             {
               "id": "w2d7t4",
-              "title": "Week 2 recap: cumulative Anki review (Weeks 1-2)",
+              "title": "Anki: Domain III lifecycle stages and the artefact produced at each (intake form, impact assessment, datasheet, model card, test report)",
               "url": "",
               "type": "flashcards",
-              "minutes": 20,
+              "minutes": 15,
               "optional": false,
-              "domain": "All"
+              "domain": "III"
             },
             {
               "id": "w2d7t5",
-              "title": "Read IAPP: 'EDPB weighs in on key questions on personal data in AI models'",
-              "url": "https://iapp.org/news/a/edpb-weighs-in-on-key-questions-on-personal-data-in-ai-models",
+              "title": "Read OWASP Top 10 for LLM Applications 2025: LLM01-LLM10 titles + mitigations",
+              "url": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
               "type": "read",
-              "minutes": 20,
+              "minutes": 30,
               "optional": true,
-              "domain": "II"
-            },
-            {
-              "id": "w2d7t6",
-              "title": "Drill 20 OpenExamPrep questions untimed (Domains III-IV)",
-              "url": "https://open-exam-prep.com/practice/aigp",
-              "type": "practice",
-              "minutes": 25,
-              "optional": true,
-              "domain": "All"
+              "domain": "III"
             }
           ]
         }
@@ -683,12 +710,13 @@
     },
     {
       "week": 3,
-      "theme": "EU AI Act article-level deep dive, Mock #1, book the exam, standards (II.C, II.D)",
+      "theme": "Course: IV.A-IV.C (governing deployment), Mock #1, book the exam, EU AI Act high-risk deep dive",
       "bokDomains": [
+        "IV",
         "II",
         "All"
       ],
-      "targetHours": 11.8,
+      "targetHours": 12.6,
       "days": [
         {
           "date": "2026-10-07",
@@ -697,57 +725,39 @@
           "tasks": [
             {
               "id": "w3d1t1",
-              "title": "Read AIGP Playbook Domain II notes: II.A (privacy law) and II.B (other laws) sections",
-              "url": "https://aigpplaybook.com/aigp-domain-2.html",
-              "type": "read",
-              "minutes": 40,
+              "title": "Course: Domain IV.A lessons (deciding whether and how to deploy, incl. agentic AI)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
               "id": "w3d1t2",
-              "title": "Read EU AI Act Article 5 (the prohibited practices)",
-              "url": "https://artificialintelligenceact.eu/article/5/",
-              "type": "read",
-              "minutes": 30,
+              "title": "Course: Domain IV.A quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 20,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
               "id": "w3d1t3",
-              "title": "Read EU AI Act Article 6 (high-risk classification rules, incl. the Art 6(3) derogation and profiling carve-back)",
-              "url": "https://artificialintelligenceact.eu/article/6/",
+              "title": "Read Singapore Model AI Governance Framework for Agentic AI: agent risks and controls sections",
+              "url": "https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf",
               "type": "read",
-              "minutes": 20,
+              "minutes": 30,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
               "id": "w3d1t4",
-              "title": "Read EU AI Act Annex III (the 8 high-risk use-case areas)",
-              "url": "https://artificialintelligenceact.eu/annex/3/",
+              "title": "Read EU AI Act Article 26 (obligations of deployers of high-risk AI)",
+              "url": "https://artificialintelligenceact.eu/article/26/",
               "type": "read",
-              "minutes": 25,
+              "minutes": 20,
               "optional": false,
-              "domain": "II"
-            },
-            {
-              "id": "w3d1t5",
-              "title": "Read IAPP Top 10 EU AI Act: 'Understanding and assessing risk'",
-              "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-understanding-assessing-risk",
-              "type": "read",
-              "minutes": 30,
-              "optional": true,
-              "domain": "II"
-            },
-            {
-              "id": "w3d1t6",
-              "title": "Skim the Commission Guidelines on prohibited AI practices: worked examples for each Art 5 ban",
-              "url": "https://ai-act-service-desk.ec.europa.eu/sites/default/files/2025-08/guidelines_on_prohibited_artificial_intelligence_practices_established_by_regulation_eu_20241689_ai_act_english_ied3r5nwo50xggpcfmwckm3nuc_112367-1.PDF",
-              "type": "read",
-              "minutes": 30,
-              "optional": true,
-              "domain": "II"
+              "domain": "IV"
             }
           ]
         },
@@ -758,58 +768,39 @@
           "tasks": [
             {
               "id": "w3d2t1",
-              "title": "Buy ONE v2.1 practice bank: AI Career Pro ($99, 5 full mocks) if its free trial felt IAPP-like; otherwise one Udemy v2.1 bank on sale",
+              "title": "Course: Domain IV.B lessons (assessments, third-party/vendor due diligence, contracts)",
               "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
-              "type": "practice",
-              "minutes": 15,
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
-              "domain": "All",
-              "milestone": "Buy practice bank (AI Career Pro, $99)"
+              "domain": "IV"
             },
             {
               "id": "w3d2t2",
-              "title": "Read EU AI Act Chapter III Section 2 (Arts 8-15 high-risk requirements), focusing on Arts 11 technical documentation, 12 record-keeping, 13 transparency to deployers",
-              "url": "https://artificialintelligenceact.eu/section/3-2/",
-              "type": "read",
-              "minutes": 40,
+              "title": "Course: Domain IV.B quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 20,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
               "id": "w3d2t3",
-              "title": "Read EU AI Act Article 14 (human oversight)",
-              "url": "https://artificialintelligenceact.eu/article/14/",
-              "type": "read",
-              "minutes": 20,
-              "optional": false,
-              "domain": "III"
-            },
-            {
-              "id": "w3d2t4",
-              "title": "Read EU AI Act Article 25 (value chain: when a deployer/distributor becomes a provider)",
-              "url": "https://artificialintelligenceact.eu/article/25/",
+              "title": "Read IAPP: 'EU model contractual clauses for AI procurement: a practical guide'",
+              "url": "https://iapp.org/news/a/eu-model-contractual-clauses-for-ai-procurement-a-practical-guide",
               "type": "read",
               "minutes": 25,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
-              "id": "w3d2t5",
-              "title": "Read 'Why I failed the AIGP exam' (FAIR Institute): answer as the ideal governance function, not the pragmatic operator",
-              "url": "https://www.fairinstitute.org/blog/why-i-failed-the-aigp-exam-and-you-should-too",
-              "type": "read",
-              "minutes": 10,
+              "id": "w3d2t4",
+              "title": "Lab 5 (NovaPay): write a 12-question vendor due-diligence questionnaire for buying a third-party CV-screening tool",
+              "url": "",
+              "type": "practice",
+              "minutes": 25,
               "optional": false,
-              "domain": "All"
-            },
-            {
-              "id": "w3d2t6",
-              "title": "Read IAPP Top 10 EU AI Act: 'Subject matter, definitions, key actors and scope'",
-              "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-scope-subject-definitions-actors",
-              "type": "read",
-              "minutes": 30,
-              "optional": true,
-              "domain": "II"
+              "domain": "IV"
             }
           ]
         },
@@ -820,57 +811,39 @@
           "tasks": [
             {
               "id": "w3d3t1",
-              "title": "Read EU AI Act Article 50 (transparency: chatbots, synthetic content, deepfakes, emotion recognition)",
-              "url": "https://artificialintelligenceact.eu/article/50/",
-              "type": "read",
-              "minutes": 20,
+              "title": "Course: Domain IV.C lessons (post-deployment monitoring, incidents, decommissioning)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 45,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
               "id": "w3d3t2",
-              "title": "Read EU AI Act Article 99 (penalty tiers: EUR35m/7%, EUR15m/3%, EUR7.5m/1%)",
-              "url": "https://artificialintelligenceact.eu/article/99/",
-              "type": "read",
-              "minutes": 15,
+              "title": "Course: Domain IV.C quiz questions; add misses to Anki",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 20,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
               "id": "w3d3t3",
-              "title": "Read the AI Act implementation timeline: ORIGINAL dates (2 Feb 2025, 2 Aug 2025, 2 Aug 2026, 2 Aug 2027)",
-              "url": "https://artificialintelligenceact.eu/implementation-timeline/",
+              "title": "Read NIST AI RMF Playbook MANAGE 1-4 (risk response, third-party risk, monitoring, incident communication); skim",
+              "url": "https://airc.nist.gov/airmf-resources/playbook/manage/",
               "type": "read",
-              "minutes": 20,
+              "minutes": 30,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
               "id": "w3d3t4",
-              "title": "Read Morgan Lewis on the Digital Omnibus: NEW dates (Annex III to 2 Dec 2027, Annex I to 2 Aug 2028)",
-              "url": "https://www.morganlewis.com/pubs/2026/06/eu-approves-delays-and-other-amendments-to-certain-eu-ai-act-obligations-what-businesses-should-know",
-              "type": "read",
-              "minutes": 25,
-              "optional": false,
-              "domain": "II"
-            },
-            {
-              "id": "w3d3t5",
-              "title": "Read EU AI Act Articles 51 and 53 (systemic-risk GPAI, 10^25 FLOP presumption; GPAI provider obligations); fast, BlueDot-covered",
-              "url": "https://artificialintelligenceact.eu/article/53/",
-              "type": "read",
+              "title": "Anki: deployer duties, vendor contract terms, incident steps",
+              "url": "",
+              "type": "flashcards",
               "minutes": 15,
               "optional": false,
-              "domain": "II"
-            },
-            {
-              "id": "w3d3t6",
-              "title": "Read IAPP Top 10 EU AI Act: 'Obligations for general-purpose AI models'",
-              "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-obligations-general-purpose-ai-models",
-              "type": "read",
-              "minutes": 25,
-              "optional": true,
-              "domain": "II"
+              "domain": "IV"
             }
           ]
         },
@@ -891,7 +864,7 @@
             },
             {
               "id": "w3d4t2",
-              "title": "Score Mock #1 by domain; update the gap log; apply the decision rule (keep 27 Oct or move to 10 Nov? fallback course?)",
+              "title": "Score Mock #1 by domain; update the gap log; apply the decision rule (keep 27 Oct or move to 10 Nov?)",
               "url": "",
               "type": "review",
               "minutes": 20,
@@ -936,18 +909,18 @@
               "title": "Review every Mock #1 item (right and wrong): write why each distractor is wrong",
               "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
               "type": "review",
-              "minutes": 90,
+              "minutes": 75,
               "optional": false,
               "domain": "All"
             },
             {
               "id": "w3d6t3",
-              "title": "Run the EU AI Act Compliance Checker on 5 invented scenarios (HR screening, chatbot, credit scoring, emotion recognition at work, product safety component)",
-              "url": "https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/",
-              "type": "practice",
-              "minutes": 45,
-              "optional": true,
-              "domain": "II"
+              "title": "Anki: a card for every Mock #1 miss",
+              "url": "",
+              "type": "flashcards",
+              "minutes": 20,
+              "optional": false,
+              "domain": "All"
             }
           ]
         },
@@ -958,35 +931,35 @@
           "tasks": [
             {
               "id": "w3d7t1",
-              "title": "Make Anki flashcards from every Mock #1 miss + a two-column date card (original vs Omnibus)",
-              "url": "",
-              "type": "flashcards",
-              "minutes": 25,
+              "title": "Read EU AI Act Chapter III Section 2 (Arts 8-15 high-risk requirements): Arts 9 risk management, 11 documentation, 12 logs, 13 transparency",
+              "url": "https://artificialintelligenceact.eu/section/3-2/",
+              "type": "read",
+              "minutes": 40,
               "optional": false,
-              "domain": "All"
+              "domain": "II"
             },
             {
               "id": "w3d7t2",
-              "title": "Read the ISO/IEC 42001 page (AIMS scope, clause structure)",
-              "url": "https://www.iso.org/standard/42001",
+              "title": "Read EU AI Act Article 14 (human oversight)",
+              "url": "https://artificialintelligenceact.eu/article/14/",
               "type": "read",
-              "minutes": 5,
+              "minutes": 15,
               "optional": false,
-              "domain": "II"
+              "domain": "III"
             },
             {
               "id": "w3d7t3",
-              "title": "Read ISMS.online on ISO 42001 Annex A controls (A.2-A.10 objectives)",
-              "url": "https://www.isms.online/iso-42001/annex-a-controls/",
-              "type": "read",
-              "minutes": 35,
+              "title": "Lab 6a (NovaPay): high-risk checklist for the credit-scoring model: map each of Arts 9-15 to an owner and an artefact",
+              "url": "",
+              "type": "practice",
+              "minutes": 30,
               "optional": false,
-              "domain": "II"
+              "domain": "III"
             },
             {
               "id": "w3d7t4",
-              "title": "Skim the NIST AI RMF to ISO/IEC 42001 crosswalk: how the functions map to 42001 clauses",
-              "url": "https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf",
+              "title": "Read the AI Act implementation timeline: ORIGINAL dates",
+              "url": "https://artificialintelligenceact.eu/implementation-timeline/",
               "type": "read",
               "minutes": 15,
               "optional": false,
@@ -994,28 +967,19 @@
             },
             {
               "id": "w3d7t5",
-              "title": "Read the ISO/IEC 42005 page (AI system impact assessment, new in v2.1)",
-              "url": "https://www.iso.org/standard/42005",
+              "title": "Read Morgan Lewis on the Digital Omnibus: NEW dates (Annex III to 2 Dec 2027, Annex I to 2 Aug 2028); make a two-column date card",
+              "url": "https://www.morganlewis.com/pubs/2026/06/eu-approves-delays-and-other-amendments-to-certain-eu-ai-act-obligations-what-businesses-should-know",
               "type": "read",
-              "minutes": 5,
+              "minutes": 20,
               "optional": false,
               "domain": "II"
             },
             {
               "id": "w3d7t6",
-              "title": "Skim the ISO/IEC 42005 to NIST AI RMF crosswalk",
-              "url": "https://airc.nist.gov/documents/2/ai-2025-00108_ISO_IEC_42005_to_NIST_AI_RMF_Crosswalk.pdf",
+              "title": "Read IAPP Top 10 EU AI Act: 'Understanding and assessing risk'",
+              "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-understanding-assessing-risk",
               "type": "read",
-              "minutes": 15,
-              "optional": false,
-              "domain": "II"
-            },
-            {
-              "id": "w3d7t7",
-              "title": "Skim the IAPP US State AI Governance Legislation Tracker (which states, which models)",
-              "url": "https://iapp.org/resources/article/us-state-ai-governance-legislation-tracker",
-              "type": "read",
-              "minutes": 20,
+              "minutes": 30,
               "optional": true,
               "domain": "II"
             }
@@ -1025,13 +989,13 @@
     },
     {
       "week": 4,
-      "theme": "II.A/II.B detail, Domain III deep dive, Mock #2, Domain IV deep dive",
+      "theme": "Applied deep dive: FRIA/DPIA lab, GDPR and US laws, Mock #2, standards, post-market",
       "bokDomains": [
         "II",
         "III",
         "IV"
       ],
-      "targetHours": 12.0,
+      "targetHours": 11.9,
       "days": [
         {
           "date": "2026-10-14",
@@ -1040,8 +1004,8 @@
           "tasks": [
             {
               "id": "w4d1t1",
-              "title": "Read FTC 'Operation AI Comply' (Section 5 deception/unfairness applied to AI claims)",
-              "url": "https://www.ftc.gov/business-guidance/blog/2024/09/operation-ai-comply-continuing-crackdown-overpromises-ai-related-lies",
+              "title": "Read EU AI Act Article 25 (value chain: when a deployer becomes a provider)",
+              "url": "https://artificialintelligenceact.eu/article/25/",
               "type": "read",
               "minutes": 20,
               "optional": false,
@@ -1049,57 +1013,39 @@
             },
             {
               "id": "w4d1t2",
-              "title": "Read NYC DCWP page on Local Law 144 (AEDT bias audits, candidate notice)",
-              "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+              "title": "Read EU AI Act Article 27 (fundamental rights impact assessment)",
+              "url": "https://artificialintelligenceact.eu/article/27/",
               "type": "read",
               "minutes": 20,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
               "id": "w4d1t3",
-              "title": "Read McDermott: Colorado SB24-205 blocked, replaced by SB26-189 (eff. 1 Jan 2027); keep the developer/deployer duty-of-care concepts",
-              "url": "https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/",
-              "type": "read",
-              "minutes": 20,
+              "title": "Lab 6b (NovaPay): mini FRIA + DPIA for deploying the CV-screening tool (use the Art 27 and GDPR Art 35 headings; 1 page)",
+              "url": "",
+              "type": "practice",
+              "minutes": 45,
               "optional": false,
-              "domain": "II"
+              "domain": "IV"
             },
             {
               "id": "w4d1t4",
-              "title": "Read Wittliff Cutter: Texas TRAIGA, the Colorado reset and federal preemption (2026)",
-              "url": "https://www.wittliffcutter.com/news-insights/ai-regulation-texas-colorado-federal-2026",
-              "type": "read",
-              "minutes": 20,
-              "optional": false,
-              "domain": "II"
-            },
-            {
-              "id": "w4d1t5",
-              "title": "Read GDPR Article 13 (incl. 'meaningful information about the logic involved')",
-              "url": "https://gdpr-info.eu/art-13-gdpr/",
-              "type": "read",
+              "title": "Anki: provider vs deployer vs 'deemed provider'; FRIA vs DPIA",
+              "url": "",
+              "type": "flashcards",
               "minutes": 15,
               "optional": false,
               "domain": "II"
             },
             {
-              "id": "w4d1t6",
-              "title": "Read FPF on South Korea's AI Framework (Basic) Act, in force 22 Jan 2026 (new in v2.1)",
-              "url": "https://fpf.org/blog/south-koreas-new-ai-framework-act-a-balancing-act-between-innovation-and-regulation/",
-              "type": "read",
-              "minutes": 20,
-              "optional": false,
-              "domain": "II"
-            },
-            {
-              "id": "w4d1t7",
-              "title": "Read the Dec 2025 White House EO on a national AI policy framework (state-law preemption)",
-              "url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/",
-              "type": "read",
-              "minutes": 20,
+              "id": "w4d1t5",
+              "title": "Complete Canada's Algorithmic Impact Assessment tool for the same CV-screening scenario and compare",
+              "url": "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
+              "type": "practice",
+              "minutes": 40,
               "optional": true,
-              "domain": "II"
+              "domain": "IV"
             }
           ]
         },
@@ -1113,13 +1059,13 @@
               "title": "Read ICO Guidance on AI and data protection: accountability, lawfulness, fairness and transparency sections",
               "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
               "type": "read",
-              "minutes": 45,
+              "minutes": 40,
               "optional": false,
               "domain": "II"
             },
             {
               "id": "w4d2t2",
-              "title": "Read EDPB Opinion 28/2024 executive summary (model anonymity, legitimate-interest 3-step test, consequences of unlawful training)",
+              "title": "Read EDPB Opinion 28/2024 executive summary (model anonymity, legitimate-interest 3-step test)",
               "url": "https://www.edpb.europa.eu/system/files/2024-12/edpb_opinion_202428_ai-models_en.pdf",
               "type": "read",
               "minutes": 25,
@@ -1128,21 +1074,21 @@
             },
             {
               "id": "w4d2t3",
-              "title": "Read EU AI Act Article 15 (accuracy, robustness and cybersecurity) on the AI Act Service Desk",
-              "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-15",
-              "type": "read",
-              "minutes": 20,
-              "optional": false,
-              "domain": "III"
-            },
-            {
-              "id": "w4d2t4",
-              "title": "Read EU AI Act Article 43 (conformity assessment routes) as a III.C release gate",
-              "url": "https://artificialintelligenceact.eu/article/43/",
+              "title": "Read GDPR Article 13 (incl. 'meaningful information about the logic involved')",
+              "url": "https://gdpr-info.eu/art-13-gdpr/",
               "type": "read",
               "minutes": 15,
               "optional": false,
-              "domain": "III"
+              "domain": "II"
+            },
+            {
+              "id": "w4d2t4",
+              "title": "Course: re-do the II.A quiz questions you missed the first time",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 15,
+              "optional": false,
+              "domain": "II"
             },
             {
               "id": "w4d2t5",
@@ -1162,39 +1108,57 @@
           "tasks": [
             {
               "id": "w4d3t1",
-              "title": "Read AIGP Playbook training material: Domain III module (III.A design/build, III.B data, III.C release/monitoring/maintenance)",
-              "url": "https://aigpplaybook.com/training.html",
+              "title": "Read McDermott: Colorado SB24-205 blocked, replaced by SB26-189 (eff. 1 Jan 2027); keep the developer/deployer duty-of-care concepts",
+              "url": "https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/",
               "type": "read",
-              "minutes": 60,
+              "minutes": 20,
               "optional": false,
-              "domain": "III"
+              "domain": "II"
             },
             {
               "id": "w4d3t2",
-              "title": "Read EU AI Act Articles 47 and 49 (EU declaration of conformity / CE marking; registration in the EU database)",
-              "url": "https://artificialintelligenceact.eu/article/47/",
+              "title": "Read Wittliff Cutter: Texas TRAIGA, the Colorado reset and federal preemption (2026)",
+              "url": "https://www.wittliffcutter.com/news-insights/ai-regulation-texas-colorado-federal-2026",
               "type": "read",
               "minutes": 15,
               "optional": false,
-              "domain": "III"
+              "domain": "II"
             },
             {
               "id": "w4d3t3",
-              "title": "Read IAPP Top 10 EU AI Act: 'Post-market monitoring, information sharing and enforcement'",
-              "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-post-market-monitoring-sharing-enforcement",
+              "title": "Read FPF on South Korea's AI Framework (Basic) Act (new in v2.1)",
+              "url": "https://fpf.org/blog/south-koreas-new-ai-framework-act-a-balancing-act-between-innovation-and-regulation/",
               "type": "read",
-              "minutes": 35,
+              "minutes": 20,
               "optional": false,
-              "domain": "III"
+              "domain": "II"
             },
             {
               "id": "w4d3t4",
-              "title": "Skim NIST AI 100-2e2025 adversarial ML taxonomy: the attack classes (evasion, poisoning, privacy, misuse)",
-              "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+              "title": "Read EU AI Act Article 50 (transparency: chatbots, synthetic content, deepfakes) and Article 99 penalty tiers",
+              "url": "https://artificialintelligenceact.eu/article/50/",
               "type": "read",
-              "minutes": 40,
+              "minutes": 25,
+              "optional": false,
+              "domain": "II"
+            },
+            {
+              "id": "w4d3t5",
+              "title": "Teach-back: 5-minute voice memo on 'which AI laws apply to NovaPay in the EU and US, and why'",
+              "url": "",
+              "type": "review",
+              "minutes": 15,
+              "optional": false,
+              "domain": "II"
+            },
+            {
+              "id": "w4d3t6",
+              "title": "Read the Dec 2025 White House EO on a national AI policy framework (state-law preemption)",
+              "url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/",
+              "type": "read",
+              "minutes": 20,
               "optional": true,
-              "domain": "III"
+              "domain": "II"
             }
           ]
         },
@@ -1266,28 +1230,28 @@
             },
             {
               "id": "w4d6t3",
-              "title": "Read IAPP Top 10 EU AI Act: 'AI assurance across the risk categories'",
-              "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-ai-assurance-risk-categories",
+              "title": "Read ISMS.online on ISO 42001 Annex A controls (A.2-A.10 objectives)",
+              "url": "https://www.isms.online/iso-42001/annex-a-controls/",
               "type": "read",
-              "minutes": 35,
+              "minutes": 30,
               "optional": false,
-              "domain": "III"
+              "domain": "II"
             },
             {
               "id": "w4d6t4",
-              "title": "Read Canada's Directive on Automated Decision-Making (impact levels, requirements)",
-              "url": "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/automated-decision-making.html",
-              "type": "read",
-              "minutes": 20,
-              "optional": true,
+              "title": "Lab 7: using the NIST AI RMF to ISO/IEC 42001 crosswalk, build a 1-page table: NIST function -> 42001 clause -> NovaPay artefact",
+              "url": "https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf",
+              "type": "practice",
+              "minutes": 25,
+              "optional": false,
               "domain": "II"
             },
             {
               "id": "w4d6t5",
-              "title": "Read China's Interim Measures for Generative AI Services (English translation)",
-              "url": "https://www.chinalawtranslate.com/en/generative-ai-interim/",
+              "title": "Skim the ISO/IEC 42005 to NIST AI RMF crosswalk",
+              "url": "https://airc.nist.gov/documents/2/ai-2025-00108_ISO_IEC_42005_to_NIST_AI_RMF_Crosswalk.pdf",
               "type": "read",
-              "minutes": 20,
+              "minutes": 15,
               "optional": true,
               "domain": "II"
             }
@@ -1300,24 +1264,42 @@
           "tasks": [
             {
               "id": "w4d7t1",
-              "title": "Read AIGP Playbook training material: Domain IV module (IV.A deploy decision incl. agentic, IV.B assessments/vendor due diligence, IV.C monitoring, incidents, decommissioning)",
-              "url": "https://aigpplaybook.com/training.html",
+              "title": "Read IAPP Top 10 EU AI Act: 'Post-market monitoring, information sharing and enforcement'",
+              "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-post-market-monitoring-sharing-enforcement",
               "type": "read",
-              "minutes": 55,
+              "minutes": 30,
               "optional": false,
-              "domain": "IV"
+              "domain": "III"
             },
             {
               "id": "w4d7t2",
-              "title": "Make Anki flashcards: release gates, post-market monitoring, serious-incident reporting + Mock #2 misses",
-              "url": "",
-              "type": "flashcards",
-              "minutes": 25,
+              "title": "Read EU AI Act Article 43 (conformity assessment routes) as a release gate",
+              "url": "https://artificialintelligenceact.eu/article/43/",
+              "type": "read",
+              "minutes": 15,
               "optional": false,
               "domain": "III"
             },
             {
               "id": "w4d7t3",
+              "title": "Lab 8 (NovaPay): 1-page monitoring and incident plan for the credit-scoring model (drift trigger, owner, serious-incident reporting, decommissioning)",
+              "url": "",
+              "type": "practice",
+              "minutes": 25,
+              "optional": false,
+              "domain": "IV"
+            },
+            {
+              "id": "w4d7t4",
+              "title": "Course: rewatch the lessons for your two weakest competencies from Mock #2",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "watch",
+              "minutes": 25,
+              "optional": false,
+              "domain": "All"
+            },
+            {
+              "id": "w4d7t5",
               "title": "Week 4 recap: cumulative Anki review (all decks)",
               "url": "",
               "type": "flashcards",
@@ -1326,22 +1308,13 @@
               "domain": "All"
             },
             {
-              "id": "w4d7t4",
-              "title": "Skim GDPR Chapter 3 (data subject rights, Arts 12-23) for AI-relevant rights: access, erasure, objection",
-              "url": "https://gdpr-info.eu/chapter-3/",
+              "id": "w4d7t6",
+              "title": "Read IAPP Top 10 EU AI Act: 'AI assurance across the risk categories'",
+              "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-ai-assurance-risk-categories",
               "type": "read",
-              "minutes": 15,
+              "minutes": 35,
               "optional": true,
-              "domain": "II"
-            },
-            {
-              "id": "w4d7t5",
-              "title": "Read the Council of Europe AI treaty (CETS 225) announcement",
-              "url": "https://www.coe.int/en/web/portal/-/council-of-europe-opens-first-ever-global-treaty-on-ai-for-signature",
-              "type": "read",
-              "minutes": 15,
-              "optional": true,
-              "domain": "II"
+              "domain": "III"
             }
           ]
         }
@@ -1355,7 +1328,7 @@
         "IV",
         "III"
       ],
-      "targetHours": 14.4,
+      "targetHours": 14.2,
       "days": [
         {
           "date": "2026-10-21",
@@ -1389,7 +1362,7 @@
           "tasks": [
             {
               "id": "w5d2t1",
-              "title": "Review Mock #3 misses; re-read your notes on the 3 most-missed competencies",
+              "title": "Review Mock #3 misses; rewatch the course lessons for the 3 most-missed competencies",
               "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
               "type": "review",
               "minutes": 45,
@@ -1398,10 +1371,10 @@
             },
             {
               "id": "w5d2t2",
-              "title": "Gap closure 1 (default IV.B if the gap log agrees): re-read the IAPP guide to EU model contractual clauses; list 10 vendor due-diligence questions",
-              "url": "https://iapp.org/news/a/eu-model-contractual-clauses-for-ai-procurement-a-practical-guide",
-              "type": "review",
-              "minutes": 40,
+              "title": "Gap closure: redo your weakest NovaPay lab (default Lab 5 vendor questionnaire) using what the mocks taught you",
+              "url": "",
+              "type": "practice",
+              "minutes": 30,
               "optional": false,
               "domain": "IV"
             },
@@ -1432,24 +1405,15 @@
           "tasks": [
             {
               "id": "w5d3t1",
-              "title": "Gap closure 2 (default IV.C): re-read NIST Playbook MANAGE 3-4 (third-party risk, post-deployment monitoring, incident response, decommissioning)",
-              "url": "https://airc.nist.gov/airmf-resources/playbook/manage/",
-              "type": "review",
-              "minutes": 40,
+              "title": "Course: take 40 mixed questions from the course bank you haven't seen, timed (~1.5 min each)",
+              "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+              "type": "practice",
+              "minutes": 60,
               "optional": false,
-              "domain": "IV"
+              "domain": "All"
             },
             {
               "id": "w5d3t2",
-              "title": "Re-read EU AI Act Articles 25 and 26 together: build a provider vs deployer vs 'deemed provider' table",
-              "url": "https://artificialintelligenceact.eu/article/25/",
-              "type": "review",
-              "minutes": 25,
-              "optional": false,
-              "domain": "II"
-            },
-            {
-              "id": "w5d3t3",
               "title": "Run the OnVUE system check on the exam computer (>=48 h ahead) or confirm the test-centre route; re-read the handbook's ID and room rules",
               "url": "https://iapp.org/certify/candidate-handbook",
               "type": "review",
@@ -1458,16 +1422,7 @@
               "domain": "All"
             },
             {
-              "id": "w5d3t4",
-              "title": "Drill 40 OpenExamPrep questions untimed on your two weakest competencies",
-              "url": "https://open-exam-prep.com/practice/aigp",
-              "type": "practice",
-              "minutes": 40,
-              "optional": true,
-              "domain": "All"
-            },
-            {
-              "id": "w5d3t5",
+              "id": "w5d3t3",
               "title": "Watch 'Top 3 Tips to Pass Your AIGP Exam on the First Try'",
               "url": "https://www.youtube.com/watch?v=0muZy8Pcxks",
               "type": "watch",
