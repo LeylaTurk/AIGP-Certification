@@ -1,5 +1,5 @@
 <title>AIGP Study Tracker</title>
-<meta name="description" content="Six-week AIGP (BoK v2.1) study tracker: daily tasks, progress by week and domain, practice-exam log and booking-rule status.">
+<meta name="description" content="Five-week AIGP (BoK v2.1) study tracker: daily tasks, progress by week and domain, practice-exam log and booking-rule status.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -198,7 +198,7 @@ pre.export{white-space:pre-wrap;word-break:break-all;max-height:180px;overflow:a
   <div class="top-inner">
     <div class="titlerow">
       <div>
-        <div class="eyebrow">IAPP AIGP · BoK v2.1 · exam Sat 31 Oct 2026</div>
+        <div class="eyebrow">IAPP AIGP · BoK v2.1 · exam Tue 27 Oct 2026</div>
         <h1>AIGP Study Tracker</h1>
       </div>
       <span class="sync" id="sync" data-mode="local" role="status"><span class="dot"></span><span id="syncText">Saved in this browser</span></span>
@@ -346,11 +346,11 @@ const TESTS = [
   {id:"diag",  name:"Diagnostic (study guide + Playbook preview)", short:"Diag", date:"2026-09-24", target:null},
   {id:"acp0",  name:"AI Career Pro free trial", short:"ACP trial", date:"2026-10-06", target:null},
   {id:"mock1", name:"Mock #1 · AI Career Pro Mock 1", short:"M1", date:"2026-10-10", target:60, mock:true},
-  {id:"mock2", name:"Mock #2 · AI Career Pro Mock 2", short:"M2", date:"2026-10-18", target:70, mock:true},
-  {id:"mock3", name:"Mock #3 · AI Career Pro Mock 3", short:"M3", date:"2026-10-24", target:75, mock:true},
-  {id:"iapp",  name:"IAPP official practice exam", short:"IAPP", date:"2026-10-25", target:70},
-  {id:"mock4", name:"AI Career Pro Mock 4 (extension)", short:"M4", date:"2026-11-07", target:75, mock:true},
-  {id:"mock5", name:"AI Career Pro Mock 5 (extension)", short:"M5", date:"2026-11-11", target:75, mock:true},
+  {id:"mock2", name:"Mock #2 · AI Career Pro Mock 2", short:"M2", date:"2026-10-17", target:70, mock:true},
+  {id:"mock3", name:"Mock #3 · AI Career Pro Mock 3", short:"M3", date:"2026-10-21", target:75, mock:true},
+  {id:"iapp",  name:"IAPP official practice exam", short:"IAPP", date:"2026-10-24", target:70},
+  {id:"mock4", name:"AI Career Pro Mock 4 (extension)", short:"M4", date:"2026-10-31", target:75, mock:true},
+  {id:"mock5", name:"AI Career Pro Mock 5 (extension)", short:"M5", date:"2026-11-07", target:75, mock:true},
   {id:"oep",   name:"OpenExamPrep drill (drilling only)", short:"OEP", date:null, target:null},
   {id:"other", name:"Other…", short:"Other", date:null, target:null}
 ];
@@ -746,7 +746,7 @@ function renderRule(){
     const d3=m1.dom.III, d4=m1.dom.IV;
     const ok = m1.score>=60 && (d3==null||d3>=55) && (d4==null||d4>=55);
     const unk = d3==null||d4==null;
-    gate = ok ? {s:unk?"warn":"good", t:`Mock #1 ${m1.score}% → book Sat 31 Oct${unk?" (add III/IV scores to confirm ≥55%)":""}`} : {s:"bad", t:`Mock #1 ${m1.score}% → book Sat 14 Nov and buy the fallback course`};
+    gate = ok ? {s:unk?"warn":"good", t:`Mock #1 ${m1.score}% → book Tue 27 Oct${unk?" (add III/IV scores to confirm ≥55%)":""}`} : {s:"bad", t:`Mock #1 ${m1.score}% → book Tue 10 Nov and buy the fallback course`};
   }
   let pair=null, pairUnknown=false;
   for(let i=1;i<mocks.length;i++){ const a=qualifies(mocks[i-1]), b=qualifies(mocks[i]); if(a.ok&&b.ok) pair=[mocks[i-1],mocks[i]]; else if(a.ok!==false&&b.ok!==false) pairUnknown=true; }
@@ -754,7 +754,7 @@ function renderRule(){
   const c1 = pair ? {s:"good", t:`${testName(pair[0])} ${pair[0].score}% and ${testName(pair[1])} ${pair[1].score}%`} :
              pairUnknown ? {s:"warn", t:"Two consecutive mocks ≥75%, but domain scores are missing"} :
              {s:mocks.length?"bad":"neutral", t: mocks.length? `Not yet: last mock ${mocks[mocks.length-1].score}%, ${qualifies(mocks[mocks.length-1]).why}; need two in a row` : "No full mocks logged yet"};
-  const c2 = iapp ? (iapp.score>=75?{s:"good",t:`IAPP practice exam ${iapp.score}%`}: iapp.score>=70?{s:"warn",t:`IAPP practice exam ${iapp.score}% (meets 70%, below the safer 75%)`}:{s:"bad",t:`IAPP practice exam ${iapp.score}% (target ≥70–75%)`}) : {s:"neutral",t:"IAPP official practice exam not logged (Sun 25 Oct)"};
+  const c2 = iapp ? (iapp.score>=75?{s:"good",t:`IAPP practice exam ${iapp.score}%`}: iapp.score>=70?{s:"warn",t:`IAPP practice exam ${iapp.score}% (meets 70%, below the safer 75%)`}:{s:"bad",t:`IAPP practice exam ${iapp.score}% (target ≥70–75%)`}) : {s:"neutral",t:"IAPP official practice exam not logged (Sat 24 Oct)"};
   const met = pair && iapp && iapp.score>=70;
   const icon = s => ({good:"✓",warn:"!",bad:"✗",neutral:"–"})[s];
   document.getElementById("ruleCard").innerHTML = `<div class="row" style="justify-content:space-between"><h2>Booking rule</h2><span class="small muted">Decide by go/no-go, ${fmtDay(GONOGO)}</span></div>
@@ -764,7 +764,7 @@ function renderRule(){
       <li><span class="pill ${c1.s}">${icon(c1.s)} Step 2</span><span>${esc(c1.t)}</span></li>
       <li><span class="pill ${c2.s}">${icon(c2.s)} Step 3</span><span>${esc(c2.t)}</span></li>
     </ul>
-    <div class="verdict" style="margin-top:12px">${met?'<span class="pill good">Rule met</span> Keep Sat 31 Oct.':'<span class="pill neutral">Not met yet</span> <span class="small" style="font-weight:500">If it is still unmet on '+fmtDay(GONOGO)+', reschedule to '+fmtDay(FALLBACK)+'.</span>'}</div>`;
+    <div class="verdict" style="margin-top:12px">${met?'<span class="pill good">Rule met</span> Keep Tue 27 Oct.':'<span class="pill neutral">Not met yet</span> <span class="small" style="font-weight:500">If it is still unmet on '+fmtDay(GONOGO)+', reschedule to '+fmtDay(FALLBACK)+'.</span>'}</div>`;
 }
 function renderChart(){
   const as=attemptsSorted().filter(a=>a.test!=="oep");
