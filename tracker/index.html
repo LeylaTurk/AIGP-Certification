@@ -1,0 +1,942 @@
+<title>AIGP Study Tracker</title>
+<meta name="description" content="Six-week AIGP (BoK v2.1) study tracker: daily tasks, progress by week and domain, practice-exam log and booking-rule status.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#F4F6F3; --surface:#FFFFFF; --surface-2:#EAEEE9; --line:#D5DCD5; --line-strong:#B4BFB6;
+  --ink:#18221F; --ink-2:#46534E; --ink-3:#6B7872;
+  --accent:#0E6A5B; --accent-ink:#FFFFFF; --accent-soft:#D6EAE4;
+  --ochre:#9A6412; --ochre-soft:#F5E7CC;
+  --good:#2E7D32; --good-soft:#DCEFDC; --warn:#A15C07; --warn-soft:#F8E6CC; --bad:#B42318; --bad-soft:#F9DEDB;
+  --d1:#3D6FA8; --d2:#7A5AA6; --d3:#0E6A5B; --d4:#B0572B; --dall:#6B7872;
+  --focus:#1D64D8;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#101614; --surface:#171F1C; --surface-2:#1F2925; --line:#2B3732; --line-strong:#3F4D47;
+    --ink:#E6ECE8; --ink-2:#B3C0BA; --ink-3:#8A9892;
+    --accent:#4FC2AA; --accent-ink:#06201A; --accent-soft:#173A33;
+    --ochre:#E0A94F; --ochre-soft:#3A2D16;
+    --good:#6CC070; --good-soft:#1B3320; --warn:#E6A24A; --warn-soft:#3A2A14; --bad:#F2887D; --bad-soft:#3D1D1A;
+    --d1:#7FA9DD; --d2:#B39BDB; --d3:#4FC2AA; --d4:#E3946A; --dall:#8A9892;
+    --focus:#8AB4FF;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#101614; --surface:#171F1C; --surface-2:#1F2925; --line:#2B3732; --line-strong:#3F4D47;
+  --ink:#E6ECE8; --ink-2:#B3C0BA; --ink-3:#8A9892;
+  --accent:#4FC2AA; --accent-ink:#06201A; --accent-soft:#173A33;
+  --ochre:#E0A94F; --ochre-soft:#3A2D16;
+  --good:#6CC070; --good-soft:#1B3320; --warn:#E6A24A; --warn-soft:#3A2A14; --bad:#F2887D; --bad-soft:#3D1D1A;
+  --d1:#7FA9DD; --d2:#B39BDB; --d3:#4FC2AA; --d4:#E3946A; --dall:#8A9892;
+  --focus:#8AB4FF;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding-inline:16px;padding-block:0 48px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:1.65rem;letter-spacing:-.01em}
+h2{font-size:1.3rem}
+h3{font-size:1.05rem;font-family:var(--sans);font-weight:700}
+a{color:var(--accent)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.muted{color:var(--ink-3)}
+.small{font-size:.85rem}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+button,select,input,textarea{font:inherit;color:inherit}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-inner{max-width:940px;margin:0 auto;padding:12px 16px 0;display:grid;gap:10px}
+.titlerow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sync{font-size:.78rem;color:var(--ink-3);display:inline-flex;align-items:center;gap:6px}
+.sync .dot{width:8px;height:8px;border-radius:50%;background:var(--ink-3)}
+.sync[data-mode="cloud"] .dot{background:var(--good)}
+.sync[data-mode="error"] .dot{background:var(--warn)}
+nav.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-bottom:-1px}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:8px 12px;cursor:pointer;color:var(--ink-2);font-weight:600;font-size:.9rem;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+nav.tabs button:hover{color:var(--ink)}
+
+section.panel{padding-top:18px;display:grid;gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+section.panel > *,.grid2 > *{min-width:0}
+.grid2{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+/* summary strip */
+.strip{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:grid;gap:2px;align-content:start}
+.stat .v{font-family:var(--mono);font-size:1.45rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.stat .s{font-size:.8rem;color:var(--ink-3)}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+.pill.good{background:var(--good-soft);color:var(--good)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.pill.neutral{background:var(--surface-2);color:var(--ink-2)}
+
+/* ring */
+.hero{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.ring{width:132px;height:132px;flex:none}
+.ring text{fill:var(--ink)}
+.hero-copy{flex:1 1 220px;display:grid;gap:6px}
+.toggle{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--ink-2);cursor:pointer}
+.toggle input{width:16px;height:16px;accent-color:var(--accent)}
+
+/* milestone bar */
+.mbar{position:relative;height:14px;background:var(--surface-2);border-radius:7px;margin:26px 0 8px}
+.mbar .fill{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:7px}
+.mbar .exp{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.55}
+.mbar .mk{position:absolute;top:-22px;transform:translateX(-50%);font:600 .68rem/1 var(--mono);color:var(--ink-3);display:grid;justify-items:center;gap:3px}
+.mbar .mk i{display:block;width:10px;height:10px;transform:rotate(45deg);border:2px solid var(--ochre);background:var(--surface)}
+.mbar .mk.hit i{background:var(--ochre)}
+.mbar .mk.hit{color:var(--ochre)}
+.mlist{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:4px;font-size:.86rem}
+.mlist li{display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:baseline}
+.mlist .n{font:600 .75rem var(--mono);color:var(--ochre)}
+.mlist .st{font-size:.75rem}
+
+/* bars */
+.bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:baseline}
+.bar-row .lbl{font-size:.86rem;min-width:0}
+.bar-row .val{font:600 .82rem var(--mono);font-variant-numeric:tabular-nums}
+.track{grid-column:1/-1;height:8px;border-radius:4px;background:var(--surface-2);position:relative;overflow:hidden}
+.track span{position:absolute;inset:0 auto 0 0;border-radius:4px;background:var(--accent)}
+.track .expm{position:absolute;top:0;bottom:0;width:2px;background:var(--ink);opacity:.5}
+
+/* tasks */
+.tasks{list-style:none;margin:0;padding:0;display:grid}
+.task{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.tasks > .task:first-child{border-top:0}
+.task input[type=checkbox]{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent);cursor:pointer}
+.task .t{font-size:.94rem;overflow-wrap:anywhere}
+.task .t a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}
+.task .t a:hover{text-decoration-color:var(--accent);color:var(--accent)}
+.task .t a .ext{font-size:.75em;color:var(--ink-3);margin-left:3px}
+.task.done .t,.task.done .t a{color:var(--ink-3);text-decoration:line-through}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px;align-items:center}
+.tag{font-size:.72rem;padding:1px 7px;border-radius:5px;background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+.tag.min{font-family:var(--mono)}
+.tag.dom{color:var(--surface);font-weight:700}
+.tag.dom[data-d="I"]{background:var(--d1)} .tag.dom[data-d="II"]{background:var(--d2)} .tag.dom[data-d="III"]{background:var(--d3)} .tag.dom[data-d="IV"]{background:var(--d4)} .tag.dom[data-d="All"]{background:var(--dall)}
+.tag.opt{background:transparent;border:1px dashed var(--line-strong);color:var(--ink-3)}
+.tag.ms{background:var(--ochre-soft);color:var(--ochre);font-weight:700}
+.tag.late{background:var(--bad-soft);color:var(--bad);font-weight:600}
+.tag.when{font-family:var(--mono)}
+
+.day{display:grid;gap:4px;padding:12px 0;border-top:1px solid var(--line)}
+.day:first-of-type{border-top:0}
+.dayhead{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.dayhead h3 .d{font-family:var(--mono);font-weight:600;font-size:.85rem;color:var(--ink-3);margin-left:6px}
+.day.rest{background:repeating-linear-gradient(135deg,transparent 0 8px,var(--surface-2) 8px 9px);border-radius:8px;padding:12px 10px}
+.day.is-today .dayhead h3{color:var(--accent)}
+details.week{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.week > summary{list-style:none;cursor:pointer;padding:14px 16px;display:grid;gap:8px}
+details.week > summary::-webkit-details-marker{display:none}
+.wk-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.wk-top h2{font-size:1.15rem}
+.wk-top h2::before{content:"▸";display:inline-block;margin-right:8px;color:var(--ink-3);transition:transform .15s}
+details[open] > summary .wk-top h2::before{transform:rotate(90deg)}
+.wk-body{padding:0 16px 8px}
+.wk-theme{font-size:.86rem;color:var(--ink-2)}
+
+.filters{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.filters label{font-size:.85rem;color:var(--ink-2);display:inline-flex;gap:6px;align-items:center}
+.filters input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent)}
+select,input[type=text],input[type=number],input[type=date],textarea{background:var(--surface);border:1px solid var(--line-strong);border-radius:7px;padding:6px 8px;font-size:.88rem;max-width:100%}
+textarea{width:100%;min-height:70px;resize:vertical}
+.btn{border:1px solid var(--line-strong);background:var(--surface);border-radius:8px;padding:8px 14px;font-weight:600;font-size:.88rem;cursor:pointer}
+.btn:hover{border-color:var(--ink-3)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.danger{color:var(--bad);border-color:var(--bad)}
+.btn.link{border:0;background:none;padding:4px 6px;color:var(--ink-3);font-weight:500}
+.btn.link:hover{color:var(--bad)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.empty{color:var(--ink-3);font-size:.9rem;padding:8px 0}
+
+/* exam log */
+form.attempt{display:grid;gap:12px}
+.fgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.field{display:grid;gap:4px;font-size:.82rem;color:var(--ink-2);font-weight:600}
+.field input,.field select{width:100%}
+.domscores{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.chartbox{overflow-x:auto}
+.chartbox svg{display:block;width:100%;height:auto}
+.chartbox text{font-family:var(--mono);font-size:11px;fill:var(--ink-3)}
+table.log{width:100%;border-collapse:collapse;font-size:.86rem}
+table.log th{text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line)}
+table.log td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.log td.num{white-space:nowrap}
+.tablewrap{overflow-x:auto;position:relative}
+.task,.row,label.t{position:relative}
+.rule{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rule li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:.9rem}
+.verdict{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 14px;border-radius:8px;background:var(--surface-2);font-weight:600}
+.confirm{border:1px solid var(--bad);background:var(--bad-soft);border-radius:8px;padding:12px;display:grid;gap:10px}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;font-size:.86rem;z-index:20;max-width:calc(100% - 32px)}
+pre.export{white-space:pre-wrap;word-break:break-all;max-height:180px;overflow:auto;background:var(--surface-2);padding:10px;border-radius:8px;font:.75rem/1.4 var(--mono)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:520px){
+  h1{font-size:1.35rem}
+  .ring{width:110px;height:110px}
+  .domscores{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="titlerow">
+      <div>
+        <div class="eyebrow">IAPP AIGP · BoK v2.1 · exam Sat 31 Oct 2026</div>
+        <h1>AIGP Study Tracker</h1>
+      </div>
+      <span class="sync" id="sync" data-mode="local" role="status"><span class="dot"></span><span id="syncText">Saved in this browser</span></span>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" id="tab-today" aria-controls="p-today" aria-selected="true" data-tab="today">Today</button>
+      <button role="tab" id="tab-plan" aria-controls="p-plan" aria-selected="false" data-tab="plan">Plan</button>
+      <button role="tab" id="tab-progress" aria-controls="p-progress" aria-selected="false" data-tab="progress">Progress</button>
+      <button role="tab" id="tab-exams" aria-controls="p-exams" aria-selected="false" data-tab="exams">Practice exams</button>
+      <button role="tab" id="tab-data" aria-controls="p-data" aria-selected="false" data-tab="data">Data</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- TODAY -->
+  <section class="panel" id="p-today" role="tabpanel" aria-labelledby="tab-today">
+    <div class="strip" id="countdowns"></div>
+    <div class="card hero" id="todayHero"></div>
+    <div class="card" id="todayCard"></div>
+    <div class="card" id="overdueCard"></div>
+  </section>
+
+  <!-- PLAN -->
+  <section class="panel" id="p-plan" role="tabpanel" aria-labelledby="tab-plan" hidden>
+    <div class="filters" role="group" aria-label="Filters">
+      <label><input type="checkbox" id="fHideOpt"> Hide stretch tasks</label>
+      <label><input type="checkbox" id="fIncomplete"> Only incomplete</label>
+      <label for="fDomain">Domain
+        <select id="fDomain">
+          <option value="">All domains</option>
+          <option value="I">I · Foundations</option>
+          <option value="II">II · Laws &amp; frameworks</option>
+          <option value="III">III · Development</option>
+          <option value="IV">IV · Deployment &amp; use</option>
+          <option value="All">Cross-domain (All)</option>
+        </select>
+      </label>
+      <label for="fWeek">Jump to
+        <select id="fWeek"></select>
+      </label>
+      <span class="small muted" id="filterCount" aria-live="polite"></span>
+    </div>
+    <div id="weeks" style="display:grid;gap:12px"></div>
+  </section>
+
+  <!-- PROGRESS -->
+  <section class="panel" id="p-progress" role="tabpanel" aria-labelledby="tab-progress" hidden>
+    <div class="card hero" id="progHero"></div>
+    <div class="card">
+      <div class="row" style="justify-content:space-between"><h2>Milestones</h2><span class="small muted">Diamonds sit at each milestone's cumulative core-minute position; the dark tick is where the schedule expects you today.</span></div>
+      <div id="mbar"></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><h2 style="margin-bottom:12px">By week</h2><div class="bars" id="weekBars"></div></div>
+      <div class="card"><h2 style="margin-bottom:12px">By BoK domain</h2><div class="bars" id="domBars"></div></div>
+    </div>
+    <div class="card" id="streakCard"></div>
+  </section>
+
+  <!-- EXAMS -->
+  <section class="panel" id="p-exams" role="tabpanel" aria-labelledby="tab-exams" hidden>
+    <div class="card" id="ruleCard"></div>
+    <div class="card">
+      <h2 style="margin-bottom:10px">Score trend</h2>
+      <div class="chartbox" id="chart"></div>
+    </div>
+    <div class="card">
+      <h2 style="margin-bottom:12px">Log an attempt</h2>
+      <form class="attempt" id="attemptForm" novalidate>
+        <div class="fgrid">
+          <label class="field" for="aDate">Date<input type="date" id="aDate" required></label>
+          <label class="field" for="aTest">Test<select id="aTest"></select></label>
+          <label class="field" for="aOther" id="aOtherWrap" hidden>Name of test<input type="text" id="aOther" placeholder="e.g. Udemy set 2"></label>
+          <label class="field" for="aScore">Overall score %<input type="number" id="aScore" min="0" max="100" step="1" inputmode="numeric" required></label>
+        </div>
+        <fieldset style="border:0;padding:0;margin:0;display:grid;gap:6px">
+          <legend class="field" style="padding:0;margin-bottom:6px">Per-domain scores % (optional)</legend>
+          <div class="domscores">
+            <label class="field" for="aD1">I<input type="number" id="aD1" min="0" max="100" inputmode="numeric"></label>
+            <label class="field" for="aD2">II<input type="number" id="aD2" min="0" max="100" inputmode="numeric"></label>
+            <label class="field" for="aD3">III<input type="number" id="aD3" min="0" max="100" inputmode="numeric"></label>
+            <label class="field" for="aD4">IV<input type="number" id="aD4" min="0" max="100" inputmode="numeric"></label>
+          </div>
+        </fieldset>
+        <label class="field" for="aNotes">Notes<textarea id="aNotes" placeholder="Weakest competencies, timing, what to re-read"></textarea></label>
+        <div class="row"><button class="btn primary" type="submit">Add attempt</button><span class="small" id="formMsg" role="status"></span></div>
+      </form>
+    </div>
+    <div class="card">
+      <h2 style="margin-bottom:10px">Attempts</h2>
+      <div class="tablewrap" id="logTable"></div>
+    </div>
+  </section>
+
+  <!-- DATA -->
+  <section class="panel" id="p-data" role="tabpanel" aria-labelledby="tab-data" hidden>
+    <div class="card" style="display:grid;gap:10px">
+      <h2>Where your progress is saved</h2>
+      <p style="margin:0" id="storageExplain"></p>
+    </div>
+    <div class="card" style="display:grid;gap:12px">
+      <h2>Export and import</h2>
+      <p class="small muted" style="margin:0">A JSON file with your ticked tasks, completion dates and practice-exam attempts.</p>
+      <div class="row">
+        <button class="btn" id="exportBtn" type="button">Export progress (.json)</button>
+        <label class="btn" for="importFile" style="display:inline-block">Import from file…</label>
+        <input type="file" id="importFile" accept="application/json,.json" class="visually-hidden">
+      </div>
+      <div id="exportFallback" hidden>
+        <p class="small" style="margin:0 0 6px">Downloads are not available in this view. Copy the JSON below and save it as a <code>.json</code> file.</p>
+        <div class="row" style="margin-bottom:6px"><button class="btn" id="copyBtn" type="button">Copy JSON</button></div>
+        <pre class="export" id="exportText" tabindex="0"></pre>
+      </div>
+      <p class="small" id="dataMsg" role="status" style="margin:0"></p>
+    </div>
+    <div class="card" style="display:grid;gap:12px">
+      <h2>Reset</h2>
+      <p class="small muted" style="margin:0">Clears every tick, completion date and exam attempt, here and in synced storage.</p>
+      <div><button class="btn danger" id="resetBtn" type="button">Reset all progress…</button></div>
+      <div class="confirm" id="resetConfirm" hidden>
+        <strong>Erase all progress? This cannot be undone.</strong>
+        <span class="small">Export first if you might want it back.</span>
+        <div class="row"><button class="btn danger" id="resetYes" type="button">Yes, erase everything</button><button class="btn" id="resetNo" type="button">Cancel</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+const PLAN = {"meta":{"startDate":"2026-09-23","examTargetDate":"2026-10-31","totalWeeks":6,"totalHours":64.6,"coreHours":64.6,"stretchHours":14.7,"studyHoursExcludingExamSitting":61.8,"bookByDate":"2026-10-13","goNoGoDate":"2026-10-27","fallbackExamDate":"2026-11-14","domains":[{"id":"I","name":"Understanding the foundations of AI governance","weight":"~21%","scoredQuestions":"16-20"},{"id":"II","name":"Understanding how laws, standards and frameworks apply to AI","weight":"~25%","scoredQuestions":"19-23"},{"id":"III","name":"Understanding how to govern AI development","weight":"~27%","scoredQuestions":"21-25"},{"id":"IV","name":"Understanding how to govern AI deployment and use","weight":"~27%","scoredQuestions":"21-25"}],"targetScores":{"diagnostic":"No target; ranks domains","mock1":">=60% overall and >=55% on Domains III and IV (else fallback course + book 14 Nov)","mock2":">=70% overall, no domain <65% (>=75% counts toward the booking rule)","mock3":">=75% overall, no domain <65-70%","iappOfficial":">=70-75% timed","bookingRule":"Mocks #2 and #3 (two consecutive) >=75% with no domain <65-70% AND IAPP official >=70-75%"}},"weeks":[{"week":1,"theme":"Blueprint, diagnostic, Domain I (governance programme) and a first pass of Domain II","bokDomains":["I","II"],"targetHours":11.6,"days":[{"date":"2026-09-23","weekday":"Wednesday","isRestDay":false,"tasks":[{"id":"w1d1t1","title":"Read the AIGP BoK v2.1 PDF: all four domains' competencies and performance indicators; tag each line Strong / Partial / Weak against your BlueDot background","url":"https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf","type":"read","minutes":50,"optional":false,"domain":"All"},{"id":"w1d1t2","title":"Request the free IAPP AIGP study guide (form); check it shows the 4-domain structure before using it","url":"https://iapp.org/l/aigp-study-guide-request","type":"read","minutes":10,"optional":false,"domain":"All"},{"id":"w1d1t3","title":"Read the IAPP Candidate Handbook PDF: scheduling, rescheduling/cancellation cut-offs, ID rules, OnVUE requirements","url":"https://prod.iapp.org/media/pdf/certification/IAPP_Certification_Handbook_Updated.pdf","type":"read","minutes":20,"optional":false,"domain":"All"},{"id":"w1d1t4","title":"Watch 'AIGP v2.1 Full Course Update Explained' (what changed in v2.1)","url":"https://www.youtube.com/watch?v=cmWGspcCdkc","type":"watch","minutes":45,"optional":true,"domain":"All"}]},{"date":"2026-09-24","weekday":"Thursday","isRestDay":false,"tasks":[{"id":"w1d2t1","title":"Diagnostic part 1: IAPP free study guide sample questions, untimed","url":"https://iapp.org/l/aigp-study-guide-request","type":"practice","minutes":35,"optional":false,"domain":"All","milestone":"Diagnostic"},{"id":"w1d2t2","title":"Diagnostic part 2: AIGP Playbook 15-question free mock preview, untimed","url":"https://aigpplaybook.com/premium-exam.html","type":"practice","minutes":25,"optional":false,"domain":"All"},{"id":"w1d2t3","title":"Start a gap log: tag every diagnostic miss by BoK competency and rank the four domains weakest to strongest","url":"","type":"review","minutes":20,"optional":false,"domain":"All"}]},{"date":"2026-09-25","weekday":"Friday","isRestDay":true,"tasks":[{"id":"w1d3t1","title":"Rest day: no study","url":"","type":"review","minutes":0,"optional":false,"domain":"All"}]},{"date":"2026-09-26","weekday":"Saturday","isRestDay":false,"tasks":[{"id":"w1d4t1","title":"Read AIGP Playbook Domain I notes: skim I.A; study I.B (roles, committees, cross-functional collaboration, AI literacy) and I.C (policies across the lifecycle)","url":"https://aigpplaybook.com/aigp-domain-1.html","type":"read","minutes":75,"optional":false,"domain":"I"},{"id":"w1d4t2","title":"Read NIST AI RMF Playbook GOVERN 1-6 (policies, accountability, workforce, culture, stakeholder engagement, third-party risk)","url":"https://airc.nist.gov/airmf-resources/playbook/govern/","type":"read","minutes":60,"optional":false,"domain":"I"},{"id":"w1d4t3","title":"Listen: AIGP Audio Course Ep. 11, updating privacy, security, data-governance and IP policies for AI (I.C.2)","url":"https://open.spotify.com/episode/3ca2ImW1KV6MZ8gH1WFwU3","type":"watch","minutes":30,"optional":false,"domain":"I"},{"id":"w1d4t4","title":"Read EU AI Act Article 4 (AI literacy duty)","url":"https://artificialintelligenceact.eu/article/4/","type":"read","minutes":10,"optional":false,"domain":"I"},{"id":"w1d4t5","title":"Make Anki flashcards: Domain I roles, governance committee/RACI, policy types, AI inventory","url":"","type":"flashcards","minutes":30,"optional":false,"domain":"I"},{"id":"w1d4t6","title":"Read IAPP AI Governance Profession Report 2025: where governance sits, team structures","url":"https://iapp.org/resources/article/ai-governance-profession-report","type":"read","minutes":45,"optional":true,"domain":"I"}]},{"date":"2026-09-27","weekday":"Sunday","isRestDay":false,"tasks":[{"id":"w1d5t1","title":"Read IAPP AI Governance in Practice Report 2024: programme set-up sections (governance structures, inventories, risk assessment)","url":"https://prod.iapp.org/resources/article/ai-governance-in-practice-report/","type":"read","minutes":60,"optional":false,"domain":"I"},{"id":"w1d5t2","title":"Read the IAPP Key Terms for AI Governance glossary end to end; flag unfamiliar terms","url":"https://iapp.org/resources/ai-governance-glossary","type":"read","minutes":45,"optional":false,"domain":"I"},{"id":"w1d5t3","title":"Make Anki flashcards from ~40 flagged glossary terms (IAPP wording)","url":"","type":"flashcards","minutes":30,"optional":false,"domain":"I"},{"id":"w1d5t4","title":"Skim OECD AI Principles: 5 values-based principles + 5 recommendations (fast, BlueDot-covered)","url":"https://oecd.ai/en/ai-principles","type":"read","minutes":15,"optional":false,"domain":"II"},{"id":"w1d5t5","title":"Read Commission Guidelines on the AI-system definition: the 7 definitional elements only (fast)","url":"https://ai-act-service-desk.ec.europa.eu/sites/default/files/2025-08/commission_guidelines_on_the_definition_of_an_artificial_intelligence_system_established_by_regulation_eu_20241689_ai_actenglish_nf2skcqfrtjdfggjavcodopcwz4_112455.PDF","type":"read","minutes":20,"optional":false,"domain":"I"},{"id":"w1d5t6","title":"Skim NIST AI 600-1 GenAI Profile Section 2 (the 12 GAI risks); BlueDot-covered, just map names","url":"https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf","type":"read","minutes":30,"optional":true,"domain":"I"}]},{"date":"2026-09-28","weekday":"Monday","isRestDay":false,"tasks":[{"id":"w1d6t1","title":"Read the EU AI Act high-level summary (whole page): risk tiers, provider vs deployer duties, GPAI","url":"https://artificialintelligenceact.eu/high-level-summary/","type":"read","minutes":45,"optional":false,"domain":"II"},{"id":"w1d6t2","title":"Read EU AI Act Article 3 definitions: points (1) AI system, (3) provider, (4) deployer, (5)-(7) authorised rep/importer/distributor, (63)-(66) GPAI","url":"https://artificialintelligenceact.eu/article/3/","type":"read","minutes":25,"optional":false,"domain":"II"},{"id":"w1d6t3","title":"Add Art 3 role definitions to Anki","url":"","type":"flashcards","minutes":10,"optional":false,"domain":"II"},{"id":"w1d6t4","title":"Read Veronica Lin's 'How I passed the AIGP exam' (what worked, what didn't)","url":"https://aigouvernance.com/how-i-passed-the-aigp-exam-what-actually-worked-what-didnt/","type":"read","minutes":15,"optional":true,"domain":"All"}]},{"date":"2026-09-29","weekday":"Tuesday","isRestDay":false,"tasks":[{"id":"w1d7t1","title":"Read GDPR Article 5 (principles): note how purpose limitation and minimisation bite on AI training data","url":"https://gdpr-info.eu/art-5-gdpr/","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w1d7t2","title":"Read GDPR Article 6 (lawful bases): legitimate interest vs consent for training and deployment","url":"https://gdpr-info.eu/art-6-gdpr/","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w1d7t3","title":"Read GDPR Article 22 (automated individual decision-making, incl. profiling)","url":"https://gdpr-info.eu/art-22-gdpr/","type":"read","minutes":15,"optional":false,"domain":"II"},{"id":"w1d7t4","title":"Week 1 recap: Anki review of all Week 1 cards + write a one-page Domain I summary from memory","url":"","type":"review","minutes":25,"optional":false,"domain":"I"},{"id":"w1d7t5","title":"Listen: AIGP Audio Course Ep. 1, decoding the exam blueprint","url":"https://podcasts.apple.com/us/podcast/episode-1-decode-the-aigp-exam-blueprint-question/id1890735004?i=1000759289642","type":"watch","minutes":25,"optional":true,"domain":"All"},{"id":"w1d7t6","title":"Skim Oliver Patel's Unofficial AIGP Resource Guide and bookmark links for your Weak competencies","url":"https://oliverpatel.substack.com/p/the-unofficial-aigp-resource-guide","type":"read","minutes":20,"optional":true,"domain":"All"}]}]},{"week":2,"theme":"First pass: Domain III (governing development) and Domain IV (governing deployment)","bokDomains":["III","IV","II"],"targetHours":11.9,"days":[{"date":"2026-09-30","weekday":"Wednesday","isRestDay":false,"tasks":[{"id":"w2d1t1","title":"Read NIST AI RMF 1.0 PDF Part 1, Section 3 (7 trustworthy-AI characteristics) and Section 5 overview of the Core","url":"https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf","type":"read","minutes":45,"optional":false,"domain":"II"},{"id":"w2d1t2","title":"Read the AIRC AI RMF Core page: Govern/Map/Measure/Manage and their category IDs (GOVERN 1-6, MAP 1-5, MEASURE 1-4, MANAGE 1-4)","url":"https://airc.nist.gov/airmf-resources/airmf/5-sec-core/","type":"read","minutes":35,"optional":false,"domain":"II"},{"id":"w2d1t3","title":"Watch 'NIST AI RMF deep dive: GOVERN vs MAP vs MEASURE vs MANAGE'","url":"https://www.youtube.com/watch?v=IbKXHfkFcBQ","type":"watch","minutes":30,"optional":true,"domain":"II"}]},{"date":"2026-10-01","weekday":"Thursday","isRestDay":false,"tasks":[{"id":"w2d2t1","title":"Read NIST AI RMF Playbook MAP 1-5 (context, categorisation, capabilities, risks/benefits, impacts): the design-stage checklist","url":"https://airc.nist.gov/airmf-resources/playbook/map/","type":"read","minutes":50,"optional":false,"domain":"III"},{"id":"w2d2t2","title":"Read EU AI Act Article 9 (risk management system for high-risk AI)","url":"https://artificialintelligenceact.eu/article/9/","type":"read","minutes":20,"optional":false,"domain":"III"},{"id":"w2d2t3","title":"Add MAP categories and Art 9 steps to Anki","url":"","type":"flashcards","minutes":10,"optional":false,"domain":"III"}]},{"date":"2026-10-02","weekday":"Friday","isRestDay":true,"tasks":[{"id":"w2d3t1","title":"Rest day: no study","url":"","type":"review","minutes":0,"optional":false,"domain":"All"}]},{"date":"2026-10-03","weekday":"Saturday","isRestDay":false,"tasks":[{"id":"w2d4t1","title":"Read EU AI Act Article 10 (data and data governance: training, validation, test sets; bias examination)","url":"https://artificialintelligenceact.eu/article/10/","type":"read","minutes":25,"optional":false,"domain":"III"},{"id":"w2d4t2","title":"Read ICO guidance: 'How should we assess security and data minimisation in AI?'","url":"https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-should-we-assess-security-and-data-minimisation-in-ai/","type":"read","minutes":40,"optional":false,"domain":"III"},{"id":"w2d4t3","title":"Read Datasheets for Datasets (Gebru et al.): abstract + the question sets (motivation, composition, collection, preprocessing, uses)","url":"https://arxiv.org/abs/1803.09010","type":"read","minutes":30,"optional":false,"domain":"III"},{"id":"w2d4t4","title":"Read Model Cards for Model Reporting (Mitchell et al.): abstract + the model-card sections","url":"https://arxiv.org/abs/1810.03993","type":"read","minutes":25,"optional":false,"domain":"III"},{"id":"w2d4t5","title":"Read NIST AI RMF Playbook MEASURE 1-4 (metrics, TEVV, bias/fairness, feedback); skim the eval parts you know from BlueDot","url":"https://airc.nist.gov/airmf-resources/playbook/measure/","type":"read","minutes":50,"optional":false,"domain":"III"},{"id":"w2d4t6","title":"Make Anki flashcards: Domain III lifecycle stages and the artefact produced at each (intake form, impact assessment, datasheet, model card, test report)","url":"","type":"flashcards","minutes":25,"optional":false,"domain":"III"},{"id":"w2d4t7","title":"Read OWASP Top 10 for LLM Applications 2025: LLM01-LLM10 titles + mitigations","url":"https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/","type":"read","minutes":30,"optional":true,"domain":"III"}]},{"date":"2026-10-04","weekday":"Sunday","isRestDay":false,"tasks":[{"id":"w2d5t1","title":"Read NIST AI RMF Playbook MANAGE 1-4 (risk response, third-party risk, post-deployment monitoring, incident communication)","url":"https://airc.nist.gov/airmf-resources/playbook/manage/","type":"read","minutes":50,"optional":false,"domain":"IV"},{"id":"w2d5t2","title":"Read EU AI Act Article 26 (obligations of deployers of high-risk AI)","url":"https://artificialintelligenceact.eu/article/26/","type":"read","minutes":25,"optional":false,"domain":"IV"},{"id":"w2d5t3","title":"Read GDPR Article 35 (DPIA: when required, minimum contents)","url":"https://gdpr-info.eu/art-35-gdpr/","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w2d5t4","title":"Work through the ICO AI and data protection risk toolkit: its risk areas and example controls","url":"https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/ai-and-data-protection-risk-toolkit/","type":"read","minutes":30,"optional":false,"domain":"IV"},{"id":"w2d5t5","title":"Read IAPP: 'EU model contractual clauses for AI procurement: a practical guide' (vendor terms, IV.B)","url":"https://iapp.org/news/a/eu-model-contractual-clauses-for-ai-procurement-a-practical-guide","type":"read","minutes":30,"optional":false,"domain":"IV"},{"id":"w2d5t6","title":"Read Singapore Model AI Governance Framework for Agentic AI: agent risks and controls sections (agentic architectures are new in v2.1, IV.A)","url":"https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf","type":"read","minutes":35,"optional":false,"domain":"IV"},{"id":"w2d5t7","title":"Make Anki flashcards: deployer duties, DPIA triggers, vendor contract terms, agent controls","url":"","type":"flashcards","minutes":10,"optional":false,"domain":"IV"}]},{"date":"2026-10-05","weekday":"Monday","isRestDay":false,"tasks":[{"id":"w2d6t1","title":"Read EU AI Act Article 27 (fundamental rights impact assessment)","url":"https://artificialintelligenceact.eu/article/27/","type":"read","minutes":20,"optional":false,"domain":"IV"},{"id":"w2d6t2","title":"Complete Canada's Algorithmic Impact Assessment tool for one invented scenario (e.g., benefits-eligibility triage)","url":"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html","type":"practice","minutes":40,"optional":false,"domain":"IV"},{"id":"w2d6t3","title":"Week 2 recap: cumulative Anki review (Weeks 1-2)","url":"","type":"flashcards","minutes":20,"optional":false,"domain":"All"},{"id":"w2d6t4","title":"Watch 'AIGP How They Passed - July 2026' (the only v2.1-era candidate panel)","url":"https://www.youtube.com/watch?v=rdASQWETQyY","type":"watch","minutes":45,"optional":true,"domain":"All"}]},{"date":"2026-10-06","weekday":"Tuesday","isRestDay":false,"tasks":[{"id":"w2d7t1","title":"Read AIGP Playbook Domain II notes: II.A (privacy law) and II.B (other laws) sections","url":"https://aigpplaybook.com/aigp-domain-2.html","type":"read","minutes":40,"optional":false,"domain":"II"},{"id":"w2d7t2","title":"Try AI Career Pro's free practice exam / free Domain I-A trial; judge whether the items feel IAPP-like before buying","url":"https://governance.aicareer.pro/course/aigp-exam-prep","type":"practice","minutes":30,"optional":false,"domain":"All"},{"id":"w2d7t3","title":"Read 'Why I failed the AIGP exam' (FAIR Institute): answer as the ideal governance function, not the pragmatic operator","url":"https://www.fairinstitute.org/blog/why-i-failed-the-aigp-exam-and-you-should-too","type":"read","minutes":10,"optional":false,"domain":"All"},{"id":"w2d7t4","title":"Read IAPP: 'EDPB weighs in on key questions on personal data in AI models'","url":"https://iapp.org/news/a/edpb-weighs-in-on-key-questions-on-personal-data-in-ai-models","type":"read","minutes":20,"optional":true,"domain":"II"},{"id":"w2d7t5","title":"Drill 20 OpenExamPrep questions untimed (Domains III-IV)","url":"https://open-exam-prep.com/practice/aigp","type":"practice","minutes":25,"optional":true,"domain":"All"}]}]},{"week":3,"theme":"EU AI Act article-level deep dive, Mock #1, standards (II.C, II.D)","bokDomains":["II","All"],"targetHours":11.6,"days":[{"date":"2026-10-07","weekday":"Wednesday","isRestDay":false,"tasks":[{"id":"w3d1t1","title":"Read EU AI Act Article 5 (the prohibited practices)","url":"https://artificialintelligenceact.eu/article/5/","type":"read","minutes":30,"optional":false,"domain":"II"},{"id":"w3d1t2","title":"Read EU AI Act Article 6 (high-risk classification rules, incl. the Art 6(3) derogation and profiling carve-back)","url":"https://artificialintelligenceact.eu/article/6/","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w3d1t3","title":"Read EU AI Act Annex III (the 8 high-risk use-case areas)","url":"https://artificialintelligenceact.eu/annex/3/","type":"read","minutes":25,"optional":false,"domain":"II"},{"id":"w3d1t4","title":"Read IAPP Top 10 EU AI Act: 'Understanding and assessing risk'","url":"https://iapp.org/resources/article/top-impacts-eu-ai-act-understanding-assessing-risk","type":"read","minutes":30,"optional":true,"domain":"II"},{"id":"w3d1t5","title":"Skim the Commission Guidelines on prohibited AI practices: worked examples for each Art 5 ban","url":"https://ai-act-service-desk.ec.europa.eu/sites/default/files/2025-08/guidelines_on_prohibited_artificial_intelligence_practices_established_by_regulation_eu_20241689_ai_act_english_ied3r5nwo50xggpcfmwckm3nuc_112367-1.PDF","type":"read","minutes":30,"optional":true,"domain":"II"}]},{"date":"2026-10-08","weekday":"Thursday","isRestDay":false,"tasks":[{"id":"w3d2t1","title":"Buy ONE v2.1 practice bank: AI Career Pro ($99, 5 full mocks) if its free trial felt IAPP-like; otherwise one Udemy v2.1 bank on sale","url":"https://governance.aicareer.pro/course/aigp-exam-prep","type":"practice","minutes":15,"optional":false,"domain":"All","milestone":"Buy practice bank (AI Career Pro, $99)"},{"id":"w3d2t2","title":"Read EU AI Act Chapter III Section 2 (Arts 8-15 high-risk requirements), focusing on Arts 11 technical documentation, 12 record-keeping, 13 transparency to deployers","url":"https://artificialintelligenceact.eu/section/3-2/","type":"read","minutes":40,"optional":false,"domain":"II"},{"id":"w3d2t3","title":"Read EU AI Act Article 14 (human oversight)","url":"https://artificialintelligenceact.eu/article/14/","type":"read","minutes":20,"optional":false,"domain":"III"},{"id":"w3d2t4","title":"Read IAPP Top 10 EU AI Act: 'Subject matter, definitions, key actors and scope'","url":"https://iapp.org/resources/article/top-impacts-eu-ai-act-scope-subject-definitions-actors","type":"read","minutes":30,"optional":true,"domain":"II"}]},{"date":"2026-10-09","weekday":"Friday","isRestDay":true,"tasks":[{"id":"w3d3t1","title":"Rest day: no study","url":"","type":"review","minutes":0,"optional":false,"domain":"All"}]},{"date":"2026-10-10","weekday":"Saturday","isRestDay":false,"tasks":[{"id":"w3d4t1","title":"FULL MOCK #1: AI Career Pro Mock 1, 100 Qs, timed 165 min, no notes (target >=60% overall, >=55% on III and IV)","url":"https://governance.aicareer.pro/course/aigp-exam-prep","type":"practice","minutes":165,"optional":false,"domain":"All","milestone":"First practice exam"},{"id":"w3d4t2","title":"Score Mock #1 by domain; update the gap log; apply the decision rule (fallback course? which booking date?)","url":"","type":"review","minutes":30,"optional":false,"domain":"All"}]},{"date":"2026-10-11","weekday":"Sunday","isRestDay":false,"tasks":[{"id":"w3d5t1","title":"Review every Mock #1 item (right and wrong): write why each distractor is wrong","url":"https://governance.aicareer.pro/course/aigp-exam-prep","type":"review","minutes":90,"optional":false,"domain":"All"},{"id":"w3d5t2","title":"Read EU AI Act Article 25 (value chain: when a deployer/distributor becomes a provider)","url":"https://artificialintelligenceact.eu/article/25/","type":"read","minutes":25,"optional":false,"domain":"II"},{"id":"w3d5t3","title":"Read EU AI Act Article 50 (transparency: chatbots, synthetic content, deepfakes, emotion recognition)","url":"https://artificialintelligenceact.eu/article/50/","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w3d5t4","title":"Read EU AI Act Article 99 (penalty tiers: EUR35m/7%, EUR15m/3%, EUR7.5m/1%)","url":"https://artificialintelligenceact.eu/article/99/","type":"read","minutes":15,"optional":false,"domain":"II"},{"id":"w3d5t5","title":"Make Anki flashcards from every Mock #1 miss","url":"","type":"flashcards","minutes":30,"optional":false,"domain":"All"},{"id":"w3d5t6","title":"Run the EU AI Act Compliance Checker on 5 invented scenarios (HR screening, chatbot, credit scoring, emotion recognition at work, product safety component)","url":"https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/","type":"practice","minutes":45,"optional":true,"domain":"II"}]},{"date":"2026-10-12","weekday":"Monday","isRestDay":false,"tasks":[{"id":"w3d6t1","title":"Read the AI Act implementation timeline: ORIGINAL dates (2 Feb 2025, 2 Aug 2025, 2 Aug 2026, 2 Aug 2027)","url":"https://artificialintelligenceact.eu/implementation-timeline/","type":"read","minutes":20,"optional":false,"domain":"II","milestone":"50% of plan"},{"id":"w3d6t2","title":"Read Morgan Lewis on the Digital Omnibus: NEW dates (Annex III to 2 Dec 2027, Annex I to 2 Aug 2028)","url":"https://www.morganlewis.com/pubs/2026/06/eu-approves-delays-and-other-amendments-to-certain-eu-ai-act-obligations-what-businesses-should-know","type":"read","minutes":25,"optional":false,"domain":"II"},{"id":"w3d6t3","title":"Read EU AI Act Article 53 (GPAI provider obligations); fast, BlueDot-covered","url":"https://artificialintelligenceact.eu/article/53/","type":"read","minutes":10,"optional":false,"domain":"II"},{"id":"w3d6t4","title":"Read EU AI Act Article 51 (systemic-risk GPAI, 10^25 FLOP presumption); fast","url":"https://artificialintelligenceact.eu/article/51/","type":"read","minutes":10,"optional":false,"domain":"II"},{"id":"w3d6t5","title":"Week 3 recap: cumulative Anki review + a two-column date card (original vs Omnibus)","url":"","type":"flashcards","minutes":15,"optional":false,"domain":"All"},{"id":"w3d6t6","title":"Read IAPP Top 10 EU AI Act: 'Obligations for general-purpose AI models'","url":"https://iapp.org/resources/article/top-impacts-eu-ai-act-obligations-general-purpose-ai-models","type":"read","minutes":25,"optional":true,"domain":"II"}]},{"date":"2026-10-13","weekday":"Tuesday","isRestDay":false,"tasks":[{"id":"w3d7t1","title":"Read the ISO/IEC 42001 page (AIMS scope, clause structure)","url":"https://www.iso.org/standard/42001","type":"read","minutes":5,"optional":false,"domain":"II"},{"id":"w3d7t2","title":"Read ISMS.online on ISO 42001 Annex A controls (A.2-A.10 objectives)","url":"https://www.isms.online/iso-42001/annex-a-controls/","type":"read","minutes":35,"optional":false,"domain":"II"},{"id":"w3d7t3","title":"Skim the NIST AI RMF to ISO/IEC 42001 crosswalk: how the functions map to 42001 clauses","url":"https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf","type":"read","minutes":15,"optional":false,"domain":"II"},{"id":"w3d7t4","title":"Read the ISO/IEC 42005 page (AI system impact assessment, new in v2.1)","url":"https://www.iso.org/standard/42005","type":"read","minutes":5,"optional":false,"domain":"II"},{"id":"w3d7t5","title":"Skim the ISO/IEC 42005 to NIST AI RMF crosswalk","url":"https://airc.nist.gov/documents/2/ai-2025-00108_ISO_IEC_42005_to_NIST_AI_RMF_Crosswalk.pdf","type":"read","minutes":15,"optional":false,"domain":"II"},{"id":"w3d7t6","title":"BOOK THE EXAM (gated on Mock #1): >=60% and >=55% on III/IV -> book Sat 31 Oct 2026; otherwise book fallback Sat 14 Nov 2026. Book via the IAPP AIGP page, then Pearson VUE","url":"https://iapp.org/certify/aigp","type":"review","minutes":15,"optional":false,"domain":"All","milestone":"Book exam by (provisional, gated on Mock #1)"},{"id":"w3d7t7","title":"Skim the IAPP US State AI Governance Legislation Tracker (which states, which models)","url":"https://iapp.org/resources/article/us-state-ai-governance-legislation-tracker","type":"read","minutes":20,"optional":true,"domain":"II"}]}]},{"week":4,"theme":"II.A/II.B detail, Domain III deep dive, Mock #2, Domain IV deep dive","bokDomains":["II","III","IV"],"targetHours":12.2,"days":[{"date":"2026-10-14","weekday":"Wednesday","isRestDay":false,"tasks":[{"id":"w4d1t1","title":"Read FTC 'Operation AI Comply' (Section 5 deception/unfairness applied to AI claims)","url":"https://www.ftc.gov/business-guidance/blog/2024/09/operation-ai-comply-continuing-crackdown-overpromises-ai-related-lies","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w4d1t2","title":"Read NYC DCWP page on Local Law 144 (AEDT bias audits, candidate notice)","url":"https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w4d1t3","title":"Read McDermott: Colorado SB24-205 blocked, replaced by SB26-189 (eff. 1 Jan 2027); keep the developer/deployer duty-of-care concepts","url":"https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w4d1t4","title":"Read Wittliff Cutter: Texas TRAIGA, the Colorado reset and federal preemption (2026)","url":"https://www.wittliffcutter.com/news-insights/ai-regulation-texas-colorado-federal-2026","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w4d1t5","title":"Read the Dec 2025 White House EO on a national AI policy framework (state-law preemption)","url":"https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/","type":"read","minutes":20,"optional":true,"domain":"II"}]},{"date":"2026-10-15","weekday":"Thursday","isRestDay":false,"tasks":[{"id":"w4d2t1","title":"Read ICO Guidance on AI and data protection: accountability, lawfulness, fairness and transparency sections","url":"https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/","type":"read","minutes":45,"optional":false,"domain":"II"},{"id":"w4d2t2","title":"Read GDPR Article 13 (incl. 'meaningful information about the logic involved')","url":"https://gdpr-info.eu/art-13-gdpr/","type":"read","minutes":15,"optional":false,"domain":"II"},{"id":"w4d2t3","title":"Read EDPB Opinion 28/2024 executive summary (model anonymity, legitimate-interest 3-step test, consequences of unlawful training)","url":"https://www.edpb.europa.eu/system/files/2024-12/edpb_opinion_202428_ai-models_en.pdf","type":"read","minutes":25,"optional":false,"domain":"II"},{"id":"w4d2t4","title":"Read ICO: 'How do we ensure individual rights in our AI systems?'","url":"https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-individual-rights-in-our-ai-systems/","type":"read","minutes":30,"optional":true,"domain":"II"}]},{"date":"2026-10-16","weekday":"Friday","isRestDay":true,"tasks":[{"id":"w4d3t1","title":"Rest day: no study","url":"","type":"review","minutes":0,"optional":false,"domain":"All"}]},{"date":"2026-10-17","weekday":"Saturday","isRestDay":false,"tasks":[{"id":"w4d4t1","title":"Read AIGP Playbook training material: Domain III module (III.A design/build, III.B data, III.C release/monitoring/maintenance)","url":"https://aigpplaybook.com/training.html","type":"read","minutes":60,"optional":false,"domain":"III"},{"id":"w4d4t2","title":"Read EU AI Act Article 15 (accuracy, robustness and cybersecurity) on the AI Act Service Desk","url":"https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-15","type":"read","minutes":20,"optional":false,"domain":"III"},{"id":"w4d4t3","title":"Read IAPP Top 10 EU AI Act: 'AI assurance across the risk categories'","url":"https://iapp.org/resources/article/top-impacts-eu-ai-act-ai-assurance-risk-categories","type":"read","minutes":35,"optional":false,"domain":"III"},{"id":"w4d4t4","title":"Read EU AI Act Article 43 (conformity assessment routes) as a III.C release gate","url":"https://artificialintelligenceact.eu/article/43/","type":"read","minutes":15,"optional":false,"domain":"III"},{"id":"w4d4t5","title":"Read EU AI Act Article 47 (EU declaration of conformity) and note what triggers CE marking","url":"https://artificialintelligenceact.eu/article/47/","type":"read","minutes":10,"optional":false,"domain":"III"},{"id":"w4d4t6","title":"Read EU AI Act Article 49 (registration in the EU database)","url":"https://artificialintelligenceact.eu/article/49/","type":"read","minutes":10,"optional":false,"domain":"III"},{"id":"w4d4t7","title":"Read IAPP Top 10 EU AI Act: 'Post-market monitoring, information sharing and enforcement'","url":"https://iapp.org/resources/article/top-impacts-eu-ai-act-post-market-monitoring-sharing-enforcement","type":"read","minutes":35,"optional":false,"domain":"III"},{"id":"w4d4t8","title":"Make Anki flashcards: release gates, post-market monitoring, serious-incident reporting","url":"","type":"flashcards","minutes":25,"optional":false,"domain":"III"},{"id":"w4d4t9","title":"Skim NIST AI 100-2e2025 adversarial ML taxonomy: the attack classes (evasion, poisoning, privacy, misuse)","url":"https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf","type":"read","minutes":40,"optional":true,"domain":"III"},{"id":"w4d4t10","title":"Drill 40 OpenExamPrep questions untimed, filtered to your weakest domain","url":"https://open-exam-prep.com/practice/aigp","type":"practice","minutes":40,"optional":true,"domain":"All"}]},{"date":"2026-10-18","weekday":"Sunday","isRestDay":false,"tasks":[{"id":"w4d5t1","title":"FULL MOCK #2: AI Career Pro Mock 2, timed 165 min (target >=70% overall, no domain <65%; >=75% counts toward the booking rule)","url":"https://governance.aicareer.pro/course/aigp-exam-prep","type":"practice","minutes":165,"optional":false,"domain":"All","milestone":"Second practice exam"},{"id":"w4d5t2","title":"Score Mock #2 by domain; update the gap log; pick the two weakest competencies for Week 5","url":"","type":"review","minutes":20,"optional":false,"domain":"All"}]},{"date":"2026-10-19","weekday":"Monday","isRestDay":false,"tasks":[{"id":"w4d6t1","title":"Review every Mock #2 item: why each distractor is wrong","url":"https://governance.aicareer.pro/course/aigp-exam-prep","type":"review","minutes":60,"optional":false,"domain":"All"},{"id":"w4d6t2","title":"Buy the IAPP official AIGP practice exam (~$50-60, price unverified); confirm the store page references BoK v2.1","url":"https://store.iapp.org/aigp-practice-exam-digital/","type":"practice","minutes":10,"optional":false,"domain":"All","milestone":"Buy IAPP practice exam"},{"id":"w4d6t3","title":"Read FPF on South Korea's AI Framework (Basic) Act, in force 22 Jan 2026 (new in v2.1)","url":"https://fpf.org/blog/south-koreas-new-ai-framework-act-a-balancing-act-between-innovation-and-regulation/","type":"read","minutes":20,"optional":false,"domain":"II"},{"id":"w4d6t4","title":"Read Canada's Directive on Automated Decision-Making (impact levels, requirements)","url":"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/automated-decision-making.html","type":"read","minutes":20,"optional":true,"domain":"II"},{"id":"w4d6t5","title":"Read China's Interim Measures for Generative AI Services (English translation)","url":"https://www.chinalawtranslate.com/en/generative-ai-interim/","type":"read","minutes":20,"optional":true,"domain":"II"}]},{"date":"2026-10-20","weekday":"Tuesday","isRestDay":false,"tasks":[{"id":"w4d7t1","title":"Read AIGP Playbook training material: Domain IV module (IV.A deploy decision incl. agentic, IV.B assessments/vendor due diligence, IV.C monitoring, incidents, decommissioning)","url":"https://aigpplaybook.com/training.html","type":"read","minutes":55,"optional":false,"domain":"IV"},{"id":"w4d7t2","title":"Week 4 recap: cumulative Anki review (all decks)","url":"","type":"flashcards","minutes":25,"optional":false,"domain":"All"},{"id":"w4d7t3","title":"Skim GDPR Chapter 3 (data subject rights, Arts 12-23) for AI-relevant rights: access, erasure, objection","url":"https://gdpr-info.eu/chapter-3/","type":"read","minutes":15,"optional":true,"domain":"II"},{"id":"w4d7t4","title":"Read the Council of Europe AI treaty (CETS 225) announcement","url":"https://www.coe.int/en/web/portal/-/council-of-europe-opens-first-ever-global-treaty-on-ai-for-signature","type":"read","minutes":15,"optional":true,"domain":"II"}]}]},{"week":5,"theme":"Consolidation 1: gap closure, Mock #3, IAPP official practice exam, go/no-go","bokDomains":["All","IV","III"],"targetHours":11.9,"days":[{"date":"2026-10-21","weekday":"Wednesday","isRestDay":false,"tasks":[{"id":"w5d1t1","title":"Gap closure 1 (default IV.B if the gap log agrees): re-read the IAPP guide to EU model contractual clauses; list 10 vendor due-diligence questions","url":"https://iapp.org/news/a/eu-model-contractual-clauses-for-ai-procurement-a-practical-guide","type":"review","minutes":40,"optional":false,"domain":"IV"},{"id":"w5d1t2","title":"Read AIGP Playbook reference sheets and checklists (impact assessments, vendor review)","url":"https://aigpplaybook.com/resources/","type":"review","minutes":20,"optional":false,"domain":"IV"},{"id":"w5d1t3","title":"Cumulative Anki review (all decks)","url":"","type":"flashcards","minutes":20,"optional":false,"domain":"All"},{"id":"w5d1t4","title":"Drill 60 OpenExamPrep questions untimed on your two weakest competencies","url":"https://open-exam-prep.com/practice/aigp","type":"practice","minutes":60,"optional":true,"domain":"All"}]},{"date":"2026-10-22","weekday":"Thursday","isRestDay":false,"tasks":[{"id":"w5d2t1","title":"Gap closure 2 (default IV.C): re-read NIST Playbook MANAGE 3-4 (third-party risk, post-deployment monitoring, incident response, decommissioning)","url":"https://airc.nist.gov/airmf-resources/playbook/manage/","type":"review","minutes":40,"optional":false,"domain":"IV"},{"id":"w5d2t2","title":"Re-read EU AI Act Article 25 alongside Art 26: build a provider vs deployer vs 'deemed provider' table","url":"https://artificialintelligenceact.eu/article/25/","type":"review","minutes":20,"optional":false,"domain":"II"},{"id":"w5d2t3","title":"Re-read EU AI Act Article 26 (deployer duties) and check the table","url":"https://artificialintelligenceact.eu/article/26/","type":"review","minutes":20,"optional":false,"domain":"IV"},{"id":"w5d2t4","title":"Watch 'Top 3 Tips to Pass Your AIGP Exam on the First Try'","url":"https://www.youtube.com/watch?v=0muZy8Pcxks","type":"watch","minutes":20,"optional":true,"domain":"All"}]},{"date":"2026-10-23","weekday":"Friday","isRestDay":true,"tasks":[{"id":"w5d3t1","title":"Rest day: no study","url":"","type":"review","minutes":0,"optional":false,"domain":"All"}]},{"date":"2026-10-24","weekday":"Saturday","isRestDay":false,"tasks":[{"id":"w5d4t1","title":"FULL MOCK #3: AI Career Pro Mock 3, timed 165 min (target >=75% overall, no domain <65-70%)","url":"https://governance.aicareer.pro/course/aigp-exam-prep","type":"practice","minutes":165,"optional":false,"domain":"All"},{"id":"w5d4t2","title":"Score Mock #3 by domain and compare with Mock #2","url":"","type":"review","minutes":20,"optional":false,"domain":"All"},{"id":"w5d4t3","title":"Quick fix: re-read your notes on the 3 most-missed Mock #3 competencies","url":"","type":"review","minutes":30,"optional":false,"domain":"All"}]},{"date":"2026-10-25","weekday":"Sunday","isRestDay":false,"tasks":[{"id":"w5d5t1","title":"IAPP OFFICIAL AIGP PRACTICE EXAM: timed 165 min, exam conditions (target >=70-75%)","url":"https://store.iapp.org/aigp-practice-exam-digital/","type":"practice","minutes":165,"optional":false,"domain":"All","milestone":"IAPP official practice exam"},{"id":"w5d5t2","title":"Score the IAPP practice exam by domain","url":"","type":"review","minutes":15,"optional":false,"domain":"All"}]},{"date":"2026-10-26","weekday":"Monday","isRestDay":false,"tasks":[{"id":"w5d6t1","title":"Review every IAPP practice-exam and Mock #3 miss: note the qualifier (FIRST/BEST/MOST) and the lifecycle stage each item hinged on","url":"https://store.iapp.org/aigp-practice-exam-digital/","type":"review","minutes":80,"optional":false,"domain":"All"},{"id":"w5d6t2","title":"Re-attempt all flagged misses from Mocks 1-3 in AI Career Pro review mode","url":"https://governance.aicareer.pro/course/aigp-exam-prep","type":"practice","minutes":60,"optional":true,"domain":"All"}]},{"date":"2026-10-27","weekday":"Tuesday","isRestDay":false,"tasks":[{"id":"w5d7t1","title":"GO/NO-GO: Mocks #2 and #3 both >=75% with no domain <65-70%, AND IAPP practice >=70-75%? Yes: keep Sat 31 Oct. No: reschedule to Sat 14 Nov (check the handbook cut-off) and run the 2-week extension","url":"https://iapp.org/certify/candidate-handbook","type":"review","minutes":20,"optional":false,"domain":"All","milestone":"Ready to book exam"},{"id":"w5d7t2","title":"Build your one-page cram sheet: AI Act dates (both schedules), penalty tiers, Art 5 bans, Annex III areas, impact-assessment types (DPIA/FRIA/conformity/42005/AEDT audit)","url":"","type":"review","minutes":40,"optional":false,"domain":"All"},{"id":"w5d7t3","title":"Cumulative Anki review","url":"","type":"flashcards","minutes":20,"optional":false,"domain":"All"},{"id":"w5d7t4","title":"Answer this week's AIGP Playbook Question of the Week","url":"https://aigpplaybook.com/question-of-the-week.html","type":"practice","minutes":15,"optional":true,"domain":"All"}]}]},{"week":6,"theme":"Consolidation 2 and exam week (light)","bokDomains":["All"],"targetHours":5.4,"days":[{"date":"2026-10-28","weekday":"Wednesday","isRestDay":false,"tasks":[{"id":"w6d1t1","title":"Read the AIGP Playbook exam-day revision sheet (100 essential facts by domain); star any fact you can't explain","url":"https://aigpplaybook.com/aigp-exam-revision.html","type":"review","minutes":45,"optional":false,"domain":"All"},{"id":"w6d1t2","title":"Run the OnVUE system check on the exam computer (>=48 h ahead) or confirm the test-centre route; re-read the handbook's ID and room rules","url":"https://iapp.org/certify/candidate-handbook","type":"review","minutes":20,"optional":false,"domain":"All"}]},{"date":"2026-10-29","weekday":"Thursday","isRestDay":false,"tasks":[{"id":"w6d2t1","title":"Cumulative Anki review (all decks)","url":"","type":"flashcards","minutes":30,"optional":false,"domain":"All"},{"id":"w6d2t2","title":"Re-check the AI Act implementation timeline against your two-column date card","url":"https://artificialintelligenceact.eu/implementation-timeline/","type":"review","minutes":15,"optional":false,"domain":"II"},{"id":"w6d2t3","title":"Re-read your cram sheet and gap log; stop new material","url":"","type":"review","minutes":20,"optional":false,"domain":"All"}]},{"date":"2026-10-30","weekday":"Friday","isRestDay":false,"tasks":[{"id":"w6d3t1","title":"Light: re-skim only the starred facts on the AIGP Playbook 100-facts sheet","url":"https://aigpplaybook.com/aigp-exam-revision.html","type":"review","minutes":20,"optional":false,"domain":"All"},{"id":"w6d3t2","title":"Pack/prepare: ID matching registration, clear desk/room (OnVUE), alarm, route; early night","url":"","type":"review","minutes":10,"optional":false,"domain":"All"},{"id":"w6d3t3","title":"Optional 15-min Anki pass (due cards only)","url":"","type":"flashcards","minutes":15,"optional":true,"domain":"All"}]},{"date":"2026-10-31","weekday":"Saturday","isRestDay":false,"tasks":[{"id":"w6d4t1","title":"SIT THE AIGP EXAM: 100 Qs, 165 min (+ optional 15-min break; review flagged first-half items BEFORE the break)","url":"https://iapp.org/certify/aigp","type":"practice","minutes":165,"optional":false,"domain":"All","milestone":"Exam day"}]}]}]};
+</script>
+<script>
+(function(){
+"use strict";
+const LS_KEY = "aigp-tracker-state-v1";
+const LS_UI = "aigp-tracker-ui-v1";
+const DB_DOC = "tracker/progress";
+const META = PLAN.meta;
+const EXAM = META.examTargetDate, BOOK = META.bookByDate, GONOGO = META.goNoGoDate, START = META.startDate, FALLBACK = META.fallbackExamDate;
+
+/* ---------- practice tests (from the plan's practice schedule) ---------- */
+const TESTS = [
+  {id:"diag",  name:"Diagnostic (study guide + Playbook preview)", short:"Diag", date:"2026-09-24", target:null},
+  {id:"acp0",  name:"AI Career Pro free trial", short:"ACP trial", date:"2026-10-06", target:null},
+  {id:"mock1", name:"Mock #1 · AI Career Pro Mock 1", short:"M1", date:"2026-10-10", target:60, mock:true},
+  {id:"mock2", name:"Mock #2 · AI Career Pro Mock 2", short:"M2", date:"2026-10-18", target:70, mock:true},
+  {id:"mock3", name:"Mock #3 · AI Career Pro Mock 3", short:"M3", date:"2026-10-24", target:75, mock:true},
+  {id:"iapp",  name:"IAPP official practice exam", short:"IAPP", date:"2026-10-25", target:70},
+  {id:"mock4", name:"AI Career Pro Mock 4 (extension)", short:"M4", date:"2026-11-07", target:75, mock:true},
+  {id:"mock5", name:"AI Career Pro Mock 5 (extension)", short:"M5", date:"2026-11-11", target:75, mock:true},
+  {id:"oep",   name:"OpenExamPrep drill (drilling only)", short:"OEP", date:null, target:null},
+  {id:"other", name:"Other…", short:"Other", date:null, target:null}
+];
+const TEST_BY = Object.fromEntries(TESTS.map(t=>[t.id,t]));
+const DOMS = [
+  {id:"I",  short:"I · Foundations of AI governance"},
+  {id:"II", short:"II · Laws, standards & frameworks"},
+  {id:"III",short:"III · Governing AI development"},
+  {id:"IV", short:"IV · Governing deployment & use"},
+  {id:"All",short:"Cross-domain (practice, review, logistics)"}
+];
+
+/* ---------- dates (local) ---------- */
+const pad = n => String(n).padStart(2,"0");
+const localISO = d => d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const parseISO = s => { const [y,m,d]=s.split("-").map(Number); return new Date(y,m-1,d); };
+const addDays = (s,n) => { const d=parseISO(s); d.setDate(d.getDate()+n); return localISO(d); };
+const daysBetween = (a,b) => Math.round((parseISO(b)-parseISO(a))/86400000);
+const todayISO = () => (typeof window.__AIGP_TODAY==="string" ? window.__AIGP_TODAY : localISO(new Date()));
+const WD = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], MO = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fmtDay = s => { const d=parseISO(s); return WD[d.getDay()]+" "+d.getDate()+" "+MO[d.getMonth()]; };
+const fmtH = m => (m/60).toFixed(1)+" h";
+
+/* ---------- flatten plan ---------- */
+const TASKS = [], DAYS = [], TASK_BY = {};
+let cumCore = 0;
+PLAN.weeks.forEach(w => w.days.forEach(d => {
+  DAYS.push({date:d.date, weekday:d.weekday, rest:!!d.isRestDay, week:w.week, tasks:d.tasks});
+  d.tasks.forEach(t => {
+    if(!t.optional) cumCore += t.minutes;
+    const o = Object.assign({}, t, {date:d.date, week:w.week, rest:!!d.isRestDay, cumCore:cumCore});
+    TASKS.push(o); TASK_BY[t.id] = o;
+  });
+}));
+const CORE_MIN = TASKS.filter(t=>!t.optional).reduce((a,t)=>a+t.minutes,0);
+const ALL_MIN = TASKS.reduce((a,t)=>a+t.minutes,0);
+const FIRST = DAYS[0].date, LAST = DAYS[DAYS.length-1].date;
+const REST_DATES = new Set(DAYS.filter(d=>d.rest).map(d=>d.date));
+
+/* ---------- state ---------- */
+function blank(){ return {v:1, done:{}, attempts:[], updatedAt:0}; }
+function sanitize(s){
+  const out = blank();
+  if(!s || typeof s!=="object") return out;
+  if(s.done && typeof s.done==="object") for(const k in s.done){
+    if(!TASK_BY[k]) continue; const v=s.done[k];
+    if(v && typeof v==="object" && typeof v.on==="string") out.done[k]={on:v.on.slice(0,10), at:Number(v.at)||0};
+    else if(typeof v==="string") out.done[k]={on:v.slice(0,10), at:0};
+    else if(v===true) out.done[k]={on:todayISO(), at:0};
+  }
+  if(Array.isArray(s.attempts)) out.attempts = s.attempts.filter(a=>a && typeof a==="object" && isFinite(a.score)).map(a=>({
+    id:String(a.id||Math.random().toString(36).slice(2)), date:String(a.date||"").slice(0,10), test:TEST_BY[a.test]?a.test:"other",
+    other:String(a.other||"").slice(0,80), score:Math.max(0,Math.min(100,Number(a.score))),
+    dom:["I","II","III","IV"].reduce((m,k)=>{const x=a.dom&&a.dom[k]; if(x!==null && x!==undefined && x!=="" && isFinite(x)) m[k]=Math.max(0,Math.min(100,Number(x))); return m;},{}),
+    notes:String(a.notes||"").slice(0,2000), at:Number(a.at)||0
+  }));
+  out.updatedAt = Number(s.updatedAt)||0;
+  return out;
+}
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); return true; }catch(e){ return false; } }
+let state = blank();
+try{ const raw=lsGet(LS_KEY); if(raw) state=sanitize(JSON.parse(raw)); }catch(e){}
+let ui = {tab:"today", hideOpt:false, incomplete:false, domain:"", stretch:false, open:{}};
+try{ const raw=lsGet(LS_UI); if(raw) ui=Object.assign(ui, JSON.parse(raw)); }catch(e){}
+const saveUI = () => lsSet(LS_UI, JSON.stringify(ui));
+
+/* ---------- cloud sync via the artifact db capability ---------- */
+let docRef=null, syncMode="local", canWrite=true, writing=false, again=false, pushTimer=null;
+function setSync(mode, text){
+  syncMode = mode;
+  const el=document.getElementById("sync"); el.dataset.mode = mode;
+  document.getElementById("syncText").textContent = text;
+  renderStorageExplain();
+}
+function commit(){
+  state.updatedAt = Date.now();
+  lsSet(LS_KEY, JSON.stringify(state));
+  schedulePush();
+}
+function schedulePush(){
+  if(!docRef || !canWrite) return;
+  clearTimeout(pushTimer); pushTimer = setTimeout(push, 500);
+}
+async function push(){
+  if(!docRef || !canWrite) return;
+  if(writing){ again=true; return; }
+  writing=true;
+  try{
+    await docRef.set(JSON.parse(JSON.stringify(state)));
+    setSync("cloud","Synced to your artifact storage");
+  }catch(e){
+    const code = e && e.code;
+    if(code==="invalid_argument"){ canWrite=false; setSync("error","View only: changes stay in this browser"); }
+    else if(code==="unavailable"){ setTimeout(schedulePush, 1500+Math.random()*1500); setSync("error","Sync retrying…"); }
+    else setSync("error","Sync paused: saved in this browser");
+  }finally{
+    writing=false;
+    if(again){ again=false; schedulePush(); }
+  }
+}
+(async function initCloud(){
+  try{
+    if(!window.claude || typeof window.claude.use!=="function") return;
+    const db = await window.claude.use("db");
+    if(!db){ return; }
+    docRef = db.doc(DB_DOC);
+    setSync("cloud","Connecting to artifact storage…");
+    docRef.onSnapshot(snap => {
+      if(snap.metadata && snap.metadata.hasPendingWrites) return;
+      if(!snap.exists){
+        if(state.updatedAt>0) schedulePush(); else setSync("cloud","Synced to your artifact storage");
+        return;
+      }
+      const remote = sanitize(snap.data());
+      if(remote.updatedAt > state.updatedAt){
+        state = remote; lsSet(LS_KEY, JSON.stringify(state)); renderAll();
+      }else if(remote.updatedAt < state.updatedAt){
+        schedulePush();
+      }
+      setSync("cloud","Synced to your artifact storage");
+    }, err => { docRef=null; setSync("error","Sync stopped: saved in this browser"); });
+  }catch(e){ /* stay local */ }
+})();
+
+/* ---------- derived ---------- */
+function isDone(id){ return !!state.done[id]; }
+function pct(a,b){ return b ? a/b*100 : 0; }
+function stats(){
+  const today = todayISO(), inclS = !!ui.stretch;
+  let doneCore=0, doneAll=0, expCore=0;
+  TASKS.forEach(t => {
+    if(isDone(t.id)){ doneAll+=t.minutes; if(!t.optional) doneCore+=t.minutes; }
+    if(!t.optional && t.date<=today) expCore+=t.minutes;
+  });
+  const denom = inclS ? ALL_MIN : CORE_MIN, num = inclS ? doneAll : doneCore;
+  return {today, doneCore, doneAll, expCore, denom, num, pct:pct(num,denom), corePct:pct(doneCore,CORE_MIN), expPct:pct(expCore,CORE_MIN)};
+}
+function streak(){
+  const dates = new Set(Object.values(state.done).map(v=>v.on));
+  const today = todayISO();
+  const counts = d => dates.has(d);
+  const bridge = d => REST_DATES.has(d) && !dates.has(d);
+  let d = counts(today) ? today : addDays(today,-1), n=0, guard=0;
+  while(guard++<400){
+    if(counts(d)){ n++; d=addDays(d,-1); }
+    else if(bridge(d) && n>0){ d=addDays(d,-1); }
+    else if(bridge(d) && n===0 && d!==today){ d=addDays(d,-1); }
+    else break;
+  }
+  // longest
+  const sorted=[...dates].sort(); let best=0, run=0, prev=null;
+  sorted.forEach(x=>{
+    if(prev){ let gap=addDays(prev,1); while(gap<x && REST_DATES.has(gap)) gap=addDays(gap,1); run = (gap===x) ? run+1 : 1; } else run=1;
+    best=Math.max(best,run); prev=x;
+  });
+  return {current:n, best, activeToday:counts(today), days:dates.size};
+}
+function focusDate(){
+  const t=todayISO();
+  if(t<FIRST) return FIRST; if(t>LAST) return LAST;
+  return t;
+}
+
+/* ---------- rendering helpers ---------- */
+const esc = s => String(s).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function taskHTML(t, opts){
+  opts = opts||{};
+  const done = isDone(t.id);
+  const cid = (opts.prefix||"c")+"-"+t.id;
+  const title = t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener noreferrer">${esc(t.title)}<span class="ext" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>` : esc(t.title);
+  const tags = [];
+  if(opts.showDate) tags.push(`<span class="tag when">${fmtDay(t.date)}</span>`);
+  if(opts.late) tags.push(`<span class="tag late">${opts.late}</span>`);
+  tags.push(`<span class="tag min">${t.minutes} min</span>`);
+  tags.push(`<span class="tag">${esc(t.type)}</span>`);
+  tags.push(`<span class="tag dom" data-d="${esc(t.domain)}" title="BoK domain">${t.domain==="All"?"All domains":"Domain "+esc(t.domain)}</span>`);
+  if(t.optional) tags.push(`<span class="tag opt">stretch</span>`);
+  if(t.milestone) tags.push(`<span class="tag ms">◆ ${esc(t.milestone)}</span>`);
+  if(done) tags.push(`<span class="tag">done ${fmtDay(state.done[t.id].on)}</span>`);
+  return `<li class="task${done?" done":""}" data-id="${t.id}" data-opt="${t.optional?1:0}" data-dom="${esc(t.domain)}">
+    <input type="checkbox" id="${cid}" data-task="${t.id}"${done?" checked":""} aria-describedby="${cid}-t">
+    <div><label class="t" id="${cid}-t" for="${cid}">${title}</label><div class="meta">${tags.join("")}</div></div></li>`;
+}
+
+function toast(msg){
+  const el=document.getElementById("toast"); el.textContent=msg; el.hidden=false;
+  clearTimeout(toast._t); toast._t=setTimeout(()=>{el.hidden=true;},2200);
+}
+
+/* ---------- ring ---------- */
+function ringSVG(p, expP){
+  const R=52, C=2*Math.PI*R, off=C*(1-Math.min(p,100)/100);
+  const ea = (Math.min(expP,100)/100)*2*Math.PI - Math.PI/2;
+  const ex1=60+46*Math.cos(ea), ey1=60+46*Math.sin(ea), ex2=60+60*Math.cos(ea), ey2=60+60*Math.sin(ea);
+  return `<svg class="ring" viewBox="0 0 120 120" role="img" aria-label="${p.toFixed(0)} percent complete">
+    <circle cx="60" cy="60" r="${R}" fill="none" stroke="var(--surface-2)" stroke-width="12"/>
+    <circle cx="60" cy="60" r="${R}" fill="none" stroke="var(--accent)" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C.toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}" transform="rotate(-90 60 60)"/>
+    <line x1="${ex1.toFixed(1)}" y1="${ey1.toFixed(1)}" x2="${ex2.toFixed(1)}" y2="${ey2.toFixed(1)}" stroke="var(--ink)" stroke-width="2" opacity=".6"/>
+    <text x="60" y="64" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="22" font-weight="600">${p.toFixed(0)}%</text>
+    <text x="60" y="80" text-anchor="middle" font-family="Public Sans, sans-serif" font-size="9" fill="var(--ink-3)" style="fill:var(--ink-3)">complete</text>
+  </svg>`;
+}
+function scheduleLine(s){
+  const diff = s.doneCore - s.expCore;
+  let pill;
+  if(s.today < START) pill = `<span class="pill neutral">Plan starts ${fmtDay(START)}</span>`;
+  else if(diff >= 0) pill = `<span class="pill good">Ahead by ${fmtH(diff)}</span>`;
+  else if(-diff <= 60) pill = `<span class="pill warn">Behind by ${-diff} min</span>`;
+  else pill = `<span class="pill bad">Behind by ${fmtH(-diff)}</span>`;
+  return {pill, diff};
+}
+function heroHTML(s, withToggle, idp){
+  const sch = scheduleLine(s);
+  const denomTxt = ui.stretch ? `all ${fmtH(ALL_MIN)} (core + stretch)` : `${fmtH(CORE_MIN)} of core tasks (stretch excluded, exam sitting included)`;
+  return `${ringSVG(s.pct, ui.stretch ? pct(s.expCore,ALL_MIN) : s.expPct)}
+   <div class="hero-copy">
+     <div class="row">${sch.pill}</div>
+     <div><span class="num" style="font-size:1.15rem;font-weight:600">${fmtH(s.num)}</span> <span class="muted">of</span> <span class="num">${fmtH(s.denom)}</span> <span class="muted">logged</span></div>
+     <div class="small muted">Expected by end of today: <span class="num">${s.expPct.toFixed(0)}%</span> of core · actual <span class="num">${s.corePct.toFixed(0)}%</span>. Weighted by minutes; denominator is ${denomTxt}.</div>
+     ${withToggle?`<label class="toggle"><input type="checkbox" id="${idp}-stretch"${ui.stretch?" checked":""} data-stretch> Include stretch tasks in %</label>`:""}
+   </div>`;
+}
+
+/* ---------- today ---------- */
+function renderCountdowns(){
+  const t=todayISO(), st=streak();
+  const cd = (label, date, note) => {
+    const n = daysBetween(t, date);
+    const v = n>0 ? `${n} day${n===1?"":"s"}` : n===0 ? "Today" : "Passed";
+    return `<div class="stat"><span class="eyebrow">${label}</span><span class="v">${v}</span><span class="s">${fmtDay(date)}${note?" · "+note:""}</span></div>`;
+  };
+  document.getElementById("countdowns").innerHTML =
+    cd("Exam", EXAM, "100 Qs · 165 min") + cd("Book exam by", BOOK, "gated on Mock #1") + cd("Go / no-go", GONOGO, "fallback "+fmtDay(FALLBACK)) +
+    `<div class="stat"><span class="eyebrow">Streak</span><span class="v">${st.current} day${st.current===1?"":"s"}</span><span class="s">${st.activeToday?"Today counted":"Tick a task to extend"} · best ${st.best}</span></div>`;
+}
+function renderToday(){
+  const s=stats();
+  document.getElementById("todayHero").innerHTML = heroHTML(s, false);
+  const fd = focusDate(), t = todayISO(), day = DAYS.find(d=>d.date===fd);
+  const note = t<FIRST ? `The plan starts ${fmtDay(FIRST)}; showing day 1.` : t>LAST ? `The plan ended ${fmtDay(LAST)}; showing exam day.` : "";
+  const core = day.tasks.filter(x=>!x.optional).reduce((a,x)=>a+x.minutes,0);
+  const doneM = day.tasks.filter(x=>isDone(x.id)).reduce((a,x)=>a+x.minutes,0);
+  const tomorrow = DAYS.find(d=>d.date>fd);
+  document.getElementById("todayCard").innerHTML = `
+    <div class="dayhead"><div><div class="eyebrow">${fd===t?"Today":"Nearest plan day"} · week ${day.week}</div><h2>${day.weekday} ${parseISO(fd).getDate()} ${MO[parseISO(fd).getMonth()]}</h2></div>
+    <span class="small muted num">${day.rest?"Rest day":`${core} min core · ${doneM} min done`}</span></div>
+    ${note?`<p class="small muted" style="margin:6px 0 0">${note}</p>`:""}
+    ${day.rest?`<p class="small" style="margin:8px 0 0"><span class="pill neutral">Rest day</span> No study scheduled. Rest days don't break your streak.</p>`:""}
+    <ul class="tasks" style="margin-top:6px">${day.tasks.map(x=>taskHTML(x,{prefix:"td"})).join("")}</ul>
+    ${tomorrow?`<p class="small muted" style="margin:8px 0 0">Next: ${fmtDay(tomorrow.date)} · ${tomorrow.rest?"rest day":tomorrow.tasks.filter(x=>!x.optional).reduce((a,x)=>a+x.minutes,0)+" min core"}</p>`:""}`;
+  const overdue = TASKS.filter(x=>!x.optional && x.date<t && !isDone(x.id));
+  const om = overdue.reduce((a,x)=>a+x.minutes,0);
+  document.getElementById("overdueCard").innerHTML = `
+    <div class="dayhead"><h2>Overdue</h2><span class="small muted num">${overdue.length} core task${overdue.length===1?"":"s"} · ${om} min</span></div>
+    ${overdue.length ? `<ul class="tasks" style="margin-top:6px">${overdue.map(x=>taskHTML(x,{prefix:"od",showDate:true,late:daysBetween(x.date,t)+"d late"})).join("")}</ul>`
+      : `<p class="empty">Nothing overdue. Core tasks dated before today appear here until ticked.</p>`}`;
+}
+
+/* ---------- plan ---------- */
+function buildPlan(){
+  const t=todayISO();
+  const wsel=document.getElementById("fWeek");
+  wsel.innerHTML = `<option value="">Week…</option>`+PLAN.weeks.map(w=>`<option value="${w.week}">Week ${w.week} · ${fmtDay(w.days[0].date)}</option>`).join("")+`<option value="today">Today</option>`;
+  const curWeek = (DAYS.find(d=>d.date===focusDate())||DAYS[0]).week;
+  document.getElementById("weeks").innerHTML = PLAN.weeks.map(w => {
+    const open = ui.open[w.week]!==undefined ? ui.open[w.week] : (w.week===curWeek);
+    const first=w.days[0].date, last=w.days[w.days.length-1].date;
+    return `<details class="week" id="week-${w.week}" data-week="${w.week}"${open?" open":""}>
+      <summary>
+        <div class="wk-top"><h2>Week ${w.week}</h2><span class="small muted num">${fmtDay(first)} – ${fmtDay(last)} · <span data-wkpct="${w.week}"></span></span></div>
+        <div class="wk-theme">${esc(w.theme)}</div>
+        <div class="track" aria-hidden="true"><span data-wkbar="${w.week}"></span></div>
+      </summary>
+      <div class="wk-body">${w.days.map(d=>`
+        <div class="day${d.isRestDay?" rest":""}${d.date===t?" is-today":""}" id="day-${d.date}" data-date="${d.date}">
+          <div class="dayhead"><h3>${d.weekday}<span class="d">${d.date.slice(5)}</span></h3>
+          <span class="small muted num">${d.isRestDay?'<span class="pill neutral">Rest day</span>':d.tasks.filter(x=>!x.optional).reduce((a,x)=>a+x.minutes,0)+" min core"}${d.date===t?' <span class="pill good">Today</span>':""}</span></div>
+          <ul class="tasks">${d.tasks.map(x=>taskHTML(TASK_BY[x.id],{prefix:"pl"})).join("")}</ul>
+          <p class="empty" data-emptyday hidden>All tasks here are filtered out.</p>
+        </div>`).join("")}</div></details>`;
+  }).join("");
+  document.querySelectorAll("details.week").forEach(d => d.addEventListener("toggle", ()=>{ ui.open[d.dataset.week]=d.open; saveUI(); }));
+  applyFilters();
+  updatePlanWeekHeads();
+}
+function updatePlanWeekHeads(){
+  PLAN.weeks.forEach(w=>{
+    const ts=TASKS.filter(t=>t.week===w.week && (ui.stretch || !t.optional));
+    const tot=ts.reduce((a,t)=>a+t.minutes,0), dn=ts.filter(t=>isDone(t.id)).reduce((a,t)=>a+t.minutes,0);
+    const p=pct(dn,tot);
+    const a=document.querySelector(`[data-wkpct="${w.week}"]`); if(a) a.textContent=p.toFixed(0)+"% done";
+    const b=document.querySelector(`[data-wkbar="${w.week}"]`); if(b) b.style.width=p+"%";
+  });
+}
+function syncPlanRows(){
+  document.querySelectorAll("#weeks li.task").forEach(li=>{
+    const id=li.dataset.id, d=isDone(id);
+    if(li.classList.contains("done")!==d){
+      li.outerHTML = taskHTML(TASK_BY[id],{prefix:"pl"});
+    }
+  });
+  applyFilters(); updatePlanWeekHeads();
+}
+function applyFilters(){
+  let shown=0;
+  document.querySelectorAll("#weeks li.task").forEach(li=>{
+    const hide = (ui.hideOpt && li.dataset.opt==="1") || (ui.incomplete && isDone(li.dataset.id)) || (ui.domain && li.dataset.dom!==ui.domain);
+    li.hidden = hide; if(!hide) shown++;
+  });
+  document.querySelectorAll("#weeks .day").forEach(d=>{
+    const any=[...d.querySelectorAll("li.task")].some(li=>!li.hidden);
+    d.querySelector("[data-emptyday]").hidden = any;
+  });
+  const active = ui.hideOpt||ui.incomplete||ui.domain;
+  document.getElementById("filterCount").textContent = active ? `${shown} of ${TASKS.length} tasks shown` : `${TASKS.length} tasks`;
+}
+
+/* ---------- progress ---------- */
+function barRow(label, done, total, color, expP){
+  const p=pct(done,total);
+  return `<div class="bar-row"><span class="lbl">${label}</span><span class="val">${p.toFixed(0)}% <span class="muted" style="font-weight:400">${fmtH(done)}/${fmtH(total)}</span></span>
+    <div class="track" role="progressbar" aria-label="${esc(label.replace(/<[^>]+>/g,""))}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${p.toFixed(0)}"><span style="width:${p}%;${color?"background:"+color:""}"></span>${expP!=null?`<i class="expm" style="left:calc(${Math.min(expP,100)}% - 1px)"></i>`:""}</div></div>`;
+}
+function renderProgress(){
+  const s=stats();
+  document.getElementById("progHero").innerHTML = heroHTML(s, true, "pg");
+  // milestones
+  const ms = TASKS.filter(t=>t.milestone);
+  const fill = s.corePct;
+  document.getElementById("mbar").innerHTML = `
+    <div class="mbar" role="img" aria-label="Core progress ${fill.toFixed(0)}% with ${ms.length} milestones">
+      <div class="fill" style="width:${fill}%"></div>
+      <div class="exp" style="left:calc(${Math.min(s.expPct,100)}% - 1px)" title="Expected today"></div>
+      ${ms.map((m,i)=>`<div class="mk${isDone(m.id)?" hit":""}" style="left:${pct(m.cumCore,CORE_MIN)}%" title="${esc(m.milestone)}"><span>${i+1}</span><i></i></div>`).join("")}
+    </div>
+    <ol class="mlist">${ms.map((m,i)=>`<li><span class="n">${i+1}</span><span>${esc(m.milestone)} <span class="muted small">· ${fmtDay(m.date)} · at ${pct(m.cumCore,CORE_MIN).toFixed(0)}%</span></span>
+      <span class="st">${isDone(m.id)?'<span class="pill good">Reached</span>':(m.date<s.today?'<span class="pill bad">Not reached</span>':'<span class="pill neutral">Not reached</span>')}</span></li>`).join("")}</ol>`;
+  // weeks
+  document.getElementById("weekBars").innerHTML = PLAN.weeks.map(w=>{
+    const ts=TASKS.filter(t=>t.week===w.week && (ui.stretch||!t.optional));
+    const tot=ts.reduce((a,t)=>a+t.minutes,0), dn=ts.filter(t=>isDone(t.id)).reduce((a,t)=>a+t.minutes,0);
+    const ex=ts.filter(t=>t.date<=s.today).reduce((a,t)=>a+t.minutes,0);
+    return barRow(`Week ${w.week} <span class="muted small">${fmtDay(w.days[0].date)}</span>`, dn, tot, null, pct(ex,tot));
+  }).join("") + `<p class="small muted" style="margin:0">Dark tick = expected by today. ${ui.stretch?"Includes stretch tasks.":"Core tasks only."}</p>`;
+  const dcol={I:"var(--d1)",II:"var(--d2)",III:"var(--d3)",IV:"var(--d4)",All:"var(--dall)"};
+  document.getElementById("domBars").innerHTML = DOMS.map(d=>{
+    const ts=TASKS.filter(t=>t.domain===d.id && (ui.stretch||!t.optional));
+    const tot=ts.reduce((a,t)=>a+t.minutes,0), dn=ts.filter(t=>isDone(t.id)).reduce((a,t)=>a+t.minutes,0);
+    const dm=META.domains.find(x=>x.id===d.id);
+    return barRow(`${esc(d.short)}${dm?` <span class="muted small">${esc(dm.weight)} of exam</span>`:""}`, dn, tot, dcol[d.id]);
+  }).join("");
+  const st=streak();
+  document.getElementById("streakCard").innerHTML = `<div class="row" style="justify-content:space-between"><h2>Streak</h2>
+    <span class="small muted">A day counts when you tick at least one task that day. Rest days neither count nor break it.</span></div>
+    <div class="strip" style="margin-top:10px">
+      <div class="stat"><span class="eyebrow">Current</span><span class="v">${st.current}</span><span class="s">${st.activeToday?"Today counted":"Today not yet counted"}</span></div>
+      <div class="stat"><span class="eyebrow">Longest</span><span class="v">${st.best}</span><span class="s">days in a row</span></div>
+      <div class="stat"><span class="eyebrow">Study days</span><span class="v">${st.days}</span><span class="s">days with a completion</span></div>
+      <div class="stat"><span class="eyebrow">Tasks done</span><span class="v">${Object.keys(state.done).length}<span class="muted" style="font-size:.9rem">/${TASKS.length}</span></span><span class="s">core + stretch</span></div>
+    </div>${heat()}`;
+}
+function heat(){
+  const dates={}; Object.values(state.done).forEach(v=>{dates[v.on]=(dates[v.on]||0)+1;});
+  const t=todayISO();
+  const cells = DAYS.map(d=>{
+    const n=dates[d.date]||0;
+    const bg = n? (n>=3?"var(--accent)":"color-mix(in srgb, var(--accent) 55%, var(--surface-2))") : (d.rest?"transparent":"var(--surface-2)");
+    return `<span title="${fmtDay(d.date)}: ${n} ticked${d.rest?" (rest day)":""}" style="width:100%;aspect-ratio:1;max-width:100%;border-radius:3px;background:${bg};${d.rest?"border:1px dashed var(--line-strong);":""}${d.date===t?"outline:2px solid var(--ink);outline-offset:1px;":""}"></span>`;
+  }).join("");
+  return `<div style="margin-top:14px"><div class="eyebrow" style="margin-bottom:6px">Completions per plan day (Wed → Tue rows)</div>
+   <div style="display:grid;grid-template-columns:repeat(7,minmax(0,22px));gap:4px">${cells}</div></div>`;
+}
+
+/* ---------- exams ---------- */
+function attemptsSorted(){ return state.attempts.slice().sort((a,b)=> a.date<b.date?-1:a.date>b.date?1:(a.at-b.at)); }
+function testName(a){ return a.test==="other" ? (a.other||"Other") : TEST_BY[a.test].name; }
+function qualifies(a){
+  if(a.score<75) return {ok:false, why:"under 75%"};
+  const ds=Object.values(a.dom);
+  if(ds.length<4) return {ok:null, why:"add all four domain scores to confirm"};
+  const lo=Math.min(...ds);
+  if(lo<65) return {ok:false, why:`a domain at ${lo}%`};
+  return {ok:true, why: lo<70 ? `lowest domain ${lo}%, inside the 65–70% grey zone` : "all domains ≥70%"};
+}
+function renderRule(){
+  const as=attemptsSorted();
+  const mocks=as.filter(a=>TEST_BY[a.test].mock);
+  const m1=as.filter(a=>a.test==="mock1").pop();
+  let gate;
+  if(!m1) gate={s:"neutral",t:"Waiting for Mock #1 (Sat 10 Oct)"};
+  else{
+    const d3=m1.dom.III, d4=m1.dom.IV;
+    const ok = m1.score>=60 && (d3==null||d3>=55) && (d4==null||d4>=55);
+    const unk = d3==null||d4==null;
+    gate = ok ? {s:unk?"warn":"good", t:`Mock #1 ${m1.score}% → book Sat 31 Oct${unk?" (add III/IV scores to confirm ≥55%)":""}`} : {s:"bad", t:`Mock #1 ${m1.score}% → book Sat 14 Nov and buy the fallback course`};
+  }
+  let pair=null, pairUnknown=false;
+  for(let i=1;i<mocks.length;i++){ const a=qualifies(mocks[i-1]), b=qualifies(mocks[i]); if(a.ok&&b.ok) pair=[mocks[i-1],mocks[i]]; else if(a.ok!==false&&b.ok!==false) pairUnknown=true; }
+  const iapp=as.filter(a=>a.test==="iapp").pop();
+  const c1 = pair ? {s:"good", t:`${testName(pair[0])} ${pair[0].score}% and ${testName(pair[1])} ${pair[1].score}%`} :
+             pairUnknown ? {s:"warn", t:"Two consecutive mocks ≥75%, but domain scores are missing"} :
+             {s:mocks.length?"bad":"neutral", t: mocks.length? `Not yet: last mock ${mocks[mocks.length-1].score}%, ${qualifies(mocks[mocks.length-1]).why}; need two in a row` : "No full mocks logged yet"};
+  const c2 = iapp ? (iapp.score>=75?{s:"good",t:`IAPP practice exam ${iapp.score}%`}: iapp.score>=70?{s:"warn",t:`IAPP practice exam ${iapp.score}% (meets 70%, below the safer 75%)`}:{s:"bad",t:`IAPP practice exam ${iapp.score}% (target ≥70–75%)`}) : {s:"neutral",t:"IAPP official practice exam not logged (Sun 25 Oct)"};
+  const met = pair && iapp && iapp.score>=70;
+  const icon = s => ({good:"✓",warn:"!",bad:"✗",neutral:"–"})[s];
+  document.getElementById("ruleCard").innerHTML = `<div class="row" style="justify-content:space-between"><h2>Booking rule</h2><span class="small muted">Decide by go/no-go, ${fmtDay(GONOGO)}</span></div>
+    <p class="small muted" style="margin:6px 0 12px">Two consecutive full mocks ≥75% with no domain below 65–70%, and the IAPP official practice exam ≥70–75%. OpenExamPrep scores don't count.</p>
+    <ul class="rule">
+      <li><span class="pill ${gate.s}">${icon(gate.s)} Step 1</span><span>Provisional booking (by ${fmtDay(BOOK)}): ${esc(gate.t)}</span></li>
+      <li><span class="pill ${c1.s}">${icon(c1.s)} Step 2</span><span>${esc(c1.t)}</span></li>
+      <li><span class="pill ${c2.s}">${icon(c2.s)} Step 3</span><span>${esc(c2.t)}</span></li>
+    </ul>
+    <div class="verdict" style="margin-top:12px">${met?'<span class="pill good">Rule met</span> Keep Sat 31 Oct.':'<span class="pill neutral">Not met yet</span> <span class="small" style="font-weight:500">If it is still unmet on '+fmtDay(GONOGO)+', reschedule to '+fmtDay(FALLBACK)+'.</span>'}</div>`;
+}
+function renderChart(){
+  const as=attemptsSorted().filter(a=>a.test!=="oep");
+  const box=document.getElementById("chart");
+  const W=Math.max(320,Math.round(box.clientWidth||640)),H=240,L=30,R=82,T=14,B=46, iw=W-L-R, ih=H-T-B;
+  const y=v=>T+ih*(1-v/100);
+  const n=as.length;
+  const x=i=> n<=1 ? L+iw/2 : L+ i*(iw/(n-1));
+  let g="";
+  [0,25,50,100].forEach(v=>{ g+=`<line x1="${L}" x2="${L+iw}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L-6}" y="${y(v)+3}" text-anchor="end">${v}</text>`; });
+  const lines=[{v:75,l:"75 book rule",c:"var(--accent)",d:""},{v:70,l:"70 M2 / IAPP",c:"var(--ochre)",d:"5 4"},{v:60,l:"60 M1 gate",c:"var(--ink-3)",d:"2 4"}];
+  lines.forEach(o=>{ g+=`<line x1="${L}" x2="${L+iw}" y1="${y(o.v)}" y2="${y(o.v)}" stroke="${o.c}" stroke-width="1.5" stroke-dasharray="${o.d}"/><text x="${L+iw+6}" y="${y(o.v)+(o.v===70?4:o.v===75?-1:4)}" style="fill:${o.c}">${o.l}</text>`; });
+  if(!n){
+    box.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="No attempts yet">${g}<text x="${L+iw/2}" y="${y(40)}" text-anchor="middle" style="font-size:12px">No attempts yet · Mock #1 is ${fmtDay("2026-10-10")}</text></svg>`;
+    return;
+  }
+  const pts=as.map((a,i)=>[x(i),y(a.score)]);
+  const area = `M${pts[0][0]},${y(0)} `+pts.map(p=>`L${p[0]},${p[1]}`).join(" ")+` L${pts[n-1][0]},${y(0)} Z`;
+  g += n>1?`<path d="${area}" fill="var(--accent)" opacity=".10"/>`:"";
+  g += `<polyline points="${pts.map(p=>p.join(",")).join(" ")}" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>`;
+  as.forEach((a,i)=>{
+    const tg=TEST_BY[a.test].target;
+    if(tg!=null) g+=`<line x1="${x(i)-9}" x2="${x(i)+9}" y1="${y(tg)}" y2="${y(tg)}" stroke="var(--ink)" stroke-width="2" opacity=".55"/>`;
+    const last=i===n-1;
+    g+=`<circle cx="${x(i)}" cy="${y(a.score)}" r="${last?5.5:4}" fill="${last?"var(--accent)":"var(--surface)"}" stroke="var(--accent)" stroke-width="2"/>`;
+    g+=`<text x="${x(i)}" y="${y(a.score)-10}" text-anchor="middle" style="fill:var(--ink);font-weight:600">${a.score}</text>`;
+    const lbl = a.test==="other" ? (a.other||"Other").slice(0,8) : TEST_BY[a.test].short;
+    g+=`<text x="${x(i)}" y="${H-B+16}" text-anchor="middle">${esc(lbl)}</text><text x="${x(i)}" y="${H-B+29}" text-anchor="middle">${a.date.slice(5)}</text>`;
+  });
+  box.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Practice exam scores over time against target lines">${g}</svg>
+   <p class="small muted" style="margin:6px 0 0">Short dark dash on each point = that test's own target. OpenExamPrep drills are left off the chart.</p>`;
+}
+function renderLog(){
+  const as=attemptsSorted().reverse();
+  const el=document.getElementById("logTable");
+  if(!as.length){ el.innerHTML=`<p class="empty">No attempts logged. Add your diagnostic score above to start the trend.</p>`; return; }
+  el.innerHTML=`<table class="log"><thead><tr><th>Date</th><th>Test</th><th>Score</th><th>I / II / III / IV</th><th>Notes</th><th><span class="visually-hidden">Actions</span></th></tr></thead><tbody>
+   ${as.map(a=>{ const tg=TEST_BY[a.test].target; const cls = tg==null?"neutral": a.score>=tg?"good":"bad";
+     return `<tr><td class="num">${a.date}</td><td style="min-width:130px">${esc(testName(a))}</td><td class="num"><span class="pill ${cls}">${a.score}%</span>${tg!=null?`<div class="small muted">target ${tg}%</div>`:""}</td>
+     <td class="num">${["I","II","III","IV"].map(k=>a.dom[k]!=null?a.dom[k]:"–").join(" / ")}</td><td class="small" style="min-width:140px">${esc(a.notes)}</td>
+     <td><button class="btn link" type="button" data-del="${esc(a.id)}" aria-label="Delete ${esc(testName(a))} on ${a.date}">Delete</button></td></tr>`; }).join("")}
+   </tbody></table>`;
+}
+function initForm(){
+  const sel=document.getElementById("aTest");
+  sel.innerHTML=TESTS.map(t=>`<option value="${t.id}">${esc(t.name)}${t.date?" · "+fmtDay(t.date):""}${t.target!=null?" · target "+t.target+"%":""}</option>`).join("");
+  const t=todayISO();
+  document.getElementById("aDate").value=t;
+  const logged=new Set(state.attempts.map(a=>a.test));
+  const next=TESTS.find(x=>x.date && !logged.has(x.id) && x.date>=addDays(t,-3)) || TESTS[0];
+  sel.value=next.id;
+  sel.addEventListener("change",()=>{ document.getElementById("aOtherWrap").hidden = sel.value!=="other"; });
+  document.getElementById("attemptForm").addEventListener("submit", e=>{
+    e.preventDefault();
+    const msg=document.getElementById("formMsg");
+    const date=document.getElementById("aDate").value, score=document.getElementById("aScore").value;
+    if(!date){ msg.textContent="Pick the date you sat the test."; return; }
+    if(score===""||!(Number(score)>=0&&Number(score)<=100)){ msg.textContent="Enter the overall score as a number from 0 to 100."; document.getElementById("aScore").focus(); return; }
+    const dom={}; [["I","aD1"],["II","aD2"],["III","aD3"],["IV","aD4"]].forEach(([k,id])=>{ const v=document.getElementById(id).value; if(v!==""){ const n=Number(v); if(n>=0&&n<=100) dom[k]=n; } });
+    state.attempts.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6), date, test:sel.value, other:document.getElementById("aOther").value.trim(), score:Number(score), dom, notes:document.getElementById("aNotes").value.trim(), at:Date.now()});
+    commit();
+    ["aScore","aD1","aD2","aD3","aD4","aNotes","aOther"].forEach(id=>document.getElementById(id).value="");
+    msg.textContent="Attempt added."; renderExams();
+  });
+  document.getElementById("logTable").addEventListener("click", e=>{
+    const b=e.target.closest("[data-del]"); if(!b) return;
+    if(b.dataset.armed!=="1"){ b.dataset.armed="1"; b.textContent="Confirm delete"; b.style.color="var(--bad)"; setTimeout(()=>{ if(b.isConnected){b.dataset.armed="";b.textContent="Delete";b.style.color="";} },4000); return; }
+    state.attempts=state.attempts.filter(a=>a.id!==b.dataset.del); commit(); renderExams(); toast("Attempt deleted");
+  });
+}
+function renderExams(){ renderRule(); renderChart(); renderLog(); }
+
+/* ---------- data tab ---------- */
+function renderStorageExplain(){
+  const el=document.getElementById("storageExplain"); if(!el) return;
+  el.innerHTML = syncMode==="cloud"
+    ? "Your progress is saved to this artifact's own storage, so it follows you to any device where you open this page while signed in. A copy is also kept in this browser."
+    : syncMode==="error"
+    ? "Artifact storage is not accepting changes right now, so progress is being saved in this browser only. It will sync the next time storage is reachable."
+    : "Progress is saved in this browser only (artifact storage isn't available in this view). Use Export to move it to another device.";
+}
+function exportJSON(){ return JSON.stringify({app:"aigp-tracker", exportedAt:new Date().toISOString(), state}, null, 2); }
+async function doExport(){
+  const name=`aigp-progress-${todayISO()}.json`, data=exportJSON(), msg=document.getElementById("dataMsg");
+  try{
+    const dl = window.claude && window.claude.use ? await window.claude.use("downloads") : null;
+    if(dl){ await dl.save({filename:name, data}); msg.textContent="Export saved."; return; }
+  }catch(e){ if(e && e.code==="declined"){ msg.textContent="Export cancelled."; return; } }
+  document.getElementById("exportText").textContent=data;
+  document.getElementById("exportFallback").hidden=false;
+  msg.textContent="";
+}
+function initData(){
+  document.getElementById("exportBtn").addEventListener("click", doExport);
+  document.getElementById("copyBtn").addEventListener("click", ()=>{
+    const txt=document.getElementById("exportText").textContent, msg=document.getElementById("dataMsg");
+    const sel=()=>{ const r=document.createRange(); r.selectNodeContents(document.getElementById("exportText")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent="Selected: press Ctrl/Cmd+C to copy."; };
+    try{ navigator.clipboard.writeText(txt).then(()=>{msg.textContent="Copied.";}, sel); }catch(e){ sel(); }
+  });
+  document.getElementById("importFile").addEventListener("change", e=>{
+    const f=e.target.files[0], msg=document.getElementById("dataMsg"); if(!f) return;
+    const r=new FileReader();
+    r.onload=()=>{
+      try{
+        const j=JSON.parse(r.result); const src = j && j.state ? j.state : j;
+        if(!src || (typeof src.done!=="object" && !Array.isArray(src.attempts))) throw new Error("shape");
+        state=sanitize(src); commit(); renderAll();
+        msg.textContent=`Imported ${Object.keys(state.done).length} ticked tasks and ${state.attempts.length} exam attempts.`;
+      }catch(err){ msg.textContent="That file isn't a tracker export. Choose a .json file made with Export progress."; }
+      e.target.value="";
+    };
+    r.readAsText(f);
+  });
+  const conf=document.getElementById("resetConfirm");
+  document.getElementById("resetBtn").addEventListener("click",()=>{ conf.hidden=false; document.getElementById("resetNo").focus(); });
+  document.getElementById("resetNo").addEventListener("click",()=>{ conf.hidden=true; document.getElementById("resetBtn").focus(); });
+  document.getElementById("resetYes").addEventListener("click",()=>{ state=blank(); commit(); conf.hidden=true; renderAll(); document.getElementById("dataMsg").textContent="All progress erased."; });
+}
+
+/* ---------- events ---------- */
+document.addEventListener("change", e=>{
+  const cb=e.target;
+  if(cb.matches("input[data-task]")){
+    const id=cb.dataset.task;
+    if(cb.checked) state.done[id]={on:todayISO(), at:Date.now()}; else delete state.done[id];
+    commit();
+    const list=cb.closest("ul"), idx=list?[...list.querySelectorAll("input[data-task]")].indexOf(cb):-1, listId=list&&list.closest("[id]")?list.closest("[id]").id:null;
+    refresh();
+    // restore focus in re-rendered lists
+    const again=document.getElementById(cb.id);
+    if(again) again.focus();
+    else if(listId){ const l=document.getElementById(listId); const all=l?l.querySelectorAll("input[data-task]"):[]; const nx=all[Math.min(idx,all.length-1)]; if(nx) nx.focus(); }
+    return;
+  }
+  if(cb.matches("[data-stretch]")){ ui.stretch=cb.checked; saveUI(); refresh(); const again=document.getElementById(cb.id); if(again) again.focus(); }
+});
+function initFilters(){
+  const h=document.getElementById("fHideOpt"), i=document.getElementById("fIncomplete"), d=document.getElementById("fDomain"), w=document.getElementById("fWeek");
+  h.checked=!!ui.hideOpt; i.checked=!!ui.incomplete; d.value=ui.domain||"";
+  h.addEventListener("change",()=>{ui.hideOpt=h.checked;saveUI();applyFilters();});
+  i.addEventListener("change",()=>{ui.incomplete=i.checked;saveUI();applyFilters();});
+  d.addEventListener("change",()=>{ui.domain=d.value;saveUI();applyFilters();});
+  w.addEventListener("change",()=>{
+    let target;
+    if(w.value==="today"){ const fd=focusDate(); const day=DAYS.find(x=>x.date===fd); const det=document.getElementById("week-"+day.week); det.open=true; target=document.getElementById("day-"+fd); }
+    else if(w.value){ const det=document.getElementById("week-"+w.value); det.open=true; target=det; }
+    if(target){ const y=target.getBoundingClientRect().top+scrollY-(document.querySelector("header.top").offsetHeight+8); scrollTo({top:y, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}); }
+    w.value="";
+  });
+}
+const TABS=["today","plan","progress","exams","data"];
+function showTab(name, focus){
+  if(!TABS.includes(name)) name="today";
+  ui.tab=name; saveUI();
+  TABS.forEach(t=>{ const b=document.getElementById("tab-"+t), p=document.getElementById("p-"+t); const on=t===name; b.setAttribute("aria-selected",on); b.tabIndex=on?0:-1; p.hidden=!on; });
+  if(name==="exams") renderChart();
+  if(focus) document.getElementById("tab-"+name).focus();
+}
+document.querySelector("nav.tabs").addEventListener("click", e=>{ const b=e.target.closest("[data-tab]"); if(b){ showTab(b.dataset.tab); scrollTo(0,0);} });
+document.querySelector("nav.tabs").addEventListener("keydown", e=>{
+  const i=TABS.indexOf(ui.tab);
+  if(e.key==="ArrowRight"){ showTab(TABS[(i+1)%TABS.length],true); e.preventDefault(); }
+  if(e.key==="ArrowLeft"){ showTab(TABS[(i+TABS.length-1)%TABS.length],true); e.preventDefault(); }
+});
+
+function refresh(){ renderCountdowns(); renderToday(); syncPlanRows(); renderProgress(); }
+function renderAll(){ renderCountdowns(); renderToday(); buildPlan(); renderProgress(); renderExams(); }
+
+/* ---------- boot ---------- */
+initFilters(); initForm(); initData();
+renderAll(); renderStorageExplain();
+const hash=(location.hash||"").slice(1);
+showTab(TABS.includes(hash) ? hash : "today");
+})();
+</script>
