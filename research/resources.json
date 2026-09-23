@@ -1,0 +1,3691 @@
+{
+  "generated": "2026-09-23",
+  "methodNote": "All research via web search (2026-09-23). The sandbox's egress proxy blocked direct HTTP/WebFetch access to every target host (iapp.org, reddit, youtube, nist.gov, eur-lex, etc.), so NO URL was HTTP-status-checked. 'verified': true means the exact URL was returned by a live web search on 2026-09-23 (strong evidence it exists); 'verified': false means pattern-inferred. Reddit could not be searched at all (blocked for the search tool's crawler).",
+  "exam": {
+    "bokVersion": "2.1 (file name AIGP_BOK_2.1.0_FINAL)",
+    "bokApprovedDate": "2025-09-09",
+    "bokEffectiveDate": "2026-02-02",
+    "bokPreviousVersion": "2.0.1 (effective Feb 2025; restructured 7 domains -> 4). v1.0 (2023-24) had 7 domains.",
+    "bokChangesInV2_1": [
+      "'AI models' -> 'AI systems' terminology throughout (governance of the whole system, supply chain, downstream use)",
+      "Provider responsibilities made explicit; more emphasis on legal basis and transparency",
+      "Fundamental rights impact assessments; third-party AI risk management",
+      "I.C.2 modified: evaluate/update data governance AND intellectual property policies for AI",
+      "II.C expanded beyond EU AI Act to other enacted AI laws (e.g., South Korea AI Basic Act) - per secondary sources",
+      "II.D explicitly references ISO/IEC 42005 (AI system impact assessment)",
+      "Agentic architectures added as a deployment option example (Domain IV)"
+    ],
+    "domains": [
+      {
+        "id": "I",
+        "name": "Understanding the foundations of AI governance",
+        "questionsMin": 16,
+        "questionsMax": 20,
+        "weightApprox": "~21%",
+        "subtopics": [
+          "I.A Understand what AI is and why it needs governance (definitions, types of AI, risks & harms)",
+          "I.B Establish and communicate organizational expectations for AI governance (roles, cross-functional collaboration, training/AI literacy)",
+          "I.C Establish policies and procedures to apply throughout the AI life cycle (incl. updating privacy, security, data governance and IP policies; third-party) - heaviest Domain I competency (~6-8 Qs per a study site)"
+        ]
+      },
+      {
+        "id": "II",
+        "name": "Understanding how laws, standards and frameworks apply to AI",
+        "questionsMin": 19,
+        "questionsMax": 23,
+        "weightApprox": "~25%",
+        "subtopics": [
+          "II.A Understand how existing data privacy laws apply to AI (GDPR principles, lawful basis, ADM/Art 22, DPIA, data subject rights)",
+          "II.B Understand how other types of existing laws apply to AI (IP, anti-discrimination/employment, consumer protection/FTC, product liability)",
+          "II.C Understand the main elements of the EU AI Act (+ other enacted AI laws per v2.1)",
+          "II.D Understand the main industry standards and tools that apply to AI (OECD, NIST AI RMF, ISO/IEC 42001, 42005, 22989/23894 etc.)"
+        ]
+      },
+      {
+        "id": "III",
+        "name": "Understanding how to govern AI development",
+        "questionsMin": 21,
+        "questionsMax": 25,
+        "weightApprox": "~27%",
+        "subtopics": [
+          "III.A Govern the designing and building of the AI system (use-case, impact/risk assessment, requirements, documentation)",
+          "III.B Govern the collection and use of data in training and testing (data lineage, quality, bias, privacy, IP)",
+          "III.C Govern the release, monitoring and maintenance of the AI system (TEVV, red teaming, conformity, release readiness, post-market monitoring)"
+        ]
+      },
+      {
+        "id": "IV",
+        "name": "Understanding how to govern AI deployment and use",
+        "questionsMin": 21,
+        "questionsMax": 25,
+        "weightApprox": "~27%",
+        "subtopics": [
+          "IV.A Evaluate key factors and risks relevant to the decision to deploy the AI system (context: business objectives, performance requirements, data availability, ethics, workforce readiness; deployment options incl. proprietary/open, cloud/on-prem, agentic)",
+          "IV.B Perform key activities to assess the AI system (impact assessments, vendor due diligence, contract terms)",
+          "IV.C Govern the deployment and use of the AI system (monitoring, incidents, secondary use, deactivation/decommissioning) - reportedly the heaviest competency"
+        ]
+      }
+    ],
+    "domainSubtopicsCaveat": "Competency names reconstructed from multiple secondary sources + v2.0.1 structure; the v2.1 PDF itself could not be opened from the sandbox. Verify against the PDF before building the plan.",
+    "questions": 100,
+    "scoredQuestions": 85,
+    "unscoredQuestions": 15,
+    "questionFormat": "Multiple choice (mostly single answer; a candidate reported 2-3 multi-select items); ~30% tied to case-study scenarios (per third-party source)",
+    "timeMinutes": 165,
+    "timeNotes": "2 h 45 min testing time plus an optional 15-min break at the midpoint (first half is submitted and locked) - ~3 h appointment. Some sources say '3 hours' (includes break). A LearnZapp claim of '90 questions in 2.5 hours' appears wrong.",
+    "passingScore": "300 on a 100-500 scaled score (raw cut score converted; not 60%). No penalty for wrong answers - never leave blanks.",
+    "feeMember": "US$649",
+    "feeNonMember": "US$799",
+    "retakeFeeMember": "US$475",
+    "retakeFeeNonMember": "US$625",
+    "feesVerified": "Consistent across multiple third-party sources and the IAPP store search snippet; IAPP site itself could not be fetched.",
+    "retakePolicy": "Wait at least 7 days between attempts (per search snippet of store.iapp.org - verify in Candidate Handbook)",
+    "membership": "IAPP membership ~US$295/yr (saves $150 on exam; also covers certification maintenance) - unverified",
+    "delivery": "Pearson VUE test centre or OnVUE online proctoring",
+    "passRate": "Not published by IAPP. Third-party 'estimates' (45-55% first attempt) are unsourced marketing - ignore.",
+    "euAiActCaveat": "Digital Omnibus on AI in force 2026-07-27 deferred Annex III high-risk obligations to 2027-12-02 and Annex I to 2028-08-02. BoK v2.1 (approved Sep 2025) predates this - the exam item bank may still reflect original dates (Aug 2026/Aug 2027). Learn both."
+  },
+  "readiness": {
+    "medianHours": 55,
+    "rangeHours": [
+      40,
+      80
+    ],
+    "hoursEvidenceQuality": "LOW-MODERATE. No first-person report found that states total hours. Numbers are triangulated from: IAPP recommendation of >=30 h (reported secondhand by Privacy Bootcamp), vendor guides (40-60 h for privacy-cert holders with AI exposure; 80-120 h for newcomers; 60-120 h general), and one passer's '~2 months mostly after work'.",
+    "userAdjustedEstimate": "~50-65 h for this user (strong on frontier/policy context, weak on operational/legal detail): ~5 weeks at 12 h/week, with a buffer week.",
+    "hoursBeforeFirstPractice": {
+      "diagnostic": "~3 h (after reading BoK v2.1 + IAPP free study guide questions; 15-25 free Qs)",
+      "firstFullLength": 25,
+      "notes": "Take the first full-length (100-Q, timed) mock after ~25 h, i.e., after one full pass through all 4 domains."
+    },
+    "practiceSchedule": [
+      {
+        "atHours": 3,
+        "what": "Diagnostic: IAPP free-guide sample Qs + AIGP Playbook free preview (untimed)",
+        "purpose": "Learn question style; rank domains"
+      },
+      {
+        "atHours": 25,
+        "what": "Full mock #1 (timed 165 min) - third-party v2.1 bank",
+        "purpose": "Baseline; per-domain gap list"
+      },
+      {
+        "atHours": 40,
+        "what": "Full mock #2 (different bank)",
+        "purpose": "Check gap closure"
+      },
+      {
+        "atHours": 50,
+        "what": "IAPP official practice exam (timed)",
+        "purpose": "Calibration to real style"
+      },
+      {
+        "atHours": 55,
+        "what": "Re-take weakest-domain sets only; final review",
+        "purpose": "Book exam if thresholds met"
+      }
+    ],
+    "targetPracticeScores": {
+      "thirdPartyBanks": "Consistently >=75% on two consecutive full mocks from a v2.1-aligned bank (common guidance across vendor sources); no domain below ~65-70%",
+      "iappOfficialPracticeExam": ">=70-75% under timed conditions (uncalibrated - IAPP publishes no mapping to the 300 cut score)",
+      "bookingRule": "Book when you hit the thresholds above AND can explain why each wrong option is wrong; many candidates book ~2-3 weeks ahead to fix a date.",
+      "caveat": "A vendor (Certsqill) publishes pass-rate-by-mock-score tables (e.g., 80%+ -> ~85% pass). These are unsourced; treat as marketing."
+    }
+  },
+  "bluedotGapAnalysis": {
+    "method": "Inferred from BlueDot course unit descriptions (search snippets) vs BoK v2.1 competencies. BlueDot content itself not reviewed in depth.",
+    "strong": [
+      "I.A AI types, capabilities, risks & harms (societal, frontier, misuse, catastrophic)",
+      "NIST AI 600-1 GenAI risk categories (conceptually)",
+      "II.C GPAI / systemic-risk provisions of the EU AI Act and the GPAI Code of Practice (high level)",
+      "Policy landscape awareness: US federal stance, EU, UK, China, international treaties (CoE, OECD) at a high level",
+      "III.C concepts: evaluations, red-teaming, model/system cards",
+      "IV.A deployment-option debates (open-weight vs closed)"
+    ],
+    "partial": [
+      "I.B why organisations need AI governance, stakeholder mapping (BlueDot is state/lab-level, not enterprise)",
+      "II.D OECD principles (known), NIST AI RMF (probably known by name, not category-level)"
+    ],
+    "weak": [
+      "I.B/I.C enterprise program mechanics: governance committees, RACI, policies/procedures, AI inventories, training, third-party policies, IP policy updates",
+      "II.A GDPR applied to AI: lawful basis, purpose limitation, DPIA triggers, Art 22, data subject rights, EDPB Opinion 28/2024",
+      "II.B non-privacy law: copyright/IP, anti-discrimination (EEOC-type), consumer protection (FTC Section 5), product liability",
+      "II.C EU AI Act article-level detail for HIGH-RISK systems: Art 6 + Annex III classification, provider (Arts 9-17) vs deployer (Art 26) duties, Art 25 role shifts, FRIA (Art 27), Art 50 transparency, conformity assessment, penalties, timelines",
+      "II.D ISO/IEC 42001 (AIMS, Annex A), 42005, 23894; NIST AI RMF categories/subcategories",
+      "III.A-B lifecycle governance: use-case intake, impact assessments, data provenance/lineage, data quality & bias testing, documentation",
+      "IV.B vendor due diligence & contracts; IV.C monitoring, incident response, secondary use, decommissioning",
+      "US state/local laws: Colorado AI Act, NYC LL144, Texas TRAIGA; other national laws (Korea, Canada ADM directive, China GenAI measures, Singapore frameworks)"
+    ],
+    "implication": "Domains III and IV (~54% of scored items) plus II.A-II.C detail are where to spend ~70% of study time. Beware 'frontier-safety' answer instincts: AIGP rewards the process-correct, organisation-level governance action (document, assess, consult stakeholders, follow policy) rather than strategic/policy arguments."
+  },
+  "resources": [
+    {
+      "id": "iapp-aigp-page",
+      "name": "IAPP AIGP certification page",
+      "url": "https://iapp.org/certify/aigp",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "live page",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Hub for BoK, handbook, exam purchase. Always re-check before booking.",
+      "topRank": "official-1"
+    },
+    {
+      "id": "iapp-bok-v2-1",
+      "name": "AIGP Body of Knowledge & Exam Blueprint v2.1 (PDF, effective 2 Feb 2026)",
+      "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+      "format": "official-pdf",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "approved 2025-09-09; effective 2026-02-02",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "THE syllabus. Search index titles it 'VERSION 2.1 Effective date: 2 February 2026'. Print it and tick off every performance indicator.",
+      "topRank": "official-1"
+    },
+    {
+      "id": "iapp-bok-v2-1-alt",
+      "name": "AIGP BoK (alternate IAPP asset URL, also titled v2.1)",
+      "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt0d33152fd20bc134/AIGP_Cert%20BOK.pdf",
+      "format": "official-pdf",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Alternate link to same/similar v2.1 PDF; use whichever opens."
+    },
+    {
+      "id": "iapp-bok-v2-0-1-old",
+      "name": "AIGP BoK v2.0.1 (OLD, Feb 2025–Feb 2026)",
+      "url": "https://iapp.org/media/pdf/certification/AIGP_Cert_BOK_FINAL_012925_2.0.1.pdf",
+      "format": "official-pdf",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2025-01 (superseded)",
+      "rating": 2,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Superseded. Only useful to judge whether a resource is out of date."
+    },
+    {
+      "id": "iapp-handbook-page",
+      "name": "IAPP Candidate Handbook (landing)",
+      "url": "https://iapp.org/certify/candidate-handbook",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "exam-logistics"
+      ],
+      "lastUpdated": "live page",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Policies: ID, OnVUE rules, retakes, scoring, confidentiality agreement."
+    },
+    {
+      "id": "iapp-handbook-pdf",
+      "name": "IAPP Certification Candidate Handbook (PDF)",
+      "url": "https://prod.iapp.org/media/pdf/certification/IAPP_Certification_Handbook_Updated.pdf",
+      "format": "official-pdf",
+      "cost": "free",
+      "bokDomains": [
+        "exam-logistics"
+      ],
+      "lastUpdated": "unknown - check version on cover",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Version/date could not be confirmed (PDF not fetchable from sandbox)."
+    },
+    {
+      "id": "iapp-cert-faqs",
+      "name": "IAPP Certification FAQs",
+      "url": "https://iapp.org/certify/faqs",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "exam-logistics"
+      ],
+      "lastUpdated": "live page",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Scoring (100-500, 300 pass), scheduling, OnVUE."
+    },
+    {
+      "id": "iapp-free-study-guides",
+      "name": "IAPP Free study guides (hub)",
+      "url": "https://iapp.org/certify/free-study-guides",
+      "format": "official-web",
+      "cost": "free (email form)",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "live page",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Official free study guide with sample questions."
+    },
+    {
+      "id": "iapp-aigp-fsg-request",
+      "name": "Get your free AIGP Study Guide (request form)",
+      "url": "https://iapp.org/l/aigp-study-guide-request",
+      "format": "official-web",
+      "cost": "free (email form)",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "live page",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Form to obtain the current AIGP FSG."
+    },
+    {
+      "id": "iapp-aigp-fsg-pdf",
+      "name": "AIGP Free Study Guide PDF (direct, version=3)",
+      "url": "https://pages.iapp.org/rs/138-EZM-042/images/AIGP%20FSG.pdf?version=3",
+      "format": "official-pdf",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "unknown - may predate v2.1",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Some third-party snippets describe it with the OLD 6/7-domain structure; prefer the request-form version and check that it shows 4 domains."
+    },
+    {
+      "id": "iapp-glossary",
+      "name": "IAPP Key Terms for AI Governance (glossary)",
+      "url": "https://iapp.org/resources/ai-governance-glossary",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "I"
+      ],
+      "lastUpdated": "updated repeatedly since Oct 2023 (adds agentic AI, RAG, shadow AI, data drift)",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "IAPP's own vocabulary - exam wording tends to follow it. Make flashcards from it.",
+      "bokSubtopics": [
+        "I.A"
+      ],
+      "topRank": "official-2"
+    },
+    {
+      "id": "iapp-glossary-update",
+      "name": "IAPP news: Update to Key Terms for AI Governance",
+      "url": "https://iapp.org/news/a/update-to-key-terms-for-ai-governance",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "I"
+      ],
+      "lastUpdated": "2025",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Lists newly added terms."
+    },
+    {
+      "id": "iapp-global-tracker",
+      "name": "IAPP Global AI Law and Policy Tracker",
+      "url": "https://iapp.org/resources/article/global-ai-legislation-tracker",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "last updated 2026-02-03 (per search snippet)",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Jurisdiction summaries (EU, UK, US, China, Singapore, Canada, S. Korea, Japan...).",
+      "bokSubtopics": [
+        "II.C"
+      ],
+      "topRank": "official-3"
+    },
+    {
+      "id": "iapp-tracker-takeaways",
+      "name": "IAPP: Global AI Law and Policy Tracker - highlights and takeaways",
+      "url": "https://iapp.org/news/a/global-ai-law-and-policy-tracker-highlights-and-takeaways",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026-02",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Quick summary of 2025-26 global trends (Korea AI Basic Act, Japan AI Promotion Act, China labeling rules)."
+    },
+    {
+      "id": "iapp-jurisdiction-overviews",
+      "name": "IAPP Global AI Governance Law and Policy: Jurisdiction Overviews",
+      "url": "https://iapp.org/resources/article/global-ai-governance-jurisdiction-overviews",
+      "format": "official-web",
+      "cost": "free (may require free login)",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Deeper per-country write-ups."
+    },
+    {
+      "id": "iapp-us-state-tracker",
+      "name": "IAPP US State AI Governance Legislation Tracker",
+      "url": "https://iapp.org/resources/article/us-state-ai-governance-legislation-tracker",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live page",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Colorado, Texas TRAIGA, California, Utah, NYC etc."
+    },
+    {
+      "id": "iapp-top10-euaia",
+      "name": "IAPP Top 10 operational impacts of the EU AI Act (series hub)",
+      "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-25 series",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Written for practitioners; maps directly to Domain II.C.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "iapp-top10-scope",
+      "name": "Top 10 EU AI Act - Subject matter, definitions, key actors and scope",
+      "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-scope-subject-definitions-actors",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-25",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Provider/deployer/importer/distributor roles.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "iapp-top10-risk",
+      "name": "Top 10 EU AI Act - Understanding and assessing risk",
+      "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-understanding-assessing-risk",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-25",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Risk tiers.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "iapp-top10-gpai",
+      "name": "Top 10 EU AI Act - Obligations for general-purpose AI models",
+      "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-obligations-general-purpose-ai-models",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-25",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "GPAI + systemic risk.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "iapp-top10-assurance",
+      "name": "Top 10 EU AI Act - AI assurance across the risk categories",
+      "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-ai-assurance-risk-categories",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "2024-25",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Conformity assessment, QMS, standards.",
+      "bokSubtopics": [
+        "II.C",
+        "III.C"
+      ]
+    },
+    {
+      "id": "iapp-top10-pmm",
+      "name": "Top 10 EU AI Act - Post-market monitoring, information sharing and enforcement",
+      "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-post-market-monitoring-sharing-enforcement",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "2024-25",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Serious incident reporting, market surveillance.",
+      "bokSubtopics": [
+        "II.C",
+        "IV.C"
+      ]
+    },
+    {
+      "id": "iapp-top10-implementation",
+      "name": "Top 10 EU AI Act - Regulatory implementation alongside EU digital strategy",
+      "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-regulatory-implementation-application",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-25",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Interplay with GDPR/DSA etc."
+    },
+    {
+      "id": "iapp-top10-governance",
+      "name": "Top 10 EU AI Act - Governance: EU and national stakeholders",
+      "url": "https://iapp.org/resources/article/top-impacts-eu-ai-act-governance-eu-national-stakeholders/",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-25",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "AI Office, AI Board, national authorities."
+    },
+    {
+      "id": "iapp-edpb-article",
+      "name": "IAPP: EDPB weighs in on key questions on personal data in AI models",
+      "url": "https://iapp.org/news/a/edpb-weighs-in-on-key-questions-on-personal-data-in-ai-models",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-12",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Summary of EDPB Opinion 28/2024.",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "iapp-mcc-article",
+      "name": "IAPP: EU model contractual clauses for AI procurement - a practical guide",
+      "url": "https://iapp.org/news/a/eu-model-contractual-clauses-for-ai-procurement-a-practical-guide",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "IV"
+      ],
+      "lastUpdated": "2025",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Vendor/procurement due diligence.",
+      "bokSubtopics": [
+        "IV.A",
+        "IV.B"
+      ]
+    },
+    {
+      "id": "iapp-profession-report-2025",
+      "name": "IAPP AI Governance Profession Report 2025",
+      "url": "https://iapp.org/resources/article/ai-governance-profession-report",
+      "format": "official-report",
+      "cost": "free",
+      "bokDomains": [
+        "I"
+      ],
+      "lastUpdated": "2025",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "How orgs structure AI governance (roles, committees)."
+    },
+    {
+      "id": "iapp-in-practice-2024",
+      "name": "IAPP AI Governance in Practice Report 2024",
+      "url": "https://prod.iapp.org/resources/article/ai-governance-in-practice-report/",
+      "format": "official-report",
+      "cost": "free",
+      "bokDomains": [
+        "I",
+        "III",
+        "IV"
+      ],
+      "lastUpdated": "2024 (older)",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Program-building examples; slightly dated."
+    },
+    {
+      "id": "iapp-ai-governance-hub",
+      "name": "IAPP AI governance topic hub",
+      "url": "https://iapp.org/ai-governance",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "live",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Navigation hub for articles, webinars."
+    },
+    {
+      "id": "iapp-privacy-advisor-podcast",
+      "name": "The Privacy Advisor Podcast (IAPP) - Apple Podcasts",
+      "url": "https://podcasts.apple.com/us/podcast/the-privacy-advisor-podcast/id1095382766",
+      "format": "podcast",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "ongoing",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "General privacy/AI policy interviews; background listening only."
+    },
+    {
+      "id": "euaia-eurlex-oj",
+      "name": "EU AI Act - Regulation (EU) 2024/1689, EUR-Lex (Official Journal)",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AL_202401689",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "OJ 2024-07-12",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Authoritative text as originally adopted.",
+      "bokSubtopics": [
+        "II.C"
+      ],
+      "topRank": "primary-1"
+    },
+    {
+      "id": "euaia-eurlex-pdf",
+      "name": "EU AI Act - EUR-Lex PDF",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ%3AL_202401689",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-07-12",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "PDF of the OJ text."
+    },
+    {
+      "id": "euaia-eurlex-consolidated",
+      "name": "EU AI Act consolidated version 27 July 2026 (incl. Digital Omnibus on AI)",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02024R1689-20260727",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026-07-27",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Post-Omnibus consolidated text. BoK v2.1 was written before the Omnibus - know original dates AND the deferrals."
+    },
+    {
+      "id": "aia-explorer",
+      "name": "AI Act Explorer (artificialintelligenceact.eu)",
+      "url": "https://artificialintelligenceact.eu/ai-act-explorer/",
+      "format": "interactive",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Article-by-article navigation.",
+      "bokSubtopics": [
+        "II.C"
+      ],
+      "topRank": "interactive-1"
+    },
+    {
+      "id": "aia-high-level-summary",
+      "name": "AI Act high-level summary (Future of Life Institute site)",
+      "url": "https://artificialintelligenceact.eu/high-level-summary/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024 (check for Omnibus notes)",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Best single read on the Act structure.",
+      "bokSubtopics": [
+        "II.C"
+      ],
+      "topRank": "primary-2"
+    },
+    {
+      "id": "aia-timeline",
+      "name": "AI Act implementation timeline",
+      "url": "https://artificialintelligenceact.eu/implementation-timeline/",
+      "format": "interactive",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "updated 2026 (shows Dec 2027 / Aug 2028 dates)",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Key dates.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "aia-compliance-checker",
+      "name": "EU AI Act Compliance Checker",
+      "url": "https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/",
+      "format": "interactive",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "live (work in progress)",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Run 5-6 made-up scenarios (HR screening tool, chatbot, credit scoring) to drill role + risk classification.",
+      "bokSubtopics": [
+        "II.C",
+        "IV.A"
+      ],
+      "topRank": "interactive-1"
+    },
+    {
+      "id": "aia-art-2",
+      "name": "AI Act Article 2 - Scope",
+      "url": "https://artificialintelligenceact.eu/article/2/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Extraterritorial reach; exclusions (military, R&D).",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "aia-art-3",
+      "name": "AI Act Article 3 - Definitions",
+      "url": "https://artificialintelligenceact.eu/article/3/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "I"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "AI system, provider, deployer, GPAI, substantial modification.",
+      "bokSubtopics": [
+        "II.C",
+        "I.A"
+      ]
+    },
+    {
+      "id": "aia-art-4",
+      "name": "AI Act Article 4 - AI literacy",
+      "url": "https://artificialintelligenceact.eu/article/4/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "I"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Applies since 2 Feb 2025; links to I.B training.",
+      "bokSubtopics": [
+        "II.C",
+        "I.B"
+      ]
+    },
+    {
+      "id": "aia-art-5",
+      "name": "AI Act Article 5 - Prohibited AI practices",
+      "url": "https://artificialintelligenceact.eu/article/5/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Memorise the list; applies since 2 Feb 2025.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "aia-art-6",
+      "name": "AI Act Article 6 - Classification rules for high-risk AI",
+      "url": "https://artificialintelligenceact.eu/article/6/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Annex I vs Annex III routes; 6(3) derogation; profiling always high-risk.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "aia-annex-3",
+      "name": "AI Act Annex III - High-risk use cases",
+      "url": "https://artificialintelligenceact.eu/annex/3/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "8 areas (biometrics, critical infra, education, employment, essential services, law enforcement, migration, justice/democracy).",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "aia-chapter-3",
+      "name": "AI Act Chapter III - High-risk AI systems (overview)",
+      "url": "https://artificialintelligenceact.eu/chapter/3/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Navigation to Arts 6-49.",
+      "bokSubtopics": [
+        "II.C",
+        "III.A"
+      ]
+    },
+    {
+      "id": "aia-section-3-2",
+      "name": "AI Act Chapter III Section 2 - Requirements for high-risk AI (Arts 8-15)",
+      "url": "https://artificialintelligenceact.eu/section/3-2/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Risk mgmt, data, documentation, logging, transparency, oversight, accuracy/robustness.",
+      "bokSubtopics": [
+        "II.C",
+        "III.A",
+        "III.B"
+      ]
+    },
+    {
+      "id": "aia-art-9",
+      "name": "AI Act Article 9 - Risk management system",
+      "url": "https://artificialintelligenceact.eu/article/9/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Lifecycle risk management for high-risk.",
+      "bokSubtopics": [
+        "II.C",
+        "III.A"
+      ]
+    },
+    {
+      "id": "aia-art-10",
+      "name": "AI Act Article 10 - Data and data governance",
+      "url": "https://artificialintelligenceact.eu/article/10/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Training/validation/test data quality, bias examination.",
+      "bokSubtopics": [
+        "III.B"
+      ]
+    },
+    {
+      "id": "aia-art-14",
+      "name": "AI Act Article 14 - Human oversight",
+      "url": "https://artificialintelligenceact.eu/article/14/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III",
+        "IV"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Oversight design + automation bias.",
+      "bokSubtopics": [
+        "III.A",
+        "IV.C"
+      ]
+    },
+    {
+      "id": "aia-art-15-sd",
+      "name": "AI Act Article 15 - Accuracy, robustness and cybersecurity (AI Act Service Desk)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-15",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Official EC service desk rendering.",
+      "bokSubtopics": [
+        "III.C"
+      ]
+    },
+    {
+      "id": "aia-art-25",
+      "name": "AI Act Article 25 - Responsibilities along the AI value chain",
+      "url": "https://artificialintelligenceact.eu/article/25/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "When a deployer/distributor BECOMES a provider (rebranding, substantial modification, change of purpose) - classic exam scenario.",
+      "bokSubtopics": [
+        "II.C",
+        "IV.A"
+      ]
+    },
+    {
+      "id": "aia-art-26",
+      "name": "AI Act Article 26 - Obligations of deployers of high-risk AI",
+      "url": "https://artificialintelligenceact.eu/article/26/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Use per instructions, oversight staff, logs, informing workers/individuals.",
+      "bokSubtopics": [
+        "II.C",
+        "IV.C"
+      ]
+    },
+    {
+      "id": "aia-art-27",
+      "name": "AI Act Article 27 - Fundamental rights impact assessment",
+      "url": "https://artificialintelligenceact.eu/article/27/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "FRIA: who must do it (public bodies, public-service providers, credit scoring/insurance pricing).",
+      "bokSubtopics": [
+        "II.C",
+        "IV.B"
+      ]
+    },
+    {
+      "id": "aia-art-43",
+      "name": "AI Act Article 43 - Conformity assessment",
+      "url": "https://artificialintelligenceact.eu/article/43/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Internal control vs notified body.",
+      "bokSubtopics": [
+        "III.C"
+      ]
+    },
+    {
+      "id": "aia-art-47",
+      "name": "AI Act Article 47 - EU declaration of conformity",
+      "url": "https://artificialintelligenceact.eu/article/47/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "III.C"
+      ]
+    },
+    {
+      "id": "aia-art-49",
+      "name": "AI Act Article 49 - Registration",
+      "url": "https://artificialintelligenceact.eu/article/49/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "EU database registration.",
+      "bokSubtopics": [
+        "III.C"
+      ]
+    },
+    {
+      "id": "aia-art-50",
+      "name": "AI Act Article 50 - Transparency obligations (chatbots, deepfakes, emotion recognition)",
+      "url": "https://artificialintelligenceact.eu/article/50/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "n/a (applies from 2 Aug 2026)",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Limited-risk transparency.",
+      "bokSubtopics": [
+        "II.C",
+        "IV.C"
+      ]
+    },
+    {
+      "id": "aia-art-50-guide",
+      "name": "The AI Act's transparency rules: a practical guide to Article 50",
+      "url": "https://artificialintelligenceact.eu/transparency-rules-article-50/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "aia-art-51",
+      "name": "AI Act Article 51 - GPAI models with systemic risk (10^25 FLOP presumption)",
+      "url": "https://artificialintelligenceact.eu/article/51/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "aia-art-53",
+      "name": "AI Act Article 53 - Obligations for GPAI providers",
+      "url": "https://artificialintelligenceact.eu/article/53/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Tech docs, downstream info, copyright policy, training-data summary.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "aia-annex-12",
+      "name": "AI Act Annex XII - GPAI transparency info for downstream providers",
+      "url": "https://artificialintelligenceact.eu/annex/12/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "aia-annex-13",
+      "name": "AI Act Annex XIII - Criteria for systemic-risk designation",
+      "url": "https://artificialintelligenceact.eu/annex/13/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "aia-art-99",
+      "name": "AI Act Article 99 - Penalties (EUR35m/7%, EUR15m/3%, EUR7.5m/1%)",
+      "url": "https://artificialintelligenceact.eu/article/99/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Know the three fine tiers.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "aia-gpai-cop-intro",
+      "name": "Introduction to the GPAI Code of Practice",
+      "url": "https://artificialintelligenceact.eu/introduction-to-code-of-practice/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Transparency, copyright, safety & security chapters."
+    },
+    {
+      "id": "aia-gpai-guidelines",
+      "name": "Overview of Commission guidelines for GPAI models",
+      "url": "https://artificialintelligenceact.eu/gpai-guidelines-overview/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "ec-gpai-cop",
+      "name": "European Commission - The General-Purpose AI Code of Practice",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025-07-10",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "ec-ai-act-page",
+      "name": "European Commission - AI Act policy page",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "ec-service-desk",
+      "name": "EU AI Act Service Desk / Single Information Platform",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Official EC explorer, FAQs, compliance checker."
+    },
+    {
+      "id": "ec-sd-annex-3",
+      "name": "AI Act Service Desk - Annex III",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "ec-sd-art-27",
+      "name": "AI Act Service Desk - Article 27 FRIA",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-27",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Shows Omnibus-updated application dates."
+    },
+    {
+      "id": "ec-guidelines-prohibited",
+      "name": "Commission Guidelines on prohibited AI practices (PDF)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/sites/default/files/2025-08/guidelines_on_prohibited_artificial_intelligence_practices_established_by_regulation_eu_20241689_ai_act_english_ied3r5nwo50xggpcfmwckm3nuc_112367-1.PDF",
+      "format": "official-pdf",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Long; skim examples only."
+    },
+    {
+      "id": "ec-guidelines-ai-definition",
+      "name": "Commission Guidelines on the definition of an AI system (PDF)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/sites/default/files/2025-08/commission_guidelines_on_the_definition_of_an_artificial_intelligence_system_established_by_regulation_eu_20241689_ai_actenglish_nf2skcqfrtjdfggjavcodopcwz4_112455.PDF",
+      "format": "official-pdf",
+      "cost": "free",
+      "bokDomains": [
+        "I",
+        "II"
+      ],
+      "lastUpdated": "2025",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Seven elements of the AI-system definition.",
+      "bokSubtopics": [
+        "I.A"
+      ]
+    },
+    {
+      "id": "omnibus-freshfields",
+      "name": "Freshfields - EU AI Act unpacked #34: the final Digital Omnibus on AI",
+      "url": "https://www.freshfields.com/en/our-thinking/blogs/technology-quotient/eu-ai-act-unpacked-34-the-final-digital-omnibus-on-ai-key-amendments-to-the-a-102nber",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "What changed in July 2026: Annex III high-risk deferred to 2 Dec 2027; Annex I to 2 Aug 2028."
+    },
+    {
+      "id": "omnibus-morganlewis",
+      "name": "Morgan Lewis - EU approves delays and other amendments to EU AI Act obligations",
+      "url": "https://www.morganlewis.com/pubs/2026/06/eu-approves-delays-and-other-amendments-to-certain-eu-ai-act-obligations-what-businesses-should-know",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026-06",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "oliverpatel-euaia-guide",
+      "name": "Oliver Patel - The Ultimate EU AI Act Resource Guide",
+      "url": "https://oliverpatel.substack.com/p/the-ultimate-eu-ai-act-resource-guide",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Curated reading list."
+    },
+    {
+      "id": "euaia-newsletter",
+      "name": "The EU AI Act Newsletter (Substack)",
+      "url": "https://artificialintelligenceact.substack.com/p/the-eu-ai-act-newsletter-63-standards",
+      "format": "newsletter",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "ongoing",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Optional news feed."
+    },
+    {
+      "id": "gdpr-eurlex",
+      "name": "GDPR - Regulation (EU) 2016/679 (EUR-Lex HTML)",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2016",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "gdpr-art-5",
+      "name": "GDPR Art. 5 - Principles",
+      "url": "https://gdpr-info.eu/art-5-gdpr/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Purpose limitation, minimisation, accuracy vs AI training.",
+      "bokSubtopics": [
+        "II.A"
+      ],
+      "topRank": "primary-3"
+    },
+    {
+      "id": "gdpr-art-6",
+      "name": "GDPR Art. 6 - Lawfulness of processing",
+      "url": "https://gdpr-info.eu/art-6-gdpr/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Legitimate interest for AI training (see EDPB Op. 28/2024).",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "gdpr-art-9",
+      "name": "GDPR Art. 9 - Special categories",
+      "url": "https://gdpr-info.eu/art-9-gdpr/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": false,
+      "linkStatus": "NOT seen in search; URL pattern-inferred; unverified",
+      "notes": "Pattern-inferred URL.",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "gdpr-art-13",
+      "name": "GDPR Art. 13 - Information to be provided (incl. 'meaningful information about the logic involved')",
+      "url": "https://gdpr-info.eu/art-13-gdpr/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "gdpr-art-14",
+      "name": "GDPR Art. 14 - Information where data not obtained from the data subject (scraped training data)",
+      "url": "https://gdpr-info.eu/art-14-gdpr/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": false,
+      "linkStatus": "NOT seen in search; URL pattern-inferred; unverified",
+      "notes": "Pattern-inferred URL.",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "gdpr-art-15",
+      "name": "GDPR Art. 15 - Right of access",
+      "url": "https://gdpr-info.eu/art-15-gdpr/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": false,
+      "linkStatus": "NOT seen in search; URL pattern-inferred; unverified",
+      "notes": "Pattern-inferred URL.",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "gdpr-chapter-3",
+      "name": "GDPR Chapter 3 - Rights of the data subject",
+      "url": "https://gdpr-info.eu/chapter-3/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Covers Arts 12-23 incl. 15, 17, 21, 22.",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "gdpr-art-22",
+      "name": "GDPR Art. 22 - Automated individual decision-making incl. profiling",
+      "url": "https://gdpr-info.eu/art-22-gdpr/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Core AIGP topic: 'solely automated', legal/similarly significant effects, human intervention.",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "gdpr-art-25",
+      "name": "GDPR Art. 25 - Data protection by design and by default",
+      "url": "https://gdpr-info.eu/art-25-gdpr/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": false,
+      "linkStatus": "NOT seen in search; URL pattern-inferred; unverified",
+      "notes": "Pattern-inferred URL (gdpr.eu equivalent verified: https://gdpr.eu/article-25-data-protection-by-design/).",
+      "bokSubtopics": [
+        "II.A",
+        "III.A"
+      ]
+    },
+    {
+      "id": "gdpr-eu-art-25",
+      "name": "GDPR.eu - Art. 25 Data protection by design and by default",
+      "url": "https://gdpr.eu/article-25-data-protection-by-design/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "gdpr-art-35",
+      "name": "GDPR Art. 35 - Data protection impact assessment",
+      "url": "https://gdpr-info.eu/art-35-gdpr/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "DPIA vs FRIA vs AI impact assessment - know the differences.",
+      "bokSubtopics": [
+        "II.A",
+        "IV.B"
+      ]
+    },
+    {
+      "id": "gdpr-dpia-issue",
+      "name": "gdpr-info.eu - Privacy Impact Assessment explainer",
+      "url": "https://gdpr-info.eu/issues/privacy-impact-assessment/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "edpb-op-28-2024",
+      "name": "EDPB Opinion 28/2024 on AI models (PDF)",
+      "url": "https://www.edpb.europa.eu/system/files/2024-12/edpb_opinion_202428_ai-models_en.pdf",
+      "format": "official-pdf",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-12-17",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Anonymity of models, legitimate interest 3-step test, unlawfully trained models. Read exec summary only.",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "ico-ai-guidance",
+      "name": "UK ICO - Guidance on AI and data protection",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "live",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Best practitioner explanation of fairness, bias, lawful basis, ADM in AI.",
+      "bokSubtopics": [
+        "II.A",
+        "III.B"
+      ]
+    },
+    {
+      "id": "ico-ai-rights",
+      "name": "UK ICO - How do we ensure individual rights in our AI systems?",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-individual-rights-in-our-ai-systems/",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.A"
+      ]
+    },
+    {
+      "id": "ico-ai-security-minimisation",
+      "name": "UK ICO - How should we assess security and data minimisation in AI?",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-should-we-assess-security-and-data-minimisation-in-ai/",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "live",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Privacy-enhancing techniques, model inversion/membership inference.",
+      "bokSubtopics": [
+        "III.B"
+      ]
+    },
+    {
+      "id": "ico-ai-toolkit",
+      "name": "UK ICO - AI and data protection risk toolkit",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/ai-and-data-protection-risk-toolkit/",
+      "format": "interactive",
+      "cost": "free",
+      "bokDomains": [
+        "III",
+        "IV"
+      ],
+      "lastUpdated": "live",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Hands-on risk assessment template - good practice for impact assessments.",
+      "bokSubtopics": [
+        "IV.B"
+      ],
+      "topRank": "interactive-3"
+    },
+    {
+      "id": "nist-ai-rmf-pdf",
+      "name": "NIST AI RMF 1.0 (NIST AI 100-1) PDF",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "I"
+      ],
+      "lastUpdated": "2023-01-26 (revision in progress under 2025 AI Action Plan)",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Read Part 1 (risk framing, 7 trustworthiness characteristics) + Part 2 core tables.",
+      "bokSubtopics": [
+        "II.D",
+        "I.A"
+      ],
+      "topRank": "primary-2"
+    },
+    {
+      "id": "nist-ai-rmf-page",
+      "name": "NIST AI Risk Management Framework page",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Check for AI RMF revision status."
+    },
+    {
+      "id": "nist-airc-home",
+      "name": "NIST Trustworthy & Responsible AI Resource Center (AIRC)",
+      "url": "https://airc.nist.gov/",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "nist-airc-exec-summary",
+      "name": "AIRC - AI RMF Executive Summary (HTML)",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/0-ai-rmf-1-0/",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "HTML version of the framework.",
+      "bokSubtopics": [
+        "II.D"
+      ]
+    },
+    {
+      "id": "nist-airc-core",
+      "name": "AIRC - AI RMF Core (Govern/Map/Measure/Manage)",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III",
+        "IV"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Functions > categories > subcategories. Know what goes where.",
+      "bokSubtopics": [
+        "II.D"
+      ]
+    },
+    {
+      "id": "nist-playbook",
+      "name": "NIST AI RMF Playbook (AIRC)",
+      "url": "https://airc.nist.gov/airmf-resources/playbook",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III",
+        "IV"
+      ],
+      "lastUpdated": "live",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Suggested actions per subcategory.",
+      "bokSubtopics": [
+        "II.D"
+      ]
+    },
+    {
+      "id": "nist-playbook-govern",
+      "name": "AI RMF Playbook - GOVERN",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/govern/",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "I",
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Maps to Domain I program-building (policies, roles, accountability, third-party).",
+      "bokSubtopics": [
+        "I.B",
+        "I.C",
+        "II.D"
+      ]
+    },
+    {
+      "id": "nist-playbook-map",
+      "name": "AI RMF Playbook - MAP",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/map/",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "III",
+        "IV"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Context, intended use, impact characterisation.",
+      "bokSubtopics": [
+        "III.A",
+        "IV.A"
+      ]
+    },
+    {
+      "id": "nist-playbook-measure",
+      "name": "AI RMF Playbook - MEASURE",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "TEVV, metrics, bias testing.",
+      "bokSubtopics": [
+        "III.B",
+        "III.C"
+      ]
+    },
+    {
+      "id": "nist-playbook-manage",
+      "name": "AI RMF Playbook - MANAGE",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/manage/",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "IV"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Risk treatment, incident response, decommissioning, third-party risk.",
+      "bokSubtopics": [
+        "IV.C"
+      ]
+    },
+    {
+      "id": "nist-playbook-faq",
+      "name": "AI RMF Playbook FAQ",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/faq/",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "nist-airc-resources",
+      "name": "AIRC - AI RMF Resources index",
+      "url": "https://airc.nist.gov/airmf-resources/",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "nist-crosswalk-42001",
+      "name": "NIST AI RMF to ISO/IEC 42001 crosswalk (PDF)",
+      "url": "https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Fast way to learn 42001 structure without buying the standard.",
+      "bokSubtopics": [
+        "II.D"
+      ]
+    },
+    {
+      "id": "nist-crosswalk-42005",
+      "name": "ISO/IEC 42005 to NIST AI RMF crosswalk (PDF)",
+      "url": "https://airc.nist.gov/documents/2/ai-2025-00108_ISO_IEC_42005_to_NIST_AI_RMF_Crosswalk.pdf",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "2025",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "42005 is newly named in BoK v2.1.",
+      "bokSubtopics": [
+        "II.D",
+        "IV.B"
+      ]
+    },
+    {
+      "id": "nist-600-1",
+      "name": "NIST AI 600-1 Generative AI Profile (PDF)",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "2024-07-26",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "12 GenAI risk areas (confabulation, CBRN, IP, info integrity...). You likely know the concepts; skim the risk list.",
+      "bokSubtopics": [
+        "II.D",
+        "I.A"
+      ]
+    },
+    {
+      "id": "nist-100-2-2025",
+      "name": "NIST AI 100-2e2025 Adversarial ML taxonomy (PDF)",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "III"
+      ],
+      "lastUpdated": "2025-03",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Evasion, poisoning, privacy attacks; skim only.",
+      "bokSubtopics": [
+        "III.C"
+      ]
+    },
+    {
+      "id": "iso-42001",
+      "name": "ISO/IEC 42001:2023 AI management systems (ISO page)",
+      "url": "https://www.iso.org/standard/42001",
+      "format": "official-web",
+      "cost": "free page (standard is paid)",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2023-12",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Free abstract only; do not buy the standard.",
+      "bokSubtopics": [
+        "II.D"
+      ]
+    },
+    {
+      "id": "iso-42005",
+      "name": "ISO/IEC 42005:2025 AI system impact assessment (ISO page)",
+      "url": "https://www.iso.org/standard/42005",
+      "format": "official-web",
+      "cost": "free page (standard is paid)",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "2025",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "New in BoK v2.1.",
+      "bokSubtopics": [
+        "II.D",
+        "IV.B"
+      ]
+    },
+    {
+      "id": "isms-42001-annex-a",
+      "name": "ISMS.online - ISO 42001 Annex A controls explained",
+      "url": "https://www.isms.online/iso-42001/annex-a-controls/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "III"
+      ],
+      "lastUpdated": "2025-26",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Free summary of the Annex A control objectives A.2-A.10 (policy, roles, resources, impact assessment, lifecycle, data, info for parties, use, third parties).",
+      "bokSubtopics": [
+        "II.D"
+      ]
+    },
+    {
+      "id": "ms-learn-42001",
+      "name": "Microsoft Learn - ISO/IEC 42001 offering overview",
+      "url": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Short plain-English overview."
+    },
+    {
+      "id": "oecd-ai-principles",
+      "name": "OECD.AI - AI Principles overview",
+      "url": "https://oecd.ai/en/ai-principles",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "I"
+      ],
+      "lastUpdated": "2024-05 update",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "5 values-based principles + 5 recommendations; 2024 update added safety, IP, info integrity.",
+      "bokSubtopics": [
+        "II.D",
+        "I.A"
+      ]
+    },
+    {
+      "id": "oecd-principles-topic",
+      "name": "OECD - AI principles topic page",
+      "url": "https://www.oecd.org/en/topics/ai-principles.html",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "oecd-2024-update",
+      "name": "OECD press release - 2024 update to AI Principles",
+      "url": "https://www.oecd.org/en/about/news/press-releases/2024/05/oecd-updates-ai-principles-to-stay-abreast-of-rapid-technological-developments.html",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-05",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "coe-cets-225",
+      "name": "Council of Europe Framework Convention on AI (CETS 225) text",
+      "url": "https://rm.coe.int/1680afae3c",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "opened 2024-09-05",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "First binding intl AI treaty. Entry-into-force status NOT verified (one search snippet claims 1 Nov 2025) - check the CoE treaty office before relying on it.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "coe-portal",
+      "name": "Council of Europe - AI treaty opened for signature",
+      "url": "https://www.coe.int/en/web/portal/-/council-of-europe-opens-first-ever-global-treaty-on-ai-for-signature",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-09",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "co-sb24-205",
+      "name": "Colorado SB24-205 Consumer Protections for AI (legislature page)",
+      "url": "https://leg.colorado.gov/bills/sb24-205",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024; delayed; replaced by SB26-189 (2026)",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Developer/deployer duties re algorithmic discrimination - the concept is exam-relevant even though the law was blocked (Apr 2026) and replaced by SB26-189 effective 1 Jan 2027.",
+      "bokSubtopics": [
+        "II.B",
+        "II.C"
+      ]
+    },
+    {
+      "id": "co-status-mcdermott",
+      "name": "McDermott - Colorado AI law in flux: replacement bill signed after federal court blocks predecessor",
+      "url": "https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026-05",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Current status explainer."
+    },
+    {
+      "id": "nyc-aedt",
+      "name": "NYC DCWP - Automated Employment Decision Tools (Local Law 144)",
+      "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Bias audit within 1 year, public summary, candidate notice.",
+      "bokSubtopics": [
+        "II.B"
+      ]
+    },
+    {
+      "id": "nyc-osc-audit",
+      "name": "NY State Comptroller - Enforcement of Local Law 144 audit",
+      "url": "https://www.osc.ny.gov/state-agencies/audits/2025/12/02/enforcement-local-law-144-automated-employment-decision-tools",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025-12-02",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Shows weak enforcement - good context."
+    },
+    {
+      "id": "us-eo-dec-2025",
+      "name": "White House EO 'Ensuring a National Policy Framework for AI' (Dec 11 2025)",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025-12-11",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "State-law preemption push. Note EO 14110 (Biden, 2023) was revoked in Jan 2025.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "ftc-ai-comply",
+      "name": "FTC - Operation AI Comply (business guidance blog)",
+      "url": "https://www.ftc.gov/business-guidance/blog/2024/09/operation-ai-comply-continuing-crackdown-overpromises-ai-related-lies",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-09",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Consumer-protection (Section 5) applied to AI claims.",
+      "bokSubtopics": [
+        "II.B"
+      ]
+    },
+    {
+      "id": "ftc-ai-comply-pr",
+      "name": "FTC press release - crackdown on deceptive AI claims",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes",
+      "format": "official-web",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-09",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "texas-traiga",
+      "name": "Wittliff Cutter - Texas TRAIGA, Colorado reset and federal preemption (2026)",
+      "url": "https://www.wittliffcutter.com/news-insights/ai-regulation-texas-colorado-federal-2026",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "TRAIGA effective 1 Jan 2026. Unclear if v2.1 BoK names it."
+    },
+    {
+      "id": "sg-genai-mgf",
+      "name": "Singapore Model AI Governance Framework for Generative AI (May 2024, PDF)",
+      "url": "https://aiverifyfoundation.sg/wp-content/uploads/2024/05/Model-AI-Governance-Framework-for-Generative-AI-May-2024-1-1.pdf",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2024-05",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "9 dimensions. Skim.",
+      "bokSubtopics": [
+        "II.C",
+        "II.D"
+      ]
+    },
+    {
+      "id": "sg-agentic-mgf",
+      "name": "Singapore IMDA Model AI Governance Framework for Agentic AI (PDF)",
+      "url": "https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf",
+      "format": "primary-framework",
+      "cost": "free",
+      "bokDomains": [
+        "II",
+        "IV"
+      ],
+      "lastUpdated": "2026 (date unverified)",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Agentic architectures are new in BoK v2.1.",
+      "bokSubtopics": [
+        "IV.A"
+      ]
+    },
+    {
+      "id": "ca-dadm",
+      "name": "Canada - Automated decision-making (Directive on ADM)",
+      "url": "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/automated-decision-making.html",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "live",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Public-sector directive; AIDA died in Jan 2025.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "ca-aia-tool",
+      "name": "Canada - Algorithmic Impact Assessment tool",
+      "url": "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
+      "format": "interactive",
+      "cost": "free",
+      "bokDomains": [
+        "IV"
+      ],
+      "lastUpdated": "live",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Real impact-assessment questionnaire (4 impact levels). Great hands-on practice.",
+      "bokSubtopics": [
+        "IV.B"
+      ],
+      "topRank": "interactive-2"
+    },
+    {
+      "id": "cn-genai-measures",
+      "name": "China Interim Measures for Generative AI Services (English, China Law Translate)",
+      "url": "https://www.chinalawtranslate.com/en/generative-ai-interim/",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2023-07",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "kr-ai-basic-act-fpf",
+      "name": "FPF - South Korea's new AI Framework Act",
+      "url": "https://fpf.org/blog/south-koreas-new-ai-framework-act-a-balancing-act-between-innovation-and-regulation/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Named in BoK v2.1 per secondary sources; in force 22 Jan 2026.",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "kr-ai-basic-act-cset",
+      "name": "CSET English translation - Korea Framework Act on AI (PDF)",
+      "url": "https://cset.georgetown.edu/wp-content/uploads/t0625_south_korea_ai_law_EN.pdf",
+      "format": "primary-law",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "model-cards",
+      "name": "Mitchell et al. - Model Cards for Model Reporting",
+      "url": "https://arxiv.org/abs/1810.03993",
+      "format": "paper",
+      "cost": "free",
+      "bokDomains": [
+        "III"
+      ],
+      "lastUpdated": "2018",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Documentation artefact frequently referenced.",
+      "bokSubtopics": [
+        "III.A",
+        "III.C"
+      ]
+    },
+    {
+      "id": "datasheets",
+      "name": "Gebru et al. - Datasheets for Datasets",
+      "url": "https://arxiv.org/abs/1803.09010",
+      "format": "paper",
+      "cost": "free",
+      "bokDomains": [
+        "III"
+      ],
+      "lastUpdated": "2018",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "III.B"
+      ]
+    },
+    {
+      "id": "owasp-llm-top10",
+      "name": "OWASP Top 10 for LLM Applications 2025",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+      "format": "framework",
+      "cost": "free",
+      "bokDomains": [
+        "III",
+        "IV"
+      ],
+      "lastUpdated": "2024-11",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Security risks incl. excessive agency (agentic).",
+      "bokSubtopics": [
+        "III.C",
+        "IV.C"
+      ]
+    },
+    {
+      "id": "mitre-atlas-github",
+      "name": "MITRE ATLAS (adversarial threat matrix, GitHub)",
+      "url": "https://github.com/mitre/advmlthreatmatrix",
+      "format": "framework",
+      "cost": "free",
+      "bokDomains": [
+        "III"
+      ],
+      "lastUpdated": "n/a",
+      "rating": 2,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Optional; atlas.mitre.org not verified."
+    },
+    {
+      "id": "eu-mcc-ai",
+      "name": "EU Model Contractual Clauses for AI procurement (Inside Privacy summary)",
+      "url": "https://www.insideprivacy.com/artificial-intelligence/eus-community-of-practice-publishes-updated-ai-model-contractual-clauses/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "IV"
+      ],
+      "lastUpdated": "2025-04",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Vendor contract terms for high-risk/non-high-risk AI.",
+      "bokSubtopics": [
+        "IV.A"
+      ]
+    },
+    {
+      "id": "oliverpatel-aigp-guide",
+      "name": "Oliver Patel - The Unofficial AIGP Resource Guide (100 links mapped to BoK)",
+      "url": "https://oliverpatel.substack.com/p/the-unofficial-aigp-resource-guide",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2025-02 (mapped to v1/2.0 BoK - check)",
+      "rating": 5,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "By an IAPP AIGP faculty instructor. Structure predates v2.1 but readings remain valid.",
+      "topRank": "guide-2"
+    },
+    {
+      "id": "aigpplaybook-home",
+      "name": "AIGP Playbook - free study guide hub",
+      "url": "https://aigpplaybook.com/",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Practitioner-built; independent (not IAPP)."
+    },
+    {
+      "id": "aigpplaybook-study-guide",
+      "name": "AIGP Playbook - Study Guide (2026) week-by-week plan",
+      "url": "https://aigpplaybook.com/aigp-study-guide/",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "aigpplaybook-training",
+      "name": "AIGP Playbook - Free training material for every domain",
+      "url": "https://aigpplaybook.com/training.html",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026 (v2.1)",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Slide-deck notes + knowledge checks + 'exam traps' per domain.",
+      "topRank": "guide-1"
+    },
+    {
+      "id": "aigpplaybook-d1",
+      "name": "AIGP Playbook - Domain I notes",
+      "url": "https://aigpplaybook.com/aigp-domain-1.html",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "I"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "I.A",
+        "I.B",
+        "I.C"
+      ]
+    },
+    {
+      "id": "aigpplaybook-d2",
+      "name": "AIGP Playbook - Domain II notes",
+      "url": "https://aigpplaybook.com/aigp-domain-2.html",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.A",
+        "II.B",
+        "II.C",
+        "II.D"
+      ]
+    },
+    {
+      "id": "aigpplaybook-revision",
+      "name": "AIGP Playbook - Exam-day revision: 100 essential facts by domain",
+      "url": "https://aigpplaybook.com/aigp-exam-revision.html",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "One-page cram sheet for final 48h.",
+      "topRank": "guide-3"
+    },
+    {
+      "id": "aigpplaybook-qotw",
+      "name": "AIGP Playbook - Question of the Week (scenario)",
+      "url": "https://aigpplaybook.com/question-of-the-week.html",
+      "format": "practice-questions",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "weekly",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Unofficial; quality unknown."
+    },
+    {
+      "id": "aigpplaybook-resources",
+      "name": "AIGP Playbook - Free reference sheets & checklists",
+      "url": "https://aigpplaybook.com/resources/",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "III",
+        "IV"
+      ],
+      "lastUpdated": "2026",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "trainingcamp-learning-path",
+      "name": "Training Camp - How to study for the AIGP: learning path built around BoK v2.1",
+      "url": "https://trainingcamp.com/articles/how-to-study-for-the-aigp-a-learning-path-built-around-the-bok-v2-1-blueprint/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Vendor blog but useful blueprint walk-through."
+    },
+    {
+      "id": "trainingcamp-mapping",
+      "name": "Training Camp - How AIGP maps to the EU AI Act, NIST AI RMF and ISO 42001",
+      "url": "https://trainingcamp.com/articles/how-aigp-maps-to-the-eu-ai-act-nist-ai-rmf-and-iso-42001/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Framework cross-mapping."
+    },
+    {
+      "id": "flashgenius-v21",
+      "name": "FlashGenius - AIGP 2026 BoK update: from models to systems",
+      "url": "https://flashgenius.net/blog-article/navigating-the-aigp-2026-bok-update-the-shift-from-models-to-systems",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Summary of v2.1 changes."
+    },
+    {
+      "id": "infosectrain-v21",
+      "name": "InfosecTrain - What's new in the AIGP 2026 exam",
+      "url": "https://www.infosectrain.com/blog/whats-new-in-the-aigp-2026-exam",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "v2.1 changes: provider responsibilities, FRIA, third-party risk, IP, agentic, ISO 42005."
+    },
+    {
+      "id": "psg-2026-update",
+      "name": "Privacy Study Group - AIGP 2026 update: what you need to know",
+      "url": "https://privacystudygroup.com/aigp-2026-update/",
+      "format": "article",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "psg-study-guide",
+      "name": "Privacy Study Group - Ultimate AIGP Study Guide 2026",
+      "url": "https://privacystudygroup.com/aigp-study-guide/",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Contains affiliate/discount links."
+    },
+    {
+      "id": "aigovstudy-guide",
+      "name": "aigovernance.study - Free AIGP study guide (2026)",
+      "url": "https://aigovernance.study/aigp-study-guide/",
+      "format": "study-guide",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Unknown author; secondary."
+    },
+    {
+      "id": "lmakoti-github",
+      "name": "GitHub lmakoti/ai_governance_professional_iapp - AIGP Study Guide PDF",
+      "url": "https://github.com/lmakoti/ai_governance_professional_iapp/blob/main/AIGP%20Study%20Guide.pdf",
+      "format": "notes",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "unknown - likely pre-v2.1",
+      "rating": 2,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Community notes; version unknown - treat as suspect."
+    },
+    {
+      "id": "quizlet-aigp",
+      "name": "Quizlet - AIGP Exam Flashcards",
+      "url": "https://quizlet.com/1085612395/aigp-exam-flash-cards/",
+      "format": "flashcards",
+      "cost": "free",
+      "bokDomains": [
+        "I"
+      ],
+      "lastUpdated": "unknown",
+      "rating": 2,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "User-made; terminology only. Better: build your own from the IAPP glossary."
+    },
+    {
+      "id": "brainscape-aigp-defs",
+      "name": "Brainscape - AIGP Definitions (user deck)",
+      "url": "https://www.brainscape.com/packs/aigp-definitions-22228332",
+      "format": "flashcards",
+      "cost": "free (user deck)",
+      "bokDomains": [
+        "I"
+      ],
+      "lastUpdated": "unknown",
+      "rating": 2,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "User-made; check against IAPP glossary."
+    },
+    {
+      "id": "yt-v21-update",
+      "name": "YouTube - AIGP v2.1 Full Course Update Explained (LinkedIn Live)",
+      "url": "https://www.youtube.com/watch?v=cmWGspcCdkc",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026-02-02",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Explains v2.1 changes (Korea AI Basic Law, ISO 42005, agentic).",
+      "topRank": "video-1"
+    },
+    {
+      "id": "yt-how-they-passed-feb26",
+      "name": "YouTube - AIGP Success: How 3 recent grads passed (Kyle David)",
+      "url": "https://www.youtube.com/watch?v=1oxoujLLALk",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2026-02-05",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Vendor-hosted testimonials; useful for exam-day tips; not neutral."
+    },
+    {
+      "id": "yt-how-they-passed-jul26",
+      "name": "YouTube - AIGP How They Passed - July 2026 (Kyle David)",
+      "url": "https://www.youtube.com/watch?v=rdASQWETQyY",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2026-07-06",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Most recent candidate panel found (v2.1 era). Vendor-hosted.",
+      "topRank": "video-2"
+    },
+    {
+      "id": "yt-top3-tips",
+      "name": "YouTube - Top 3 Tips to Pass Your AIGP Exam on the First Try",
+      "url": "https://www.youtube.com/watch?v=0muZy8Pcxks",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2025-12-15",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "yt-no-textbook",
+      "name": "YouTube - How to Pass the AIGP Exam Without an Official Textbook",
+      "url": "https://www.youtube.com/watch?v=Vak8vBRa5FM",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2025-08-22",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "First-attempt passer's strategy (v2.0.1 era)."
+    },
+    {
+      "id": "yt-how-to-pass-2026",
+      "name": "YouTube - How to Pass the IAPP AIGP Exam in 2026 (Free Study Guide & Practice Qs)",
+      "url": "https://www.youtube.com/watch?v=zaW0W19UxRU",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2026-05-17",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "yt-full-course-playlist",
+      "name": "YouTube playlist - AI Governance Professional (AIGP) Full Course",
+      "url": "https://www.youtube.com/playlist?list=PLboJ9yx0c_SVAS8yUnczrktK5PuB_MT22",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "unknown - check v2.1 alignment",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Author/quality unverified; spot-check against BoK.",
+      "topRank": "video-3"
+    },
+    {
+      "id": "yt-masterclass-playlist",
+      "name": "YouTube playlist - AIGP Certification Masterclass",
+      "url": "https://www.youtube.com/playlist?list=PLoc3jNJCOCrAs-0HThn1HYAwCs6Xk_iIf",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "unknown",
+      "rating": 2,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Author unverified."
+    },
+    {
+      "id": "yt-old-7-domain-playlist",
+      "name": "YouTube playlist - AIGP Lectures Domain 1 to Domain 7 (OLD BoK)",
+      "url": "https://www.youtube.com/playlist?list=PLMKPofCI5XFdAZ7DSHe9EZYmslzDcLqb3",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "pre-2025 (7-domain BoK v1)",
+      "rating": 1,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "AVOID as primary - covers superseded BoK v1."
+    },
+    {
+      "id": "yt-nist-rmf-practical",
+      "name": "YouTube - NIST AI Risk Management Framework: A Practical Guide",
+      "url": "https://www.youtube.com/watch?v=3B0ELJTViMs",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026-03-21",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.D"
+      ]
+    },
+    {
+      "id": "yt-nist-rmf-functions",
+      "name": "YouTube - NIST AI RMF deep dive: GOVERN vs MAP vs MEASURE vs MANAGE",
+      "url": "https://www.youtube.com/watch?v=IbKXHfkFcBQ",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026-03-01",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Function-discrimination practice.",
+      "bokSubtopics": [
+        "II.D"
+      ]
+    },
+    {
+      "id": "yt-euaia-roles",
+      "name": "YouTube - Understanding the EU AI Act: Roles, Risks, and Compliance Explained",
+      "url": "https://www.youtube.com/watch?v=mpSWJP-LGEE",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2026-02",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "yt-euaia-art3",
+      "name": "YouTube - EU AI Act Article 3 Explained (providers, deployers, GPAI)",
+      "url": "https://www.youtube.com/watch?v=5us83jc1-6I",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025-12",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "",
+      "bokSubtopics": [
+        "II.C"
+      ]
+    },
+    {
+      "id": "yt-artigas",
+      "name": "YouTube - EU AI Act explained by Carme Artigas (MSP Global 2025)",
+      "url": "https://www.youtube.com/watch?v=fpfE6RitFuM",
+      "format": "video",
+      "cost": "free",
+      "bokDomains": [
+        "II"
+      ],
+      "lastUpdated": "2025-12",
+      "rating": 2,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Context from a negotiator; not exam detail."
+    },
+    {
+      "id": "pod-baremetal-aigp",
+      "name": "Certified: The IAPP AIGP Audio Course (Bare Metal Cyber) - Apple Podcasts",
+      "url": "https://podcasts.apple.com/us/podcast/certified-the-iapp-aigp-audio-course/id1890735004",
+      "format": "podcast",
+      "cost": "free",
+      "bokDomains": [
+        "all"
+      ],
+      "lastUpdated": "2026 (appears v2.1-structured; episode titles match v2.1 indicators)",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Exam-focused audio episodes - good for commute review. Quality not independently reviewed.",
+      "topRank": "podcast-1"
+    },
+    {
+      "id": "pod-baremetal-ep1",
+      "name": "AIGP Audio Course Ep. 1 - Decode the AIGP exam blueprint",
+      "url": "https://podcasts.apple.com/us/podcast/episode-1-decode-the-aigp-exam-blueprint-question/id1890735004?i=1000759289642",
+      "format": "podcast",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "pod-baremetal-ep11-spotify",
+      "name": "AIGP Audio Course Ep. 11 - Update privacy, security, data governance and IP policies for AI (Spotify)",
+      "url": "https://open.spotify.com/episode/3ca2ImW1KV6MZ8gH1WFwU3",
+      "format": "podcast",
+      "cost": "free",
+      "bokDomains": [
+        "I"
+      ],
+      "lastUpdated": "2026",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Maps to I.C (v2.1-modified indicator).",
+      "bokSubtopics": [
+        "I.C"
+      ]
+    },
+    {
+      "id": "rep-veronica-lin",
+      "name": "Veronica Lin - How I passed the AIGP exam (what worked, what didn't)",
+      "url": "https://aigouvernance.com/how-i-passed-the-aigp-exam-what-actually-worked-what-didnt/",
+      "format": "candidate-report",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2026-02 (passed end Jan 2026)",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Most detailed first-person report found."
+    },
+    {
+      "id": "rep-veronica-lin-li",
+      "name": "Veronica Lin - LinkedIn post",
+      "url": "https://www.linkedin.com/posts/veronica-lin-78881741_how-i-passed-the-aigp-exam-and-what-i-wish-activity-7450370273482022912--W_d",
+      "format": "candidate-report",
+      "cost": "free (login)",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2026-04-16",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "rep-joe-sabado",
+      "name": "Joe Sabado - I used AI to study for an AI governance exam, then passed on my own",
+      "url": "https://joesabado.substack.com/p/i-used-ai-to-study-for-an-ai-governance",
+      "format": "candidate-report",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2026-06-29",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "v2.1-era report; BoK-as-spine method."
+    },
+    {
+      "id": "rep-nathan-chappell",
+      "name": "Nathan Chappell - How I passed the AIGP exam with twelve televisions blaring in my brain",
+      "url": "https://medium.com/@nathanchappell/how-i-passed-the-aigp-exam-with-twelve-televisions-blaring-in-my-brain-2e4e7c7fbf3e",
+      "format": "candidate-report",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2025-10-31",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "rep-ammett-w",
+      "name": "Ammett W - AIGP IAPP exam study tips 2026",
+      "url": "https://blog.startcloudnow.com/preparing-for-success-with-the-iapp-aigp-ai-governance-professional-exam-2026-276e395109de?gi=31e8ae44f46d",
+      "format": "candidate-report",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "2026-01-27",
+      "rating": 3,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": ""
+    },
+    {
+      "id": "rep-fair-failed",
+      "name": "Donna Gallaher (FAIR Institute) - Why I failed the AIGP exam",
+      "url": "https://www.fairinstitute.org/blog/why-i-failed-the-aigp-exam-and-you-should-too",
+      "format": "candidate-report",
+      "cost": "free",
+      "bokDomains": [
+        "exam-strategy"
+      ],
+      "lastUpdated": "~2025-10",
+      "rating": 4,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Failure report: exam rewards 'ideal governance' answers over pragmatic business ones."
+    },
+    {
+      "id": "bluedot-frontier-gov",
+      "name": "BlueDot Impact - Frontier AI Governance course",
+      "url": "https://bluedot.org/courses/ai-governance",
+      "format": "reference",
+      "cost": "free",
+      "bokDomains": [
+        "gap-analysis"
+      ],
+      "lastUpdated": "2026",
+      "rating": null,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Used only for BoK gap analysis."
+    },
+    {
+      "id": "bluedot-agi-strategy",
+      "name": "BlueDot Impact - AGI Strategy course",
+      "url": "https://bluedot.org/courses/agi-strategy",
+      "format": "reference",
+      "cost": "free",
+      "bokDomains": [
+        "gap-analysis"
+      ],
+      "lastUpdated": "2026",
+      "rating": null,
+      "verified": true,
+      "linkStatus": "indexed in web search 2026-09-23; direct HTTP check blocked by sandbox egress policy",
+      "notes": "Used only for BoK gap analysis."
+    }
+  ],
+  "practiceExams": [
+    {
+      "id": "pe-iapp-official",
+      "name": "IAPP official AIGP Practice Exam (digital PDF)",
+      "url": "https://store.iapp.org/aigp-practice-exam-digital/",
+      "price": "UNVERIFIED - third-party sources say ~$50-60",
+      "questions": 100,
+      "explanations": true,
+      "bokVersion": "Store copy says 'developed from the same body of knowledge'; whether refreshed for v2.1 NOT verified",
+      "lastUpdated": "unknown",
+      "verdict": "Recommend",
+      "reasoning": "Only practice set written by IAPP-selected item writers; best signal for question style ('first', 'most appropriate'). Use it LAST as a calibration test (~1-2 weeks before exam). Small (100 Qs) and PDF format, so it cannot be your only bank. Confirm on the store page that it references BoK v2.1 before buying."
+    },
+    {
+      "id": "pe-iapp-fsg-samples",
+      "name": "IAPP free AIGP study guide sample questions",
+      "url": "https://iapp.org/l/aigp-study-guide-request",
+      "price": "free",
+      "questions": "small sample (count unverified)",
+      "explanations": "unverified",
+      "bokVersion": "check guide shows 4 domains",
+      "lastUpdated": "unknown",
+      "verdict": "Recommend",
+      "reasoning": "Official, free; use as first-day diagnostic of question style."
+    },
+    {
+      "id": "pe-aicareerpro",
+      "name": "AI Career Pro - AIGP Exam Prep Course (James Kavanagh)",
+      "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+      "price": "US$99 (per search snippet); free Domain I-A + a free practice exam trial",
+      "questions": "700+ practice Qs incl. 5 full exams (500 Qs)",
+      "explanations": "claimed",
+      "bokVersion": "v2.1 (claimed)",
+      "lastUpdated": "2026",
+      "verdict": "Optional",
+      "reasoning": "Only reasonably priced (<=$150) package that claims full v2.1 alignment and 5 full mocks, by a practitioner who passed AIGP. BUT no independent reviews found - evidence is vendor claims only. Use the FREE trial exam first; buy only if the free questions feel IAPP-like and you need more volume."
+    },
+    {
+      "id": "pe-aigpplaybook",
+      "name": "AIGP Playbook - mock exam (15-Q free preview; full ~100-Q mock from 300+ bank) + Question of the Week",
+      "url": "https://aigpplaybook.com/premium-exam.html",
+      "price": "preview free; full mock price not verified",
+      "questions": "300+ bank; 100-Q mock",
+      "explanations": "yes (SLIDE framework)",
+      "bokVersion": "v2.1 (claimed)",
+      "lastUpdated": "2026",
+      "verdict": "Optional",
+      "reasoning": "Free preview + weekly scenarios are useful extra scenario practice. No independent reviews of accuracy."
+    },
+    {
+      "id": "pe-openexamprep",
+      "name": "OpenExamPrep - Free AIGP practice exam",
+      "url": "https://open-exam-prep.com/practice/aigp",
+      "price": "free",
+      "questions": 200,
+      "explanations": "yes (claimed)",
+      "bokVersion": "v2.1 (claimed)",
+      "lastUpdated": "2026",
+      "verdict": "Optional",
+      "reasoning": "Free volume for drilling; unknown authorship; likely easier than the real exam, so do NOT use its scores to decide readiness."
+    },
+    {
+      "id": "pe-sybex",
+      "name": "Sybex IAPP AIGP Study Guide (Peter H. Gregory, Wiley) + online test bank",
+      "url": "https://www.wiley.com/en-us/IAPP+AIGP+Artificial+Intelligence+Governance+Professional+Study+Guide-p-9781394363940",
+      "price": "UNVERIFIED (book; check Amazon/Wiley; library copy may be free)",
+      "questions": "2 practice exams + chapter review Qs + flashcards (1-yr online access)",
+      "explanations": "yes",
+      "bokVersion": "written for 2025 (v2.0.1) with downloadable v2.1 supplement",
+      "lastUpdated": "2025-26",
+      "verdict": "Optional",
+      "reasoning": "Established publisher and author (multiple IAPP/ISACA guides). Breaks the $0 study-material budget unless borrowed from a library. No independent reviews on exam closeness found."
+    },
+    {
+      "id": "pe-udemy-600-mrexammaster",
+      "name": "Udemy - IAPP AIGP Practice Exams 2026: 6 Full Tests, 600 Questions",
+      "url": "https://www.udemy.com/course/iapp-aigp-practice-exams-2026-6-full-tests-600-questions/",
+      "price": "UNVERIFIED (Udemy list price; frequent sales)",
+      "questions": 600,
+      "explanations": "claimed",
+      "bokVersion": "v2.1 (claimed; built from Sybex guide + BoK + FSG)",
+      "lastUpdated": "indexed 2026-04",
+      "verdict": "Optional",
+      "reasoning": "Claims v2.1 alignment and sourcing; no independent reviews retrieved. If you buy ONE Udemy bank, pick one whose recent reviews mention 'v2.1' and 'close to real exam' - check the reviews tab first."
+    },
+    {
+      "id": "pe-udemy-800-rebuilt",
+      "name": "Udemy - AI Governance Professional (AIGP) Certification Practice (rebuilt Summer 2026, 800 Qs)",
+      "url": "https://www.udemy.com/course/aigp-exam-practice-tests/",
+      "price": "UNVERIFIED",
+      "questions": 800,
+      "explanations": "claimed",
+      "bokVersion": "v2.1 (claimed)",
+      "lastUpdated": "Summer 2026 (claimed)",
+      "verdict": "Optional",
+      "reasoning": "Its own description admits earlier versions were criticised as 'too easy / nothing like the real exam'. Rebuild is recent but unreviewed."
+    },
+    {
+      "id": "pe-udemy-500",
+      "name": "Udemy - IAPP AIGP Practice Exam 2026 - 500 Questions with Explanation",
+      "url": "https://www.udemy.com/course/iapp-aigp-practice-tests-2026500-questions-with-explanation/",
+      "price": "UNVERIFIED",
+      "questions": 500,
+      "explanations": "claimed",
+      "bokVersion": "unverified",
+      "lastUpdated": "2026",
+      "verdict": "Avoid",
+      "reasoning": "No evidence of quality or v2.1 alignment; redundant with better-evidenced options."
+    },
+    {
+      "id": "pe-udemy-2026-edition",
+      "name": "Udemy - AIGP Certification Practice Exams 2026 edition",
+      "url": "https://www.udemy.com/course/aigp-certification-practice-exams-2026-edition/",
+      "price": "UNVERIFIED",
+      "questions": "unverified",
+      "explanations": "claimed",
+      "bokVersion": "unverified",
+      "lastUpdated": "2026",
+      "verdict": "Avoid",
+      "reasoning": "No independent evidence."
+    },
+    {
+      "id": "pe-udemy-800-alldomains",
+      "name": "Udemy - IAPP AIGP Complete Practice Exam: All 4 Domains Specific",
+      "url": "https://www.udemy.com/course/iapp-aigp-complete-practice-tests-all-4-domains-specific-j/",
+      "price": "UNVERIFIED",
+      "questions": "800+",
+      "explanations": "claimed",
+      "bokVersion": "4-domain (2.0.1 or 2.1 - unverified)",
+      "lastUpdated": "unverified",
+      "verdict": "Avoid",
+      "reasoning": "Volume-heavy bank with no quality evidence; many such banks appear AI-generated."
+    },
+    {
+      "id": "pe-udemy-300-unofficial",
+      "name": "Udemy - AIGP 300 Unofficial Practice Questions",
+      "url": "https://www.udemy.com/course/aigp-300-unofficial-practice-questions/",
+      "price": "UNVERIFIED",
+      "questions": 300,
+      "explanations": "unverified",
+      "bokVersion": "unverified",
+      "lastUpdated": "unverified",
+      "verdict": "Avoid",
+      "reasoning": "No evidence."
+    },
+    {
+      "id": "pe-22academy-4tests",
+      "name": "22Academy - AIGP 4-Tests Package (200 Qs)",
+      "url": "https://22academy.com/study/artificial-intelligence/aigp-4-tests-package",
+      "price": "UNVERIFIED (22Academy self-study kit was EUR130; exam prep suite EUR745)",
+      "questions": 200,
+      "explanations": "yes (results analysis)",
+      "bokVersion": "v2.1 claimed for 2026 products",
+      "lastUpdated": "2026",
+      "verdict": "Optional",
+      "reasoning": "Established IAPP-focused training firm; praised (by a partner site) as accurate, but no independent reviews found and price unknown."
+    },
+    {
+      "id": "pe-kyle-david-site",
+      "name": "Dr. Kyle David AIGP Masterclass (own site: videos + 600 Qs + Brainscape flashcards + office hours)",
+      "url": "https://www.drdavidprivacy.com/course/ai-governance-professional-aigp-certification-masterclass",
+      "price": "~EUR180 paid by one candidate (Nov 2025); current price unverified - likely > $150",
+      "questions": 600,
+      "explanations": "yes",
+      "bokVersion": "v2.1 (site says updated July 2026)",
+      "lastUpdated": "2026-07",
+      "verdict": "Optional (over budget)",
+      "reasoning": "Strongest independent evidence of any paid product (V. Lin credits it as the main reason she passed, Jan 2026; high Udemy rating). Probably exceeds the $150 cap - see prepCourseVerdict for the cheaper Udemy video version."
+    },
+    {
+      "id": "pe-dumps",
+      "name": "Braindump sites (ExamTopics, CertEmpire 'real exam questions', Pass4Success, ITExams, CertsHero, Study4Exam, P2PExams, CertShield, DumpsGate, etc.)",
+      "url": "https://www.examtopics.com/exams/iapp/aigp/",
+      "price": "varies",
+      "questions": "varies",
+      "explanations": "often wrong",
+      "bokVersion": "unknown",
+      "lastUpdated": "n/a",
+      "verdict": "Avoid",
+      "reasoning": "Claimed 'actual exam questions' breach IAPP's candidate confidentiality terms (certification can be revoked) and answers are frequently wrong. Candidate reports (e.g., Joe Sabado) explicitly warn against them."
+    },
+    {
+      "id": "pe-iapp-training",
+      "name": "IAPP official AIGP training (online self-paced / live)",
+      "url": "https://iapp.org/train/aigp-training",
+      "price": "~$995 self-paced; ~$1,500-2,500 live (per third-party source, unverified)",
+      "questions": "n/a",
+      "explanations": "n/a",
+      "bokVersion": "v2.1",
+      "lastUpdated": "2026",
+      "verdict": "Excluded (> $150)",
+      "reasoning": "Over budget. Not required: IAPP training is not a prerequisite."
+    }
+  ],
+  "prepCourseVerdict": {
+    "verdict": "None required",
+    "reasoning": "No recent (2025-26) evidence is strong enough to justify a paid course for someone with this background. The best-evidenced course (Dr. Kyle David's AIGP Masterclass) rests on one detailed first-person report (Veronica Lin, passed Jan 2026) plus platform ratings and vendor-hosted testimonials. The free stack (BoK v2.1, primary sources, IAPP glossary/tracker/Top-10 series, AIGP Playbook notes, Oliver Patel's guide, NIST playbook) covers the syllabus.",
+    "conditionalFallback": {
+      "trigger": "Full mock #1 (at ~25 h) below ~60% overall or below 55% in Domains III/IV",
+      "option": "Kyle David 'AI Governance Professional (AIGP) Certification Masterclass' on Udemy (video-only version; ~4.7 stars, ~1.8k ratings per search snippet; buy during a Udemy sale; price unverified but Udemy sales are typically well under $150)",
+      "url": "https://www.udemy.com/course/aigp-masterclass/",
+      "caveat": "One search snippet described the Udemy version as covering BoK v2.0.1 (Mar 2025) with in-place updates promised; confirm the course page says v2.1 before buying. The practice questions/flashcards are only in the pricier own-site version (~EUR180)."
+    },
+    "alternative": {
+      "option": "AI Career Pro AIGP Exam Prep ($99; 5 mocks, v2.1-claimed)",
+      "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+      "caveat": "No independent reviews; try the free Domain I-A + free practice exam first."
+    },
+    "excluded": [
+      "IAPP official training (~$995+)",
+      "22Academy Exam Prep Suite (EUR745)",
+      "Privacy Bootcamp / Training Camp / InfosecTrain boot camps (prices not verified; almost certainly > $150)"
+    ]
+  },
+  "sources": [
+    {
+      "n": 1,
+      "title": "AIGP BoK v2.1 PDF (search-index title 'VERSION 2.1 Effective date: 2 February 2026')",
+      "url": "https://assets.contentstack.io/v3/assets/bltd4dd5b2d705252bc/blt579bac3f0b35f278/69494b068965be6043ba2815/AIGP_BOK_2.1.0_FINAL.pdf",
+      "date": "2025-09 / eff. 2026-02-02"
+    },
+    {
+      "n": 2,
+      "title": "Privacy Bootcamp - New 2026 AIGP BoK v2.1",
+      "url": "https://www.privacybootcamp.com/Resources/Article/aigp-body-of-knowledge-2026",
+      "date": "2025-26"
+    },
+    {
+      "n": 3,
+      "title": "Training Camp - How to study for the AIGP (BoK v2.1 blueprint, domain question ranges)",
+      "url": "https://trainingcamp.com/articles/how-to-study-for-the-aigp-a-learning-path-built-around-the-bok-v2-1-blueprint/",
+      "date": "2026"
+    },
+    {
+      "n": 4,
+      "title": "FlashGenius - AIGP 2026 BoK update",
+      "url": "https://flashgenius.net/blog-article/navigating-the-aigp-2026-bok-update-the-shift-from-models-to-systems",
+      "date": "2026"
+    },
+    {
+      "n": 5,
+      "title": "InfosecTrain - What's new in the AIGP 2026 exam",
+      "url": "https://www.infosectrain.com/blog/whats-new-in-the-aigp-2026-exam",
+      "date": "2026"
+    },
+    {
+      "n": 6,
+      "title": "Privacy Study Group - AIGP 2026 update",
+      "url": "https://privacystudygroup.com/aigp-2026-update/",
+      "date": "2026"
+    },
+    {
+      "n": 7,
+      "title": "IAPP store - AIGP exam (fees, time, retake wait via search snippet)",
+      "url": "https://store.iapp.org/aigp-exam/",
+      "date": "accessed 2026-09-23"
+    },
+    {
+      "n": 8,
+      "title": "Privacy Bootcamp - What is a passing score on IAPP exams",
+      "url": "https://www.privacybootcamp.com/Resources/Article/What-Is-a-Passing-Score-on-IAPP-Exams",
+      "date": "n/d"
+    },
+    {
+      "n": 9,
+      "title": "InfosecTrain - AIGP exam preparation guide (165 min + break)",
+      "url": "https://www.infosectrain.com/blog/aigp-exam-preparation-guide",
+      "date": "2025-26"
+    },
+    {
+      "n": 10,
+      "title": "IAPP store - AIGP Practice Exam Digital",
+      "url": "https://store.iapp.org/aigp-practice-exam-digital/",
+      "date": "accessed 2026-09-23"
+    },
+    {
+      "n": 11,
+      "title": "Training Camp - AIGP cost article (practice exam ~$50)",
+      "url": "https://trainingcamp.com/articles/aigp-certification-what-it-costs-what-it-pays-and-who-should-get-it/",
+      "date": "2026"
+    },
+    {
+      "n": 12,
+      "title": "aigptest.com - AIGP exam cost / study time / pass rate blogs (vendor)",
+      "url": "https://aigptest.com/blog/aigp-study-time",
+      "date": "2026"
+    },
+    {
+      "n": 13,
+      "title": "LearnZapp - AIGP certification guide (40-60 h / 80-120 h)",
+      "url": "https://www.learnzapp.com/blog/aigp-certification-guide/",
+      "date": "2026"
+    },
+    {
+      "n": 14,
+      "title": "Certsqill - What AIGP mock scores say about readiness (vendor)",
+      "url": "https://www.certsqill.com/blog/aigp-mock-scores/",
+      "date": "2026"
+    },
+    {
+      "n": 15,
+      "title": "Veronica Lin - How I passed the AIGP exam",
+      "url": "https://aigouvernance.com/how-i-passed-the-aigp-exam-what-actually-worked-what-didnt/",
+      "date": "2026-02"
+    },
+    {
+      "n": 16,
+      "title": "Joe Sabado - I used AI to study for an AI governance exam",
+      "url": "https://joesabado.substack.com/p/i-used-ai-to-study-for-an-ai-governance",
+      "date": "2026-06-29"
+    },
+    {
+      "n": 17,
+      "title": "Nathan Chappell - How I passed the AIGP exam (Medium)",
+      "url": "https://medium.com/@nathanchappell/how-i-passed-the-aigp-exam-with-twelve-televisions-blaring-in-my-brain-2e4e7c7fbf3e",
+      "date": "2025-10-31"
+    },
+    {
+      "n": 18,
+      "title": "Ammett W - AIGP study tips 2026",
+      "url": "https://blog.startcloudnow.com/preparing-for-success-with-the-iapp-aigp-ai-governance-professional-exam-2026-276e395109de?gi=31e8ae44f46d",
+      "date": "2026-01-27"
+    },
+    {
+      "n": 19,
+      "title": "FAIR Institute - Why I failed the AIGP exam",
+      "url": "https://www.fairinstitute.org/blog/why-i-failed-the-aigp-exam-and-you-should-too",
+      "date": "~2025-10"
+    },
+    {
+      "n": 20,
+      "title": "Oliver Patel - Unofficial AIGP Resource Guide",
+      "url": "https://oliverpatel.substack.com/p/the-unofficial-aigp-resource-guide",
+      "date": "2025-02"
+    },
+    {
+      "n": 21,
+      "title": "Dr David Privacy - AIGP Masterclass page / vs Udemy page",
+      "url": "https://www.drdavidprivacy.com/drdavidprivacy-vs-udemy",
+      "date": "2026"
+    },
+    {
+      "n": 22,
+      "title": "Udemy - Kyle David AIGP Masterclass",
+      "url": "https://www.udemy.com/course/aigp-masterclass/",
+      "date": "accessed 2026-09-23"
+    },
+    {
+      "n": 23,
+      "title": "AI Career Pro - AIGP Exam Prep course ($99)",
+      "url": "https://governance.aicareer.pro/course/aigp-exam-prep",
+      "date": "2026"
+    },
+    {
+      "n": 24,
+      "title": "Wiley - Sybex IAPP AIGP Study Guide (P. H. Gregory)",
+      "url": "https://www.wiley.com/en-us/IAPP+AIGP+Artificial+Intelligence+Governance+Professional+Study+Guide-p-9781394363940",
+      "date": "2025-26"
+    },
+    {
+      "n": 25,
+      "title": "Gibson Dunn - EU AI Act Omnibus agreement",
+      "url": "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/",
+      "date": "2026"
+    },
+    {
+      "n": 26,
+      "title": "EUR-Lex consolidated AI Act 2026-07-27",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02024R1689-20260727",
+      "date": "2026-07-27"
+    },
+    {
+      "n": 27,
+      "title": "McDermott - Colorado AI law in flux",
+      "url": "https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/",
+      "date": "2026-05"
+    },
+    {
+      "n": 28,
+      "title": "BlueDot - Frontier AI Governance course",
+      "url": "https://bluedot.org/courses/ai-governance",
+      "date": "2026"
+    },
+    {
+      "n": 29,
+      "title": "BlueDot - AGI Strategy course",
+      "url": "https://bluedot.org/courses/agi-strategy",
+      "date": "2026"
+    },
+    {
+      "n": 30,
+      "title": "YouTube - AIGP v2.1 Full Course Update Explained",
+      "url": "https://www.youtube.com/watch?v=cmWGspcCdkc",
+      "date": "2026-02-02"
+    },
+    {
+      "n": 31,
+      "title": "aigpplaybook - Exam revision / domain notes (I.C weight, IV.C heaviest)",
+      "url": "https://aigpplaybook.com/aigp-exam-revision.html",
+      "date": "2026"
+    },
+    {
+      "n": 32,
+      "title": "aigptest - pass rate (IAPP does not publish pass rates)",
+      "url": "https://aigptest.com/blog/aigp-pass-rate",
+      "date": "2026"
+    },
+    {
+      "n": 33,
+      "title": "NIST AI RMF page (revision under AI Action Plan)",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "date": "live"
+    },
+    {
+      "n": 34,
+      "title": "Udemy - AIGP Certification Practice (rebuilt Summer 2026) description",
+      "url": "https://www.udemy.com/course/aigp-exam-practice-tests/",
+      "date": "2026"
+    }
+  ]
+}
